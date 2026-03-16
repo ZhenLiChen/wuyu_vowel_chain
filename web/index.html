@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>吴语方言分布图 - 深度统计版</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+    <style>
+        body { font-family: "Segoe UI", "Microsoft YaHei", sans-serif; background: #f0f2f5; padding: 40px; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h2 { border-left: 5px solid #4ECDC4; padding-left: 15px; margin-bottom: 25px; }
+        
+        /* 画布区域 */
+        #canvas { background: #fff; display: block; margin: 20px auto; border-radius: 8px; border: 1px solid #eee; }
+        .tooltip { position: absolute; padding: 12px; background: rgba(0,0,0,0.85); color: #fff; border-radius: 6px; pointer-events: none; font-size: 13px; opacity: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        
+        /* 统计区域样式 */
+        .stats-container { margin-top: 30px; padding-top: 20px; border-top: 2px solid #f0f0f0; }
+        .stats-title { font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #2c3e50; display: flex; align-items: center; gap: 10px; }
+        
+        /* 全局声组汇总 */
+        .summary-bar { background: #eef2f7; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 15px; }
+        .summary-tag { background: #fff; border: 1px solid #d1d9e6; padding: 4px 12px; border-radius: 20px; font-size: 14px; }
+        .summary-tag b { color: #3498db; }
+
+        /* 韵部分类统计 */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .stats-card { background: #f8f9fa; border-radius: 10px; padding: 20px; border-top: 4px solid #ccc; transition: transform 0.2s; }
+        .stats-card:hover { transform: translateY(-5px); }
+        .stats-card h4 { margin: 0 0 15px 0; color: #333; font-size: 18px; border-bottom: 1px solid #dee2e6; padding-bottom: 8px; }
+        
+        .reading-block { margin-bottom: 12px; padding: 10px; background: white; border-radius: 6px; border: 1px solid #eee; }
+        .reading-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px; color: #2c3e50; }
+        .reading-tag { background: #34495e; color: white; padding: 1px 8px; border-radius: 4px; font-family: "Courier New", monospace; }
+        
+        /* 声组分布微缩展示 */
+        .sz-distribution { font-size: 12px; color: #666; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px dashed #eee; pt: 5px; margin-top: 5px; }
+        .sz-item { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; }
+        .sz-item b { color: #e67e22; }
+
+        .dot-label { font-size: 10px; fill: #999; pointer-events: none; }
+        .controls { background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>吴语方言元音分布与声韵配合统计</h2>
+    
+    <div class="controls">
+        <label style="font-weight: bold;">1. 选择数据文件：</label>
+        <input type="file" id="fileInput" multiple accept=".csv">
+        <button onclick="location.reload()" style="margin-left:20px; cursor: pointer;">清空并重置</button>
+        <div style="font-size: 12px; color: #888; margin-top: 10px;">
+            当前筛选：<strong>歌、戈、模、麻</strong> 韵。支持多文件拖入，系统将自动汇总统计。
+        </div>
+    </div>
+    
+    <div style="position: relative; border: 1px solid #eee; border-radius: 8px; background: #fff;">
+        <svg id="canvas" width="1000" height="600"></svg>
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <div class="stats-container" id="statsArea" style="display:none;">
+        <div class="stats-title">📊 语音分布与声韵配合报表</div>
+        
+        <div style="font-size: 14px; margin-bottom: 10px; font-weight: bold;">(1) 全局声组分布概览：</div>
+        <div id="globalSZ" class="summary-bar"></div>
+
+        <div style="font-size: 14px; margin-bottom: 10px; font-weight: bold;">(2) 各韵部读音与声组详细统计：</div>
+        <div id="statsGrid" class="stats-grid"></div>
+    </div>
+</div>
+
+<script>
+// IPA 坐标及颜色配置
+const VOWEL_COORDS = {
+    'i': [0.15, 0.15], 'y': [0.25, 0.15], 'u': [0.85, 0.15], 'ɯ': [0.75, 0.15],
+    'e': [0.15, 0.45], 'ø': [0.25, 0.45], 'o': [0.85, 0.45], 'ɤ': [0.75, 0.45],
+    'ɛ': [0.15, 0.75], 'ɔ': [0.85, 0.75], 'ə': [0.5, 0.5],
+    'a': [0.2, 0.9],   'ɑ': [0.85, 0.9],  'æ': [0.35, 0.85]
+};
+const ALLOWED_YUN = ["歌", "戈", "模", "麻"];
+const YUN_COLORS = { "歌": "#FF6B6B", "戈": "#4ECDC4", "模": "#45B7D1", "麻": "#F9D423" };
+
+const svg = d3.select("#canvas");
+const margin = {top: 50, right: 180, bottom: 50, left: 100};
+const width = +svg.attr("width"), height = +svg.attr("height");
+const chartW = width - margin.left - margin.right, chartH = height - margin.top - margin.bottom;
+const xScale = d3.scaleLinear().domain([0, 1]).range([margin.left, margin.left + chartW]);
+const yScale = d3.scaleLinear().domain([0, 1]).range([margin.top, margin.top + chartH]);
+
+let allData = [];
+
+document.getElementById('fileInput').addEventListener('change', function(e) {
+    const files = Array.from(e.target.files);
+    let filesProcessed = 0;
+    files.forEach(file => {
+        Papa.parse(file, {
+            header: true, skipEmptyLines: true,
+            complete: function(results) {
+                const filtered = results.data.filter(row => ALLOWED_YUN.includes(row.韵) && row.读音);
+                allData = allData.concat(filtered);
+                renderPoints(filtered);
+                filesProcessed++;
+                if(filesProcessed === files.length) calculateStats();
+            }
+        });
+    });
+});
+
+function renderPoints(data) {
+    const tooltip = d3.select("#tooltip");
+    const groups = svg.selectAll(".dot-group-new").data(data).enter().append("g")
+        .attr("transform", d => {
+            const r = d.读音.split('/')[0].trim();
+            const base = VOWEL_COORDS[r] || [0.5, 0.5];
+            return `translate(${xScale(base[0]) + (Math.random()-0.5)*70}, ${yScale(base[1]) + (Math.random()-0.5)*70})`;
+        });
+
+    groups.append("circle").attr("r", 4.5).attr("fill", d => YUN_COLORS[d.韵]).attr("opacity", 0.6).style("stroke", "#fff")
+        .on("mouseover", (event, d) => {
+            tooltip.style("opacity", 1).html(`<b>${d.汉字}</b><br>点位: ${d.point_name}<br>韵部: ${d.韵}<br>读音: [${d.读音}]<br>声组: ${d.声组}`)
+                   .style("left", (event.pageX + 15) + "px").style("top", (event.pageY - 15) + "px");
+        }).on("mouseout", () => tooltip.style("opacity", 0));
+
+    groups.append("text").text(d => d.声组).attr("dx", 7).attr("dy", 4).attr("class", "dot-label");
+}
+
+function calculateStats() {
+    document.getElementById('statsArea').style.display = 'block';
+    
+    // 1. 全局声组统计
+    const globalSZMap = {};
+    allData.forEach(d => {
+        const sz = d.声组 || "未知";
+        globalSZMap[sz] = (globalSZMap[sz] || 0) + 1;
+    });
+    const szContainer = document.getElementById('globalSZ');
+    szContainer.innerHTML = Object.entries(globalSZMap)
+        .sort((a,b) => b[1] - a[1])
+        .map(([sz, count]) => `<div class="summary-tag">声组 <b>${sz}</b>: ${count} 字</div>`).join('');
+
+    // 2. 韵部分类统计
+    const grid = document.getElementById('statsGrid');
+    grid.innerHTML = '';
+
+    ALLOWED_YUN.forEach(yunName => {
+        const yunData = allData.filter(d => d.韵 === yunName);
+        if(yunData.length === 0) return;
+
+        // 统计读音分布及每个读音下的声组分布
+        const readingMap = {};
+        yunData.forEach(d => {
+            const r = d.读音;
+            const sz = d.声组;
+            if(!readingMap[r]) readingMap[r] = { total: 0, szDist: {} };
+            readingMap[r].total += 1;
+            readingMap[r].szDist[sz] = (readingMap[r].szDist[sz] || 0) + 1;
+        });
+
+        const card = document.createElement('div');
+        card.className = 'stats-card';
+        card.style.borderTopColor = YUN_COLORS[yunName];
+        
+        let html = `<h4>${yunName} 韵 (共 ${yunData.length} 字)</h4>`;
+        
+        // 排序读音按字数
+        Object.entries(readingMap).sort((a,b) => b[1].total - a[1].total).forEach(([reading, info]) => {
+            const szDetails = Object.entries(info.szDist)
+                .map(([sz, count]) => `<span class="sz-item">${sz}: <b>${count}</b></span>`).join('');
+            
+            html += `
+                <div class="reading-block">
+                    <div class="reading-header">
+                        <span class="reading-tag">[${reading}]</span>
+                        <span>${info.total} 字</span>
+                    </div>
+                    <div class="sz-distribution">
+                        ${szDetails}
+                    </div>
+                </div>`;
+        });
+        
+        card.innerHTML = html;
+        grid.appendChild(card);
+    });
+}
+</script>
+</body>
+</html>
