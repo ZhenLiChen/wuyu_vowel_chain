@@ -53,9 +53,11 @@ python scripts/generate_sunburst.py
 聚类分析：通过 Combination (如 $K_{L3}|M_{L3}|...$) 对方言点进行“演变画像”聚合，识别核心演化模式。异常值监控：专门统计“越级合并率”（如 $S1=S3$），识别非线性演变路径。
 ## 5. 常见问题排查 (Troubleshooting)
 
-## ☕️支持（Support）
+## ☕️ Support
 If my script hepls you to solve some problems, please leave me a star ⭐~
-uyu Dataset は私自身が構築したものです (Self-constructed, lol). もし手伝ってくれる (help me out) なら, feel free to contact me! あとは Ant Colony Algorithm などの元音演化脚本のコンテンツ, so please stay tuned!
+Wuyu Dataset は私自身が構築したものです (Self-constructed, lol). もし手伝ってくれる (help me out) なら, feel free to contact me!
+I will public the full version of the dataset after attaining my master degree.
+あとは Ant Colony Algorithm などの元音演化脚本のコンテンツ, so please stay tuned!
 
 Maintainer: Zhenli Chen
 Update: 2026-03-30

@@ -11,5 +11,4 @@ data_clean/wuyu_lexeme.csv
 data_dict/point_coords_master.csv
 
 # 忽略 macOS 系统的隐藏文件
-
 .DS_Store
