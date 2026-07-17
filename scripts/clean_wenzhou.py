@@ -1,5 +1,4 @@
 import pandas as pd
-import re
 from pathlib import Path
 
 # === 路径设置 ===
@@ -22,6 +21,22 @@ else:
 df = df[df["韵"].notna() & df["声组"].notna()]
 df = df[df["韵"] != "韵"]
 df = df.rename(columns={"汉字": "char", "读音": "phonetic_raw"})
+
+# 兼容个别原始文件把“读音”列表头误写成点名等非标准列名的情况。
+# 规则：若 phonetic_raw 为空，则从非标准额外列中寻找第一个非空值回填。
+known_raw_columns = {
+    "point_id", "point_name", "subbranch", "lat", "lon",
+    "韵", "声组", "char", "phonetic_raw", "note",
+}
+fallback_phonetic_columns = [col for col in df.columns if col not in known_raw_columns]
+
+if fallback_phonetic_columns:
+    phonetic_fallback = df[fallback_phonetic_columns].bfill(axis=1).iloc[:, 0]
+    if "phonetic_raw" not in df.columns:
+        df["phonetic_raw"] = phonetic_fallback
+    else:
+        missing_mask = df["phonetic_raw"].isna() | df["phonetic_raw"].astype(str).str.strip().isin(["", "nan"])
+        df.loc[missing_mask, "phonetic_raw"] = phonetic_fallback[missing_mask]
 
 # === 2. 读音切分与文白标注 ===
 df['phonetic_list'] = df['phonetic_raw'].fillna('').astype(str).str.split('/')
@@ -66,18 +81,43 @@ else:
 df["rhyme_modern"] = df["韵"]
 
 # === 4. 提取元音与 vowel_class 判定 ===
-VOWEL_PATTERN = r"[aeiouAEIOUɤɔøœəɯɐʌyɨ]+"
+# 这里显式扩充项目中常见的 IPA/音标字符，避免 ɷ、ɑ、ᴀ、ᴇ、ʮ、ɥ 等被漏掉。
+IPA_VOWEL_CHARS = set("aeiouAEIOUɤɔøœəɯɐʌyɨɷɑᴀᴇʮɥæɒʊʏɵɘɚɝɜɞɪʉv")
+IPA_VOWEL_MODIFIERS = set("̞̠̹̯̃ː")
+
+
+def extract_vowel_sequence(phonetic: str):
+    start = None
+    end = None
+
+    for idx, char in enumerate(phonetic):
+        if char in IPA_VOWEL_CHARS:
+            if start is None:
+                start = idx
+            end = idx + 1
+            continue
+
+        if start is not None and char in IPA_VOWEL_MODIFIERS:
+            end = idx + 1
+            continue
+
+        if start is not None:
+            break
+
+    if start is None:
+        return None
+    return phonetic[start:end]
 
 def extract_vowel_info(phonetic):
     p_str = str(phonetic).strip()
     if not p_str or p_str == 'nan':
         return None, None
-    m = re.search(VOWEL_PATTERN, p_str)
-    v_sym = m.group(0) if m else None
+    v_sym = extract_vowel_sequence(p_str)
     
     # 复元音判定逻辑
     v_class = v_sym
-    if v_sym and len(v_sym) >= 2:
+    vowel_char_count = sum(char in IPA_VOWEL_CHARS for char in v_sym) if v_sym else 0
+    if v_sym and vowel_char_count >= 2:
         v_class = "diphthong"
     return v_sym, v_class
 

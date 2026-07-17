@@ -1,33 +1,30 @@
 合并模式两类聚类图输出
 ========================================
 
-连续合并强度聚类：使用 avg_S0_S1, avg_S1_S2, avg_S2_S3 三个均值，图中采用 k=3。
-- 地图：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_k3_map.png
-- 散点：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_stage_scatter.png
+说明：
+当前最优方案与原始 kmeans_k3 方案在聚类分配上是同一套结果。
+也就是说，nbclust_cluster == kmeans_k3；最优方法最后仍然选中了 kmeans / k=3。
+如果两张 k=3 图看起来不一样，原因不在聚类本身，而在可视化口径：
+1. 原始图按原始 cluster id (1/2/3) 着色，所以 C1、C2、C3 各有独立颜色。
+2. 后来的 nbclust 图一度按宏观标签着色；由于 C1 和 C3 都被粗标成 S2_S3_dominant，视觉上会并成同类色。
+3. 中途还发生过文件覆盖：merge_strength_k3_map.png 曾被新输出误占用，现已恢复原图。
 
+连续合并强度聚类：使用 avg_S0_S1, avg_S1_S2, avg_S2_S3 三个均值，采用 NbClust 风格自动选优，当前最优为 kmeans / k=3。
+- 瓦片底图版：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_nbclust_tile_map.png
+- 地图：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_nbclust_plain_map.png
+- 散点：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_stage_scatter.png
 类别合并模式聚类：使用 K/M/P/Ø/TS 的三级合并模式，Hamming 距离，k-modes 聚类，图中采用 k=4。
 - 地图：/Users/kleinchan/wuyu_vowel_chain/figs/merge_pattern_k4_map.png
 - MDS：/Users/kleinchan/wuyu_vowel_chain/figs/merge_pattern_hamming_mds.png
 - 聚类表：/Users/kleinchan/wuyu_vowel_chain/data_clean/merge_analysis/point_merge_pattern_clusters.csv
 
-连续聚类 k=3 摘要：
-- overall_low: 20 点；太湖片-毗陵小片(8) | 太湖片-临绍小片(7) | 太湖片-甬江小片(5)
-- S2_S3_dominant: 37 点；太湖片-苏沪嘉小片(28) | 太湖片-临绍小片(4) | 太湖片-苕溪小片(3) | 太湖片-杭州小片(1) | 太湖片-毗陵小片(1)
-- S1_S2_dominant: 7 点；太湖片-临绍小片(6) | 太湖片-甬江小片(1)
-
-k 值选择诊断：
-- k=2: WCSS=2.5144；silhouette=0.588；簇大小=[27, 37]
-- k=3: WCSS=0.9148；较 k=2 下降 1.5995；silhouette=0.688；簇大小=[20, 37, 7]
-- k=4: WCSS=0.5683；较 k=3 下降 0.3465；silhouette=0.540；簇大小=[20, 17, 7, 20]
-- k=5: WCSS=0.4833；较 k=4 下降 0.0850；silhouette=0.500；簇大小=[20, 13, 7, 5, 19]
-- k=6: WCSS=0.4475；较 k=5 下降 0.0358；silhouette=0.444；出现 1 点小簇
-- k=7: WCSS=0.4138；较 k=6 下降 0.0337；silhouette=0.407；出现 1 点小簇
-
-解释：
-k=3 是首选，因为它同时满足三点：第一，组内平方和从 k=2 到 k=3 的下降最大，之后下降幅度明显变小；第二，平均 silhouette 在 k=3 达到最高，说明三类之间分离度最好；第三，k=3 的三个簇刚好对应三个可解释的音变空间类型：整体低合并型、S2-S3 后段强合并型、S1-S2 中段强合并型。k=4 与 k=5 不是错误选择，但它们主要是在继续细分 S2-S3 后段强合并区，新增类型的语言学解释增量小于模型复杂度增加。
+连续聚类最优方案摘要（kmeans / k=3）：
+- C1 S2_S3_dominant: 25 点；太湖片-毗陵小片(10) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1) | 太湖片-苏沪嘉小片(1)
+- C3 S2_S3_dominant: 48 点；太湖片-苏沪嘉小片(37) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(5) | 太湖片-毗陵小片(1)
+- C2 S1_S2_dominant: 9 点；太湖片-临绍小片(7) | 太湖片-杭州小片(1) | 太湖片-甬江小片(1)
 
 类别模式聚类 k=4 摘要：
 - 越级/断裂型: 3 点；太湖片-苏沪嘉小片(2) | 太湖片-苕溪小片(1)
-- 保守分立型: 22 点；太湖片-毗陵小片(9) | 太湖片-临绍小片(7) | 太湖片-甬江小片(5) | 太湖片-杭州小片(1)
-- 扩展合流型: 32 点；太湖片-苏沪嘉小片(25) | 太湖片-临绍小片(4) | 太湖片-苕溪小片(3)
-- 中段合并型: 7 点；太湖片-临绍小片(6) | 太湖片-甬江小片(1)
+- 保守分立型: 25 点；太湖片-毗陵小片(11) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1)
+- 扩展合流型: 45 点；太湖片-苏沪嘉小片(36) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(4)
+- 中段合并型: 9 点；太湖片-临绍小片(7) | 太湖片-杭州小片(1) | 太湖片-甬江小片(1)

@@ -8,13 +8,15 @@ DATA_CLEAN = PROJECT_ROOT / "data_clean"
 DATA_DICT = PROJECT_ROOT / "data_dict"
 OUTPUT_DIR = DATA_CLEAN / "merge_analysis"
 
-WEIGHT_MAP = {'S': 1.0, 'L': 0.3, 'O': 0.1}
+UNIFORM_WEIGHT = 1.0
 RHYME_TO_SLOT = {
     "佳": "S0", "皆": "S0",
     "麻": "S1",
     "歌": "S2", "戈": "S2",
     "模": "S3"
 }
+CORE_PAIRS = [("S0", "S1"), ("S1", "S2"), ("S2", "S3")]
+SUPPLEMENTARY_PAIRS = [("S1", "S3")]
 
 # === 2. 加载与清洗 ===
 df = pd.read_csv(DATA_CLEAN / "wuyu_lexeme.csv")
@@ -29,16 +31,10 @@ df["onset_class"] = (
     .replace({"L": "N", "Ts": "TS", "Ts*": "TS", "TS*": "TS"})
 )
 
-# 权重分配：考虑人工标注(O/L)与自动标注(literary)
+# 保留 weight_type 标注，但本轮 merge rate 采用等权重
 df = df.merge(weight_dict_df, on="char", how="left")
 df["weight_type"] = df["weight_type"].fillna("S")
-
-def determine_weight(row):
-    if row["weight_type"] == "O": return WEIGHT_MAP["O"]
-    if row["weight_type"] == "L" or row["reading_layer"] == "literary": return WEIGHT_MAP["L"]
-    return WEIGHT_MAP["S"]
-
-df["W_i"] = df.apply(determine_weight, axis=1)
+df["W_i"] = UNIFORM_WEIGHT
 df["slot"] = df["rhyme_modern"].map(RHYME_TO_SLOT)
 df = df[df["slot"].notna()]
 
@@ -62,12 +58,11 @@ def calculate_overlap(group_a, group_b):
 results = []
 for (pid, pname, onset), group in dist_df.groupby(["point_id", "point_name", "onset_class"]):
     slots = group["slot"].unique()
-    pairs = [("S0", "S1"), ("S1", "S2"), ("S2", "S3")]
     row_res = {"point_id": pid, "point_name": pname, "onset_class": onset}
-    
-    for s_a, s_b in pairs:
-        # 补充逻辑：S0-S1 和 S1-S2 剔除 T/N 组
-        if (s_a in ["S0", "S1"] and s_b in ["S1", "S2"] and onset in ["N", "T"]):
+
+    for s_a, s_b in CORE_PAIRS + SUPPLEMENTARY_PAIRS:
+        # 低位链与跨级 S1-S3 的比较都不纳入 T/N
+        if onset in ["N", "T"] and (s_a, s_b) in [("S0", "S1"), ("S1", "S2"), ("S1", "S3")]:
             row_res[f"merge_{s_a}_{s_b}"] = np.nan
         elif s_a in slots and s_b in slots:
             dist_a = group[group["slot"] == s_a][["phonetic", "P_k"]]
@@ -89,6 +84,7 @@ def get_ranked_list(col_name):
 rank_s0_s1 = get_ranked_list("merge_S0_S1")
 rank_s1_s2 = get_ranked_list("merge_S1_S2")
 rank_s2_s3 = get_ranked_list("merge_S2_S3")
+rank_s1_s3 = get_ranked_list("merge_S1_S3")
 
 # 组织总结文档内容
 summary_text = [
@@ -96,9 +92,11 @@ summary_text = [
     " 吴语元音后高化链变：声组推力总结式序列报告",
     "==================================================",
     "\n【实验说明】",
-    "1. 采用加权期望分布模型，压低了文读(0.3)与离群字(0.1)的干扰。",
-    "2. 针对低位链环节(S0-S1, S1-S2)已排除T组与N组的无效数据。",
-    "3. 数值代表合并率均值，数值越高代表推力越强，演化越激进。\n",
+    "1. 采用等权期望分布模型；保留 weight_type 标注，但不再对文读/离群字降权。",
+    "2. 若同一字有多个 / 分隔读音，则按等概率均分；两读音各记 0.5，三读音各记 1/3。",
+    "3. 针对低位链环节(S0-S1, S1-S2)与跨级参照(S1-S3)已排除T组与N组的无效数据。",
+    "4. 数值代表合并率均值，数值越高代表推力越强，演化越激进。",
+    "5. 主分析仍以相邻链位(S0-S1 / S1-S2 / S2-S3)为核心，S1-S3只作补充参照。\n",
     "【各阶段声组推力序列 (Onset Hierarchy)】",
     "--------------------------------------------------",
     f"阶段 A (S0 佳皆 -> S1 麻):",
@@ -107,6 +105,8 @@ summary_text = [
     f"   {' > '.join(rank_s1_s2)}",
     "\n阶段 C (S2 歌戈 -> S3 模):",
     f"   {' > '.join(rank_s2_s3)}",
+    "\n补充阶段 X (S1 麻 -> S3 模，跨级参照):",
+    f"   {' > '.join(rank_s1_s3)}",
     "--------------------------------------------------",
     "\n【综合演化趋势观察】"
 ]
@@ -129,10 +129,12 @@ onset_report_text = [
     "=== 吴语元音后高化链变：声组合并率推力序列报告 ===",
     "",
     "【实验说明】",
-    "1. 采用加权期望分布模型，压低文读(0.3)与离群字(0.1)的干扰。",
-    "2. 声母类别已统一清理：L 并入 N，TS* 并入 TS。",
-    "3. 针对低位链环节(S0-S1, S1-S2)，排除 T 组与 N 组的无效格位。",
-    "4. 数值为各方言点合并率均值，数值越高代表相邻链位越趋于合并。",
+    "1. 采用等权期望分布模型；保留 weight_type 标注，但不再对文读/离群字降权。",
+    "2. 若同一字有多个 / 分隔读音，则按等概率均分；两读音各记 0.5，三读音各记 1/3。",
+    "3. 声母类别已统一清理：L 并入 N，TS* 并入 TS。",
+    "4. 针对低位链环节(S0-S1, S1-S2)与跨级参照(S1-S3)，排除 T 组与 N 组的无效格位。",
+    "5. 数值为各方言点合并率均值，数值越高代表相关链位越趋于合并。",
+    "6. 主分析使用相邻链位；S1-S3 只作补充观察。",
     "",
     "【第一部分】",
     "1. S0 (佳皆) 与 S1 (麻) 合并序列:",
@@ -143,6 +145,10 @@ onset_report_text = [
     "【第二部分】",
     "3. S2 (歌戈) 与 S3 (模) 合并序列:",
     f"   {' > '.join(rank_s2_s3)}",
+    "",
+    "【补充部分】",
+    "4. S1 (麻) 与 S3 (模) 跨级合并序列:",
+    f"   {' > '.join(rank_s1_s3)}",
 ]
 with open(OUTPUT_DIR / "onset_hierarchy_report.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(onset_report_text))

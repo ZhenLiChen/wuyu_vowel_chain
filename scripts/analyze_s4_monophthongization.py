@@ -45,6 +45,7 @@ CORE_SLOTS = ["S0", "S1", "S2", "S3"]
 TARGET_SLOT = "S4"
 TARGET_RHYME = "侯"
 EXCLUDED_CHARS = {"靴", "茄"}
+S4_EXCLUDED_ONSET_CLASSES_NO_MP = {"M", "P"}
 
 VOWEL_CHARS = set("aeiouyæøœɐɑɒɔəɛɜɞɤɯɪʊʌʏɵʉɷᴀᴇ")
 GLIDE_CHARS = set("wɥj")
@@ -723,22 +724,14 @@ def plot_map(data: pd.DataFrame) -> None:
     else:
         print("所有底图下载失败，使用空白底图")
 
-    label_categories = {"混合", "ɤ/ɯ类单音化"}
     for idx, row in enumerate(gdf.sort_values(["lat", "lon"]).itertuples(index=False)):
-        if row.map_category not in label_categories:
-            continue
         dx, dy = label_offsets[idx % len(label_offsets)]
-        label = (
-            row.point_name
-            if row.map_category != "混合"
-            else f"{row.point_name}\n{top_counts_label(row.s4_value_counts)}"
-        )
-        label = map_label_text(label)
+        label = map_label_text(str(row.point_name))
         ax.text(
             row.geometry.x + dx,
             row.geometry.y + dy,
             label,
-            fontsize=8,
+            fontsize=7,
             fontweight="bold",
             color="black",
             ha="left" if dx >= 0 else "right",
@@ -791,7 +784,191 @@ def plot_subbranch_summary(summary: pd.DataFrame) -> None:
     plt.close(fig)
 
 
-def run_analysis() -> None:
+def outputs_for_suffix(suffix: str) -> dict[str, Path]:
+    return {
+        "core_inventory": VALUE_DIR / f"point_s0_s3_monophthong_inventory_for_s4{suffix}.csv",
+        "relation": VALUE_DIR / f"point_s4_hou_monophthong_relation{suffix}.csv",
+        "summary": VALUE_DIR / f"s4_hou_monophthong_relation_summary{suffix}.csv",
+        "value_summary": VALUE_DIR / f"s4_hou_value_summary{suffix}.csv",
+        "subbranch": VALUE_DIR / f"s4_hou_monophthong_by_subbranch{suffix}.csv",
+        "cluster": VALUE_DIR / f"s4_hou_geographic_cluster_summary{suffix}.csv",
+        "typology": VALUE_DIR / f"s4_hou_typology_with_s5_s0s1{suffix}.csv",
+        "typology_summary": VALUE_DIR / f"s4_hou_typology_summary{suffix}.csv",
+        "map": FIGS_DIR / f"s4_hou_monophthong_geography_map{suffix}.png",
+        "subbranch_fig": FIGS_DIR / f"s4_hou_monophthong_subbranch_summary{suffix}.png",
+    }
+
+
+def plot_map_to_path(data: pd.DataFrame, output_path: Path, title: str) -> None:
+    global MAP_OUTPUT
+    original_map_output = MAP_OUTPUT
+    MAP_OUTPUT = output_path
+    try:
+        set_chinese_font()
+        gdf = gpd.GeoDataFrame(
+            data,
+            geometry=gpd.points_from_xy(data["lon"], data["lat"]),
+            crs="EPSG:4326",
+        ).to_crs(epsg=3857)
+
+        palette = {
+            "ɤ/ɯ类单音化": "#2F80ED",
+            "ø/ɵ/y类单音化": "#8E44AD",
+            "e类单音化": "#27AE60",
+            "u/o类单音化": "#00796B",
+            "ə/ʌ类单音化": "#6F8F3A",
+            "其他单音化": "#9B51E0",
+            "混合": "#F2994A",
+            "未单音化": "#EB5757",
+        }
+        marker_map = {
+            "ɤ/ɯ类单音化": "o",
+            "ø/ɵ/y类单音化": "s",
+            "e类单音化": "^",
+            "u/o类单音化": "P",
+            "ə/ʌ类单音化": "v",
+            "其他单音化": "*",
+            "混合": "D",
+            "未单音化": "X",
+        }
+        label_offsets = [
+            (1200, 1200),
+            (-1200, 1200),
+            (1200, -1200),
+            (-1200, -1200),
+            (1800, 0),
+            (-1800, 0),
+            (0, 1800),
+            (0, -1800),
+        ]
+
+        fig, ax = plt.subplots(figsize=(14, 11))
+        ordered_categories = [
+            "ɤ/ɯ类单音化",
+            "ø/ɵ/y类单音化",
+            "e类单音化",
+            "u/o类单音化",
+            "ə/ʌ类单音化",
+            "其他单音化",
+            "混合",
+            "未单音化",
+        ]
+        for category in ordered_categories:
+            group = gdf[gdf["map_category"] == category]
+            if group.empty:
+                continue
+            sizes = 42 + group["s4_total_token_count"].clip(upper=120) * 1.7
+            group.plot(
+                ax=ax,
+                marker=marker_map[category],
+                color=palette[category],
+                edgecolor="black",
+                linewidth=0.75,
+                markersize=sizes,
+                alpha=0.9,
+                label=category,
+                zorder=3,
+            )
+
+        basemap_sources = [
+            ("CartoDB.Voyager", ctx.providers.CartoDB.Voyager),
+            ("OpenStreetMap.Mapnik", ctx.providers.OpenStreetMap.Mapnik),
+            ("CartoDB.Positron", ctx.providers.CartoDB.Positron),
+            ("Esri.WorldPhysical", ctx.providers.Esri.WorldPhysical),
+        ]
+        for source_name, source in basemap_sources:
+            try:
+                ctx.add_basemap(ax, source=source, alpha=0.68, zorder=1)
+                print(f"已加载底图：{source_name}")
+                break
+            except Exception as exc:
+                print(f"底图 {source_name} 下载失败：{exc}")
+        else:
+            print("所有底图下载失败，使用空白底图")
+
+        label_categories = {"混合", "ɤ/ɯ类单音化"}
+        for idx, row in enumerate(gdf.sort_values(["lat", "lon"]).itertuples(index=False)):
+            if row.map_category not in label_categories:
+                continue
+            dx, dy = label_offsets[idx % len(label_offsets)]
+            label = (
+                row.point_name
+                if row.map_category != "混合"
+                else f"{row.point_name}\n{top_counts_label(row.s4_value_counts)}"
+            )
+            label = map_label_text(label)
+            ax.text(
+                row.geometry.x + dx,
+                row.geometry.y + dy,
+                label,
+                fontsize=8,
+                fontweight="bold",
+                color="black",
+                ha="left" if dx >= 0 else "right",
+                va="bottom" if dy >= 0 else "top",
+                path_effects=[
+                    path_effects.withStroke(
+                        linewidth=3,
+                        foreground="white",
+                        alpha=0.88,
+                    )
+                ],
+                zorder=4,
+            )
+
+        ax.set_title(title, fontsize=18, pad=20)
+        ax.legend(title="S4 侯韵状态", loc="lower left", frameon=True)
+        ax.set_axis_off()
+        fig.savefig(output_path, dpi=240, bbox_inches="tight")
+        plt.close(fig)
+    finally:
+        MAP_OUTPUT = original_map_output
+
+
+def plot_subbranch_summary_to_path(
+    summary: pd.DataFrame, output_path: Path, title: str
+) -> None:
+    global SUBBRANCH_FIG_OUTPUT
+    original_subbranch_output = SUBBRANCH_FIG_OUTPUT
+    SUBBRANCH_FIG_OUTPUT = output_path
+    try:
+        set_chinese_font()
+        plot_df = summary.sort_values("weighted_monophthong_share", ascending=True)
+        y = range(len(plot_df))
+
+        fig, ax = plt.subplots(figsize=(11, 6))
+        ax.barh(y, plot_df["weighted_monophthong_share"], color="#4C78A8")
+        ax.set_yticks(list(y))
+        ax.set_yticklabels(plot_df["subbranch"])
+        ax.set_xlim(0, 1.05)
+        ax.set_xlabel("S4 侯韵单音化 token 占比")
+        ax.set_title(title)
+
+        for pos, row in zip(y, plot_df.itertuples(index=False)):
+            label = (
+                f"{row.weighted_monophthong_share:.2f}  "
+                f"点={row.point_count}, 未单音化={row.diphthong_only_point_count}, 混合={row.mixed_point_count}"
+            )
+            ax.text(
+                row.weighted_monophthong_share + 0.015,
+                pos,
+                label,
+                va="center",
+                fontsize=9,
+            )
+
+        fig.tight_layout()
+        fig.savefig(output_path, dpi=220, bbox_inches="tight")
+        plt.close(fig)
+    finally:
+        SUBBRANCH_FIG_OUTPUT = original_subbranch_output
+
+
+def run_analysis_variant(
+    output_suffix: str = "",
+    excluded_s4_onset_classes: set[str] | None = None,
+    title_suffix: str = "",
+) -> None:
     if not INPUT_PATH.exists():
         raise FileNotFoundError(f"未找到输入文件：{INPUT_PATH}")
 
@@ -803,6 +980,7 @@ def run_analysis() -> None:
         "rhyme_modern",
         "chain_slot",
         "slot_type_initial",
+        "onset_class",
         "char",
         "phonetic",
     ]
@@ -832,6 +1010,8 @@ def run_analysis() -> None:
         (expanded["chain_slot"] == TARGET_SLOT)
         & (expanded["rhyme_modern"] == TARGET_RHYME)
     ].copy()
+    if excluded_s4_onset_classes:
+        s4 = s4[~s4["onset_class"].isin(excluded_s4_onset_classes)].copy()
 
     core_summary = summarize_core_inventory(core)
     s4_summary = summarize_s4(s4)
@@ -848,34 +1028,46 @@ def run_analysis() -> None:
     map_data = load_map_data(relation)
     subbranch_summary = build_subbranch_summary(map_data)
     cluster_summary = build_cluster_summary(map_data)
+    outputs = outputs_for_suffix(output_suffix)
 
     VALUE_DIR.mkdir(parents=True, exist_ok=True)
     FIGS_DIR.mkdir(parents=True, exist_ok=True)
-    core_summary.to_csv(CORE_INVENTORY_OUTPUT, index=False, encoding="utf-8-sig")
-    relation.to_csv(RELATION_OUTPUT, index=False, encoding="utf-8-sig")
-    status_summary.to_csv(SUMMARY_OUTPUT, index=False, encoding="utf-8-sig")
-    value_summary.to_csv(VALUE_SUMMARY_OUTPUT, index=False, encoding="utf-8-sig")
-    subbranch_summary.to_csv(SUBBRANCH_OUTPUT, index=False, encoding="utf-8-sig")
-    cluster_summary.to_csv(CLUSTER_OUTPUT, index=False, encoding="utf-8-sig")
-    typology.to_csv(TYPOLOGY_OUTPUT, index=False, encoding="utf-8-sig")
-    typology_summary.to_csv(
-        TYPOLOGY_SUMMARY_OUTPUT, index=False, encoding="utf-8-sig"
+    core_summary.to_csv(outputs["core_inventory"], index=False, encoding="utf-8-sig")
+    relation.to_csv(outputs["relation"], index=False, encoding="utf-8-sig")
+    status_summary.to_csv(outputs["summary"], index=False, encoding="utf-8-sig")
+    value_summary.to_csv(outputs["value_summary"], index=False, encoding="utf-8-sig")
+    subbranch_summary.to_csv(outputs["subbranch"], index=False, encoding="utf-8-sig")
+    cluster_summary.to_csv(outputs["cluster"], index=False, encoding="utf-8-sig")
+    typology.to_csv(outputs["typology"], index=False, encoding="utf-8-sig")
+    typology_summary.to_csv(outputs["typology_summary"], index=False, encoding="utf-8-sig")
+    plot_map_to_path(
+        map_data,
+        outputs["map"],
+        f"S4 侯韵（*əu）单音化的地理分布{title_suffix}",
     )
-    plot_map(map_data)
-    plot_subbranch_summary(subbranch_summary)
+    plot_subbranch_summary_to_path(
+        subbranch_summary,
+        outputs["subbranch_fig"],
+        f"各小片 S4 侯韵单音化程度，按 token 加权{title_suffix}",
+    )
 
-    print(f"已生成 S0-S3 单元音库藏表：{CORE_INVENTORY_OUTPUT}")
-    print(f"已生成 S4 侯韵单音化关系表：{RELATION_OUTPUT}")
-    print(f"已生成 S4 关系汇总表：{SUMMARY_OUTPUT}")
-    print(f"已生成 S4 音值汇总表：{VALUE_SUMMARY_OUTPUT}")
-    print(f"已生成 S4 小片汇总：{SUBBRANCH_OUTPUT}")
-    print(f"已生成 S4 地理聚集汇总：{CLUSTER_OUTPUT}")
-    print(f"已生成 S4-S5-S0/S1 类型学联表：{TYPOLOGY_OUTPUT}")
-    print(f"已生成 S4 类型学汇总表：{TYPOLOGY_SUMMARY_OUTPUT}")
-    print(f"已生成 S4 地图：{MAP_OUTPUT}")
-    print(f"已生成 S4 小片图：{SUBBRANCH_FIG_OUTPUT}")
+    print(f"已生成 S0-S3 单元音库藏表：{outputs['core_inventory']}")
+    print(f"已生成 S4 侯韵单音化关系表：{outputs['relation']}")
+    print(f"已生成 S4 关系汇总表：{outputs['summary']}")
+    print(f"已生成 S4 音值汇总表：{outputs['value_summary']}")
+    print(f"已生成 S4 小片汇总：{outputs['subbranch']}")
+    print(f"已生成 S4 地理聚集汇总：{outputs['cluster']}")
+    print(f"已生成 S4-S5-S0/S1 类型学联表：{outputs['typology']}")
+    print(f"已生成 S4 类型学汇总表：{outputs['typology_summary']}")
+    print(f"已生成 S4 地图：{outputs['map']}")
+    print(f"已生成 S4 小片图：{outputs['subbranch_fig']}")
     print(f"方言点记录数：{len(relation)}")
 
 
 if __name__ == "__main__":
-    run_analysis()
+    run_analysis_variant()
+    run_analysis_variant(
+        output_suffix="_no_mp",
+        excluded_s4_onset_classes=S4_EXCLUDED_ONSET_CLASSES_NO_MP,
+        title_suffix="（排除侯韵 M/P 组）",
+    )

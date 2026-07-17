@@ -1,0 +1,10 @@
+﻿test_name,row_var,col_var,test_type,chi_square_statistic,dof,p_value,expected_min,warning
+kmeans_cluster_by_geo_region,kmeans_cluster,subbranch,chi_square,76.7159681400471,10,2.202909361313955e-12,0.21951219512195122,expected frequencies too small; chi-square result should be interpreted cautiously.
+structure_type_by_geo_region,structure_label,subbranch,chi_square,89.13644392366199,20,1.0490840264197101e-10,0.024390243902439025,expected frequencies too small; chi-square result should be interpreted cautiously.
+kmeans_cluster_by_structure_type,kmeans_cluster,structure_label,chi_square,151.1134722222222,8,1.1485491702644848e-28,0.10975609756097561,expected frequencies too small; chi-square result should be interpreted cautiously.
+relation_type_by_onset_class_equal_only,relation_type,onset_class,chi_square,204.05182340683763,18,1.5486445758034977e-33,0.296969696969697,expected frequencies too small; chi-square result should be interpreted cautiously.
+onset_class_by_A_rel,onset_class,is_equal_str,chi_square,41.65079365079365,6,2.1550142105175584e-07,28.0,
+onset_class_by_B_rel,onset_class,is_equal_str,chi_square,27.152769122107273,4,1.851402809692282e-05,14.2,
+onset_class_by_C_rel,onset_class,is_equal_str,chi_square,140.7109815601039,4,1.9880439453743416e-29,8.6,
+onset_class_by_D_rel,onset_class,is_equal_str,chi_square,5.372645372645372,4,0.25115294718153813,0.6,expected frequencies too small; chi-square result should be interpreted cautiously.
+relation_type_by_is_equal,relation_type,is_equal_str,chi_square,652.588309990663,3,4.001038100797781e-141,112.5,

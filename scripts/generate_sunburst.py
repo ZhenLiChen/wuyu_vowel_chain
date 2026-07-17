@@ -22,57 +22,65 @@ df = pd.read_csv(input_path, encoding='utf-8')
 for col in ['一级分类', '二级分类', '三级分类(详细模式)']:
     df[col] = df[col].astype(str).str.strip()
 
-# 计算一级分类占比
-l1_counts = df['一级分类'].value_counts(normalize=True) * 100
-# 计算二级分类占比（Top 3）
-l2_counts = df['二级分类'].value_counts(normalize=True) * 100
-# 计算三级分类占比（Top 3）
-l3_counts = df['三级分类(详细模式)'].value_counts(normalize=True) * 100
-
-# B. 【核心新增】越级合并（异常值）专项统计
 # 统一处理布尔值
 df['is_leap'] = df['是否越级'].apply(lambda x: str(x).strip().lower() == 'true')
-leap_count = df['is_leap'].sum()
-leap_percent = (leap_count / len(df)) * 100
 
-# 构建统计文本
+# 统计描述
+def count_percent(series):
+    counts = series.value_counts()
+    return [
+        f"• {idx}: {int(val)} ({val / len(df) * 100:.1f}%)"
+        for idx, val in counts.items()
+    ]
+
+l1_lines = count_percent(df['一级分类'])
+l2_lines = count_percent(df['二级分类'])
+l3_lines = count_percent(df['三级分类(详细模式)'])
+leap_count = int(df['is_leap'].sum())
+leap_percent = leap_count / len(df) * 100
+
 stats_text = (
     "<b>描述性统计</b><br>"
     "--------------------------------<br>"
-    "<b>[第一层]</b><br>"
-    f"• {l1_counts.index[0]}: {l1_counts.values[0]:.1f}%<br>"
-    f"• {l1_counts.index[1]}: {l1_counts.values[1]:.1f}%<br><br>"
-    "<b>[第二层]</b><br>"
-    f"• {l2_counts.index[0]}: {l2_counts.values[0]:.1f}%<br>"
-    f"• {l2_counts.index[1]}: {l2_counts.values[1]:.1f}%<br><br>"
-    "<b>[第三层]</b><br>"
-    f"• {l3_counts.index[0]}: {l3_counts.values[0]:.1f}%<br>"
-    f"• {l3_counts.index[1]}: {l3_counts.values[1]:.1f}%<br>"
-    f"• {l3_counts.index[2]}: {l3_counts.values[2]:.1f}<br>"
-    "<b>[越级合并]</b><br>"
-    f"• <span style='color:red;'><b>S1=S3: {leap_percent:.1f}%</b></span><br>"
-    f"  (共 {leap_count} 个样本)"
+    "<b>[一级分类]</b><br>"
+    + "<br>".join(l1_lines)
+    + "<br><br><b>[二级分类]</b><br>"
+    + "<br>".join(l2_lines)
+    + "<br><br><b>[详细模式 Top 5]</b><br>"
+    + "<br>".join(l3_lines[:5])
+    + "<br><br><b>[越级合并]</b><br>"
+    + f"• <span style='color:#9f1239;'><b>S1=S3 [越级]: {leap_count} ({leap_percent:.1f}%)</b></span>"
 )
 
 # === 4. 视觉编码 (颜色映射) ===
 def assign_visual_group(row):
-    if row['一级分类'] == '分立型': return '稳定分立 (Cold)'
-    if str(row['是否越级']).lower() == 'true': return '越级合并 (Highlight)'
-    return '常规合流 (Warm)'
+    if row['一级分类'] == '分立型':
+        return '全对立'
+    if row['is_leap']:
+        return '越级合并'
+    if row['二级分类'] == '多元合并':
+        return '多元合并'
+    return '单一合并'
 
 df['VisualGroup'] = df.apply(assign_visual_group, axis=1)
 df['label'] = df['point_name'] + "(" + df['onset_class'] + ")"
+df['sunburst_l2'] = df.apply(
+    lambda row: '全对立' if row['一级分类'] == '分立型'
+    else f"{row['二级分类']}｜{row['三级分类(详细模式)']}",
+    axis=1,
+)
 
 color_map = {
-    '稳定分立 (Cold)': '#20b2aa',    # 青色
-    '常规合流 (Warm)': '#f4a460',    # 橙色
-    '越级合并 (Highlight)': '#ff4500' # 红色
+    '全对立': '#5b8c85',
+    '单一合并': '#e6a23c',
+    '多元合并': '#d97706',
+    '越级合并': '#9f1239',
 }
 
 # === 5. 绘制旭日图 ===
 fig = px.sunburst(
     df,
-    path=['一级分类', '二级分类', '三级分类(详细模式)', 'label'],
+    path=['一级分类', 'sunburst_l2', 'label'],
     color='VisualGroup',
     color_discrete_map=color_map,
     branchvalues='total'
@@ -103,8 +111,8 @@ fig.add_annotation(
 
 # 调整整体布局，给右侧看板留出空间
 fig.update_layout(
-    title_text="太湖片吴语歌、模、麻、佳皆韵合并模式图",
-    title_x=0.4,
+    title_text="太湖片吴语歌、模、麻、佳皆韵主体层合并模式图",
+    title_x=0.38,
     margin=dict(t=80, l=50, r=250, b=50), # 增加右边距 (r=250)
     width=1100, height=800
 )

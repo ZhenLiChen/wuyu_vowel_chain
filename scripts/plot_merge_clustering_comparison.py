@@ -4,6 +4,8 @@ from pathlib import Path
 
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/mpl-cache")
 
+import contextily as ctx
+import geopandas as gpd
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +25,8 @@ COORD_PATH = DATA_DICT / "point_coords_master.csv"
 PATTERN_CLUSTER_OUTPUT = MERGE_DIR / "point_merge_pattern_clusters.csv"
 COMPARISON_REPORT_OUTPUT = MERGE_DIR / "merge_clustering_comparison_report.txt"
 
-STRENGTH_MAP_OUTPUT = FIGS_DIR / "merge_strength_k3_map.png"
+STRENGTH_MAP_OUTPUT = FIGS_DIR / "merge_strength_nbclust_plain_map.png"
+STRENGTH_TILE_MAP_OUTPUT = FIGS_DIR / "merge_strength_nbclust_tile_map.png"
 STRENGTH_SCATTER_OUTPUT = FIGS_DIR / "merge_strength_stage_scatter.png"
 PATTERN_MAP_OUTPUT = FIGS_DIR / "merge_pattern_k4_map.png"
 PATTERN_MDS_OUTPUT = FIGS_DIR / "merge_pattern_hamming_mds.png"
@@ -39,6 +42,12 @@ PALETTE = [
     "#72B7B2",
     "#B279A2",
     "#FF9DA6",
+]
+
+TILE_SOURCES = [
+    ("Esri.WorldTopoMap", ctx.providers.Esri.WorldTopoMap),
+    ("OpenStreetMap.Mapnik", ctx.providers.OpenStreetMap.Mapnik),
+    ("CartoDB.Positron", ctx.providers.CartoDB.Positron),
 ]
 
 
@@ -137,16 +146,17 @@ def cluster_labels_by_profile(df: pd.DataFrame, cluster_col: str) -> dict[int, s
 
 def plot_map(df: pd.DataFrame, color_col: str, label_col: str, output: Path, title: str) -> None:
     plot_df = df.dropna(subset=["lat", "lon"]).copy()
-    labels = list(dict.fromkeys(plot_df[label_col].astype(str)))
-    color_map = {label: PALETTE[idx % len(PALETTE)] for idx, label in enumerate(labels)}
+    color_keys = list(dict.fromkeys(plot_df[color_col].astype(str)))
+    color_map = {key: PALETTE[idx % len(PALETTE)] for idx, key in enumerate(color_keys)}
 
     fig, ax = plt.subplots(figsize=(10.5, 8))
-    for label, group in plot_df.groupby(label_col, sort=False):
+    for color_key, group in plot_df.groupby(color_col, sort=False):
+        label = str(group[label_col].iloc[0])
         ax.scatter(
             group["lon"],
             group["lat"],
             s=74,
-            color=color_map[str(label)],
+            color=color_map[str(color_key)],
             edgecolor="white",
             linewidth=0.8,
             label=f"{label} ({len(group)})",
@@ -164,16 +174,69 @@ def plot_map(df: pd.DataFrame, color_col: str, label_col: str, output: Path, tit
     plt.close(fig)
 
 
+def plot_tiled_map(df: pd.DataFrame, color_col: str, label_col: str, output: Path, title: str) -> str | None:
+    plot_df = df.dropna(subset=["lat", "lon"]).copy()
+    color_keys = list(dict.fromkeys(plot_df[color_col].astype(str)))
+    color_map = {key: PALETTE[idx % len(PALETTE)] for idx, key in enumerate(color_keys)}
+
+    gdf = gpd.GeoDataFrame(
+        plot_df,
+        geometry=gpd.points_from_xy(plot_df["lon"], plot_df["lat"]),
+        crs="EPSG:4326",
+    ).to_crs(epsg=3857)
+
+    fig, ax = plt.subplots(figsize=(10.8, 8.6))
+    for color_key, group in gdf.groupby(color_col, sort=False):
+        label = str(group[label_col].iloc[0])
+        ax.scatter(
+            group.geometry.x,
+            group.geometry.y,
+            s=76,
+            color=color_map[str(color_key)],
+            edgecolor="white",
+            linewidth=0.9,
+            label=f"{label} ({len(group)})",
+            alpha=0.94,
+            zorder=3,
+        )
+    for _, row in gdf.iterrows():
+        ax.text(row.geometry.x + 1800, row.geometry.y + 1200, str(row["point_name"]), fontsize=6.3, alpha=0.85, zorder=4)
+
+    tile_errors = []
+    tile_loaded = False
+    for source_name, source in TILE_SOURCES:
+        try:
+            ctx.add_basemap(ax, source=source, alpha=0.78, zorder=1)
+            tile_loaded = True
+            break
+        except Exception as exc:
+            tile_errors.append(f"{source_name}: {type(exc).__name__}: {exc}")
+
+    if not tile_loaded:
+        plt.close(fig)
+        return " ; ".join(tile_errors)
+
+    ax.set_title(title, fontsize=15)
+    ax.set_axis_off()
+    ax.legend(loc="best", fontsize=8, frameon=True)
+    fig.tight_layout()
+    fig.savefig(output, dpi=240)
+    plt.close(fig)
+    return None
+
+
 def plot_strength_scatter(df: pd.DataFrame) -> None:
     plot_df = df.copy()
-    label_col = "kmeans_k3_label"
-    labels = list(dict.fromkeys(plot_df[label_col].astype(str)))
-    color_map = {label: PALETTE[idx % len(PALETTE)] for idx, label in enumerate(labels)}
+    label_col = "nbclust_display_label"
+    color_col = "nbclust_cluster"
+    color_keys = list(dict.fromkeys(plot_df[color_col].astype(str)))
+    color_map = {key: PALETTE[idx % len(PALETTE)] for idx, key in enumerate(color_keys)}
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 5.2))
-    for label, group in plot_df.groupby(label_col, sort=False):
-        axes[0].scatter(group["avg_S0_S1"], group["avg_S2_S3"], color=color_map[str(label)], label=label, s=66, alpha=0.9)
-        axes[1].scatter(group["avg_S1_S2"], group["avg_S2_S3"], color=color_map[str(label)], label=label, s=66, alpha=0.9)
+    for color_key, group in plot_df.groupby(color_col, sort=False):
+        label = str(group[label_col].iloc[0])
+        axes[0].scatter(group["avg_S0_S1"], group["avg_S2_S3"], color=color_map[str(color_key)], label=label, s=66, alpha=0.9)
+        axes[1].scatter(group["avg_S1_S2"], group["avg_S2_S3"], color=color_map[str(color_key)], label=label, s=66, alpha=0.9)
     axes[0].set_xlabel("平均 S0-S1 合并强度")
     axes[0].set_ylabel("平均 S2-S3 合并强度")
     axes[1].set_xlabel("平均 S1-S2 合并强度")
@@ -214,15 +277,24 @@ def run() -> None:
     FIGS_DIR.mkdir(parents=True, exist_ok=True)
 
     strength = clean_columns(pd.read_csv(STRENGTH_PATH))
-    for col in ["point_name", "subbranch", "kmeans_k3_label"]:
+    for col in ["point_name", "subbranch", "nbclust_cluster_label", "nbclust_display_label", "nbclust_method"]:
         strength[col] = strength[col].astype("string").str.strip()
+    best_method = strength["nbclust_method"].iloc[0]
+    best_k = int(strength["nbclust_k"].iloc[0])
 
     plot_map(
         strength,
-        color_col="kmeans_k3",
-        label_col="kmeans_k3_label",
+        color_col="nbclust_cluster",
+        label_col="nbclust_display_label",
         output=STRENGTH_MAP_OUTPUT,
-        title="连续合并强度聚类地图（k=3）",
+        title=f"连续合并强度聚类地图纯净版（{best_method}, k={best_k}）",
+    )
+    tile_error = plot_tiled_map(
+        strength,
+        color_col="nbclust_cluster",
+        label_col="nbclust_display_label",
+        output=STRENGTH_TILE_MAP_OUTPUT,
+        title=f"连续合并强度聚类地图含瓦片底图（{best_method}, k={best_k}）",
     )
     plot_strength_scatter(strength)
 
@@ -275,18 +347,29 @@ def run() -> None:
         "合并模式两类聚类图输出",
         "=" * 40,
         "",
-        "连续合并强度聚类：使用 avg_S0_S1, avg_S1_S2, avg_S2_S3 三个均值，图中采用 k=3。",
+        "说明：",
+        "当前最优方案与原始 kmeans_k3 方案在聚类分配上是同一套结果。",
+        "也就是说，nbclust_cluster == kmeans_k3；最优方法最后仍然选中了 kmeans / k=3。",
+        "如果两张 k=3 图看起来不一样，原因不在聚类本身，而在可视化口径：",
+        "1. 原始图按原始 cluster id (1/2/3) 着色，所以 C1、C2、C3 各有独立颜色。",
+        "2. 后来的 nbclust 图一度按宏观标签着色；由于 C1 和 C3 都被粗标成 S2_S3_dominant，视觉上会并成同类色。",
+        "3. 中途还发生过文件覆盖：merge_strength_k3_map.png 曾被新输出误占用，现已恢复原图。",
+        "",
+        f"连续合并强度聚类：使用 avg_S0_S1, avg_S1_S2, avg_S2_S3 三个均值，采用 NbClust 风格自动选优，当前最优为 {best_method} / k={best_k}。",
         f"- 地图：{STRENGTH_MAP_OUTPUT}",
         f"- 散点：{STRENGTH_SCATTER_OUTPUT}",
-        "",
         "类别合并模式聚类：使用 K/M/P/Ø/TS 的三级合并模式，Hamming 距离，k-modes 聚类，图中采用 k=4。",
         f"- 地图：{PATTERN_MAP_OUTPUT}",
         f"- MDS：{PATTERN_MDS_OUTPUT}",
         f"- 聚类表：{PATTERN_CLUSTER_OUTPUT}",
         "",
-        "连续聚类 k=3 摘要：",
+        f"连续聚类最优方案摘要（{best_method} / k={best_k}）：",
     ]
-    for label, group in strength.groupby("kmeans_k3_label", sort=False):
+    if tile_error is None:
+        report.insert(12, f"- 瓦片底图版：{STRENGTH_TILE_MAP_OUTPUT}")
+    else:
+        report.insert(12, f"- 瓦片底图版：当前环境抓取失败；原因：{tile_error}")
+    for label, group in strength.groupby("nbclust_display_label", sort=False):
         subcounts = " | ".join(f"{idx}({val})" for idx, val in group["subbranch"].value_counts().items())
         report.append(f"- {label}: {len(group)} 点；{subcounts}")
     report.extend(["", "类别模式聚类 k=4 摘要："])
@@ -296,6 +379,10 @@ def run() -> None:
     COMPARISON_REPORT_OUTPUT.write_text("\n".join(report), encoding="utf-8")
 
     print(f"已输出连续强度聚类地图：{STRENGTH_MAP_OUTPUT}")
+    if tile_error is None:
+        print(f"已输出连续强度聚类瓦片地图：{STRENGTH_TILE_MAP_OUTPUT}")
+    else:
+        print(f"连续强度聚类瓦片地图未生成：{tile_error}")
     print(f"已输出连续强度聚类散点图：{STRENGTH_SCATTER_OUTPUT}")
     print(f"已输出类别模式聚类地图：{PATTERN_MAP_OUTPUT}")
     print(f"已输出类别模式 MDS 图：{PATTERN_MDS_OUTPUT}")

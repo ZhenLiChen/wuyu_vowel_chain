@@ -115,8 +115,10 @@ python scripts/calculate_merge_rate.py
 这一步会：
 
 - 引入 `data_dict/weight_mapping.csv`
-- 对 `main / literary / outlier` 赋权
+- 保留 `weight_type` 标注，但本轮 merge rate 统一按等权处理
+- 若同一字有多个 `/` 分隔读音，则仍按等概率均分
 - 计算各点各声组的 `S0-S1 / S1-S2 / S2-S3` 合并率
+- 补充计算 `S1-S3` 跨级参照值
 - 输出 `data_clean/merge_analysis/` 下的一组汇总表与文字报告
 
 ### Step 3. 生成基础可视化
@@ -184,11 +186,12 @@ S5 = 豪
 
 ### 5.3 权重分配
 
-当前默认权重是：
+当前 `scripts/calculate_merge_rate.py` 的 merge rate 口径是：
 
-- 主体层 `S`: `1.0`
-- 文读层 `L`: `0.3`
-- 离群字 `O`: `0.1`
+- 保留 `data_dict/weight_mapping.csv` 中的 `weight_type`
+- 但实际计算统一使用等权重 `1.0`
+- 不再额外压低文读层或离群字
+- 同一字若拆成多个 `/` 读音，仍按 `1/n` 分摊到各读音
 
 这套规则写在：
 

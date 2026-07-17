@@ -144,7 +144,11 @@ final_cols = ['point_id', 'point_name', 'onset_class', 'S0', 'S1', 'S2', 'S3']
 pivoted_chains = pivoted_chains.reindex(columns=final_cols).fillna("")
 
 # 导出结果
-pivoted_chains.to_csv(OUTPUT_DIR / "type_phonetic_chains.csv", index=False, encoding="utf-8-sig")
+type_chain_path = OUTPUT_DIR / "type_phonetic_chains.csv"
+legacy_chain_path = OUTPUT_DIR / "phonetic_evolution_chains.csv"
+pivoted_chains.to_csv(type_chain_path, index=False, encoding="utf-8-sig")
+pivoted_chains.to_csv(legacy_chain_path, index=False, encoding="utf-8-sig")
 
-print(f"✅ 演变链汇总表已生成：{OUTPUT_DIR / 'phonetic_evolution_chains.csv'}")
+print(f"✅ 演变链汇总表已生成：{type_chain_path}")
+print(f"✅ 兼容旧文件名同步更新：{legacy_chain_path}")
 print(f"   (注：T 和 N 声组的 S0/S1 若无数据已按要求留空)")
