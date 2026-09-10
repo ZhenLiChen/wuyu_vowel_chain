@@ -13,7 +13,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 DATA_CLEAN = PROJECT_ROOT / "data_clean"
 VALUE_DIR = DATA_CLEAN / "value_type"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "monophthongization"
 
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.append(str(SCRIPT_DIR))

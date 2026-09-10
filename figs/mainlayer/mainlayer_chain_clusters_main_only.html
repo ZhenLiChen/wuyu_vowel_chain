@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>佳皆—麻韵—歌韵—模韵主链条聚类｜仅主链版</title>
+<style>
+  :root { color-scheme: light dark; --bg: light-dark(#fff,#181818); --fg: light-dark(#202124,#f4f4f4); --muted: light-dark(#62666b,#b7bbc0); --grid: light-dark(#dfe1e5,#494d52); }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px; background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Arial Unicode MS", sans-serif; }
+  main { max-width: 1500px; margin: 0 auto; }
+  h1 { margin: 0 0 10px; font-size: clamp(22px,3vw,34px); font-weight: 500; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-bottom: 20px; color: var(--muted); font-size: 14px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 10px; height: 10px; border-radius: 50%; background: var(--slot-color); }
+  .line-key { width: 34px; height: 0; border-top: 3px solid var(--fg); }
+  .line-key.dashed { border-top-style: dashed; }
+  .cluster-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(440px,100%),1fr)); gap: 22px; }
+  .cluster-panel { min-width: 0; }
+  h2 { margin: 0 0 5px; font-size: 18px; font-weight: 500; }
+  .meta { min-height: 42px; margin: 0 0 5px; color: var(--muted); font-size: 13px; }
+  svg { display: block; width: 100%; height: auto; }
+  .vowel-frame { fill: none; stroke: var(--grid); stroke-width: 1.5; }
+  .grid { fill: none; stroke: var(--grid); stroke-width: 1; opacity: .7; }
+  .ticks { fill: var(--muted); font-size: 13px; }
+  .ticks text:not([text-anchor]) { text-anchor: middle; }
+  .chain-edge { stroke: var(--fg); stroke-width: 3.5; vector-effect: non-scaling-stroke; }
+  .slot-node { stroke: var(--bg); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+  .node-label { fill: var(--fg); font-size: 14px; paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
+  @media (max-width: 920px) { .cluster-grid { grid-template-columns: 1fr; } .meta { min-height: 0; } }
+  @media (max-width: 500px) { body { padding: 14px; } .node-label { font-size: 20px; } .ticks { font-size: 18px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>佳皆—麻韵—歌韵—模韵主链条聚类｜仅主链版</h1>
+  <div class="legend" aria-label="链位颜色"><span><i style="--slot-color:#3366CC"></i>佳皆</span><span><i style="--slot-color:#F39C3D"></i>麻韵</span><span><i style="--slot-color:#55B86A"></i>歌韵</span><span><i style="--slot-color:#E778B4"></i>模韵</span></div>
+  <div class="cluster-grid"><section class="cluster-panel" aria-labelledby="cluster-1-title">
+<h2 id="cluster-1-title">第1类｜麻韵–歌韵 O并位型</h2>
+<p class="meta">18个方言点｜主模式 佳皆 a → 麻韵–歌韵 o → 模韵 u｜代表方言点 柯桥</p>
+<svg viewBox="0 0 550 380" role="img" aria-label="第1类主链：佳皆 a → 麻韵–歌韵 o → 模韵 u">
+<defs><marker id="arrow-c1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="context-stroke"/></marker></defs>
+<path class="vowel-frame" d="M72,32 L512,32 L512,332 L226,332 Z"/>
+<path class="grid" d="M123,132 L512,132 M175,232 L512,232 M292,32 L369,332"/>
+<g class="ticks"><text x="72" y="360">前</text><text x="292" y="360">央</text><text x="512" y="360">后</text><text x="58" y="36" text-anchor="end">高</text><text x="58" y="136" text-anchor="end">中高</text><text x="58" y="236" text-anchor="end">中低</text><text x="58" y="336" text-anchor="end">低</text></g>
+<line class="chain-edge" x1="226.0" y1="332.0" x2="512.0" y2="132.0" stroke-dasharray="9 7" marker-end="url(#arrow-c1)"/>
+<line class="chain-edge" x1="512.0" y1="132.0" x2="512.0" y2="32.0" marker-end="url(#arrow-c1)"/>
+<circle class="slot-node" cx="226.0" cy="332.0" r="8.5" fill="#3366CC"><title>佳皆 a</title></circle>
+<text class="node-label" x="237.0" y="321.0" text-anchor="start">佳皆 a</text>
+<circle class="slot-node" cx="512.0" cy="132.0" r="8.5" fill="#F39C3D"><title>麻韵 o</title></circle>
+<circle class="slot-node" cx="512.0" cy="132.0" r="6.1" fill="#55B86A"><title>歌韵 o</title></circle>
+<text class="node-label" x="501.0" y="121.0" text-anchor="end">麻韵–歌韵 o</text>
+<circle class="slot-node" cx="512.0" cy="32.0" r="8.5" fill="#E778B4"><title>模韵 u</title></circle>
+<text class="node-label" x="501.0" y="51.0" text-anchor="end">模韵 u</text>
+</svg>
+</section>
+<section class="cluster-panel" aria-labelledby="cluster-2-title">
+<h2 id="cluster-2-title">第2类｜歌韵 前增生复元音型</h2>
+<p class="meta">21个方言点｜主模式 佳皆 a → 麻韵 o → 歌韵 əu → 模韵 u｜代表方言点 奉化西坞</p>
+<svg viewBox="0 0 550 380" role="img" aria-label="第2类主链：佳皆 a → 麻韵 o → 歌韵 əu → 模韵 u">
+<defs><marker id="arrow-c2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="context-stroke"/></marker></defs>
+<path class="vowel-frame" d="M72,32 L512,32 L512,332 L226,332 Z"/>
+<path class="grid" d="M123,132 L512,132 M175,232 L512,232 M292,32 L369,332"/>
+<g class="ticks"><text x="72" y="360">前</text><text x="292" y="360">央</text><text x="512" y="360">后</text><text x="58" y="36" text-anchor="end">高</text><text x="58" y="136" text-anchor="end">中高</text><text x="58" y="236" text-anchor="end">中低</text><text x="58" y="336" text-anchor="end">低</text></g>
+<line class="chain-edge" x1="226.0" y1="332.0" x2="512.0" y2="132.0" stroke-dasharray="9 7" marker-end="url(#arrow-c2)"/>
+<line class="chain-edge" x1="512.0" y1="132.0" x2="416.7" y2="107.0" marker-end="url(#arrow-c2)"/>
+<line class="chain-edge" x1="416.7" y1="107.0" x2="512.0" y2="32.0" marker-end="url(#arrow-c2)"/>
+<circle class="slot-node" cx="226.0" cy="332.0" r="8.5" fill="#3366CC"><title>佳皆 a</title></circle>
+<text class="node-label" x="237.0" y="321.0" text-anchor="start">佳皆 a</text>
+<circle class="slot-node" cx="512.0" cy="132.0" r="8.5" fill="#F39C3D"><title>麻韵 o</title></circle>
+<text class="node-label" x="501.0" y="121.0" text-anchor="end">麻韵 o</text>
+<path class="slot-node" d="M416.7,98.5 L425.2,107.0 L416.7,115.5 L408.2,107.0 Z" fill="#55B86A"><title>歌韵 əu（复元音）</title></path>
+<text class="node-label" x="405.7" y="96.0" text-anchor="end">歌韵 əu</text>
+<circle class="slot-node" cx="512.0" cy="32.0" r="8.5" fill="#E778B4"><title>模韵 u</title></circle>
+<text class="node-label" x="501.0" y="51.0" text-anchor="end">模韵 u</text>
+</svg>
+</section>
+<section class="cluster-panel" aria-labelledby="cluster-3-title">
+<h2 id="cluster-3-title">第3类｜歌韵–模韵 U并位型</h2>
+<p class="meta">43个方言点｜主模式 佳皆 ᴀ → 麻韵 o → 歌韵–模韵 u｜代表方言点 宝山</p>
+<svg viewBox="0 0 550 380" role="img" aria-label="第3类主链：佳皆 ᴀ → 麻韵 o → 歌韵–模韵 u">
+<defs><marker id="arrow-c3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="context-stroke"/></marker></defs>
+<path class="vowel-frame" d="M72,32 L512,32 L512,332 L226,332 Z"/>
+<path class="grid" d="M123,132 L512,132 M175,232 L512,232 M292,32 L369,332"/>
+<g class="ticks"><text x="72" y="360">前</text><text x="292" y="360">央</text><text x="512" y="360">后</text><text x="58" y="36" text-anchor="end">高</text><text x="58" y="136" text-anchor="end">中高</text><text x="58" y="236" text-anchor="end">中低</text><text x="58" y="336" text-anchor="end">低</text></g>
+<line class="chain-edge" x1="369.7" y1="332.0" x2="512.0" y2="132.0" stroke-dasharray="9 7" marker-end="url(#arrow-c3)"/>
+<line class="chain-edge" x1="512.0" y1="132.0" x2="512.0" y2="32.0" marker-end="url(#arrow-c3)"/>
+<circle class="slot-node" cx="369.7" cy="332.0" r="8.5" fill="#3366CC"><title>佳皆 ᴀ</title></circle>
+<text class="node-label" x="380.7" y="321.0" text-anchor="start">佳皆 ᴀ</text>
+<circle class="slot-node" cx="512.0" cy="132.0" r="8.5" fill="#F39C3D"><title>麻韵 o</title></circle>
+<text class="node-label" x="501.0" y="121.0" text-anchor="end">麻韵 o</text>
+<circle class="slot-node" cx="512.0" cy="32.0" r="8.5" fill="#55B86A"><title>歌韵 u</title></circle>
+<circle class="slot-node" cx="512.0" cy="32.0" r="6.1" fill="#E778B4"><title>模韵 u</title></circle>
+<text class="node-label" x="501.0" y="51.0" text-anchor="end">歌韵–模韵 u</text>
+</svg>
+</section></div>
+</main>
+</body>
+</html>

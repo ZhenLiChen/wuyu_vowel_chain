@@ -1,6 +1,6 @@
 ﻿term,term_label,coefficient,std_error_approx,odds_ratio_or_multiplier,model,ridge_lambda
-intercept,截距,2.4796818619212093,0.07695349060990818,11.937466051163454,ridge_binomial_logistic,1.0
-has_core_open_mid_back,S0-S3已有ɔ/ɒ,0.5605179053020317,0.14599416258530576,1.7515794176945185,ridge_binomial_logistic,1.0
-core_back_nucleus_size_z,后元音库藏大小,0.5339914019214048,0.08999838104140287,1.705726981413877,ridge_binomial_logistic,1.0
-log_core_back_token_count_z,后元音token数,0.7517662196076702,0.058833487463476136,2.1207424075206793,ridge_binomial_logistic,1.0
-core_back_token_share_z,后元音token占比,-1.0821170087857734,0.061506868681124746,0.3388773593839003,ridge_binomial_logistic,1.0
+intercept,截距,2.8534982026433835,0.08265450696141613,17.3483639070925,ridge_binomial_logistic,1.0
+has_core_open_mid_back,S0-S3已有ɔ/ɒ,0.30861592549947586,0.14405470484707655,1.3615393375270322,ridge_binomial_logistic,1.0
+core_back_nucleus_size_z,后元音库藏大小,0.7910737669811555,0.09299117012432814,2.2057636312706936,ridge_binomial_logistic,1.0
+log_core_back_token_count_z,后元音token数,0.756516532519044,0.05745503748193977,2.130840563271514,ridge_binomial_logistic,1.0
+core_back_token_share_z,后元音token占比,-1.1127968909534016,0.06140211139693568,0.3286385084012514,ridge_binomial_logistic,1.0

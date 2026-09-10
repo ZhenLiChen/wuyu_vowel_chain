@@ -1,8 +1,6 @@
-# 告诉 GitHub 这些 HTML 文件是“生成的”，不计入语言统计
-figs/*.html linguist-generated=true
+# Generated visualizations should not dominate GitHub language statistics.
+figs/**/*.html linguist-generated=true
+data_raw/raw_data_checklist_data.js linguist-generated=true
 
-# 或者如果你想更彻底一点，直接把它们标记为“文档”
-# figs/*.html linguist-documentation=true
-
-# 确保 Python 始终被视为核心
+# Python is the primary implementation language.
 scripts/*.py linguist-detectable=true

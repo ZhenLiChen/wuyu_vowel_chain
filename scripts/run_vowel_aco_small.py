@@ -17,7 +17,7 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_CLEAN = PROJECT_ROOT / "data_clean"
 VALUE_DIR = DATA_CLEAN / "value_type"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "aco"
 
 INPUT_PATH = DATA_CLEAN / "wuyu_lexeme.csv"
 TASK_OUTPUT = VALUE_DIR / "aco_small_observation_tasks.csv"

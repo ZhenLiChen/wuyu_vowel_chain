@@ -5,7 +5,7 @@ from pathlib import Path
 # === 1. 路径设置 ===
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_RAW = PROJECT_ROOT / "data_raw"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "overview"
 FIGS_DIR.mkdir(parents=True, exist_ok=True)
 
 # === 2. 加载数据 ===

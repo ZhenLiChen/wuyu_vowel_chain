@@ -22,7 +22,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_CLEAN = PROJECT_ROOT / "data_clean"
 VALUE_DIR = DATA_CLEAN / "value_type"
 DATA_DICT = PROJECT_ROOT / "data_dict"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "monophthongization"
 
 INPUT_PATH = DATA_CLEAN / "wuyu_lexeme.csv"
 COORDS_PATH = DATA_DICT / "point_coords_master.csv"

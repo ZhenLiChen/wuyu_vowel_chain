@@ -11,7 +11,7 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 VALUE_DIR = PROJECT_ROOT / "data_clean" / "value_type"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "aco"
 
 VALUE_CLASSIFICATION = VALUE_DIR / "s0_s3_split_value_classification.csv"
 SUPPORT_OUTPUT = VALUE_DIR / "ant_colony_core_split_support.csv"

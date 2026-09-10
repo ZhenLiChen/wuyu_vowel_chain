@@ -16,7 +16,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_RAW = PROJECT_ROOT / "data_raw"
 MERGE_DIR = PROJECT_ROOT / "data_clean" / "merge_analysis"
 DATA_DICT = PROJECT_ROOT / "data_dict"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "merge_analysis"
 
 STRENGTH_PATH = MERGE_DIR / "point_merge_strength_clusters.csv"
 MAINLAYER_PATH = DATA_RAW / "mainlayer_merge.csv"

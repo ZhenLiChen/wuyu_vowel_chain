@@ -20,7 +20,7 @@ DATA_RAW = PROJECT_ROOT / "data_raw"
 DATA_DICT = PROJECT_ROOT / "data_dict"
 DATA_CLEAN = PROJECT_ROOT / "data_clean"
 VALUE_DIR = DATA_CLEAN / "value_type"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "vowel_inventory"
 
 INPUT_PATH = DATA_RAW / "mainlayer_merge.csv"
 COORD_PATH = DATA_DICT / "point_coords_master.csv"

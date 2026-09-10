@@ -1,0 +1,8 @@
+﻿onset_class,mean_merge_S1_S2,mean_merge_S2_S3,valid_points_S1_S2,valid_points_S2_S3,comparison_scope,overall_S1_S3_two_link_mean,overall_S1_S3_rank,NT_S2_S3_mean,NT_S2_S3_rank,aggregation_method
+M,0.228322,0.502287,82,82,S1-S3_two_link_mean,0.365304,1,,,S1-S2 与 S2-S3 两个声组层均值等权平均（每段 1/2；S0-S1 不参与）
+TS,0.104999,0.40746,82,82,S1-S3_two_link_mean,0.256229,2,,,S1-S2 与 S2-S3 两个声组层均值等权平均（每段 1/2；S0-S1 不参与）
+P,0.092489,0.397082,82,82,S1-S3_two_link_mean,0.244785,3,,,S1-S2 与 S2-S3 两个声组层均值等权平均（每段 1/2；S0-S1 不参与）
+K,0.06447,0.37457,82,82,S1-S3_two_link_mean,0.21952,4,,,S1-S2 与 S2-S3 两个声组层均值等权平均（每段 1/2；S0-S1 不参与）
+Ø,0.054471,0.326044,82,82,S1-S3_two_link_mean,0.190257,5,,,S1-S2 与 S2-S3 两个声组层均值等权平均（每段 1/2；S0-S1 不参与）
+T,,0.326854,0,82,S2-S3_only,,,0.326854,1,仅用 S2-S3 声组均值并在 N/T 两组内排名
+N,,0.31275,0,82,S2-S3_only,,,0.31275,2,仅用 S2-S3 声组均值并在 N/T 两组内排名

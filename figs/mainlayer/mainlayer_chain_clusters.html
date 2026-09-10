@@ -1,0 +1,1783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Mainlayer Chain Clusters</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Mainlayer Chain Clusters" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Mainlayer Chain Clusters&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 6px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;mainlayer-chain-clusters&quot;&gt;
+  &lt;style&gt;
+    #mainlayer-chain-clusters {
+      width: 100%;
+      position: relative;
+      color: var(--foreground);
+      font-family: inherit;
+    }
+    #mainlayer-chain-clusters h1,
+    #mainlayer-chain-clusters h2,
+    #mainlayer-chain-clusters h3 {
+      margin: 0;
+      font-weight: 500;
+    }
+    #mainlayer-chain-clusters .controls {
+      margin: 0.75rem 0 0.65rem;
+    }
+    #mainlayer-chain-clusters .control-field {
+      min-width: 11rem;
+      flex: 1 1 14rem;
+    }
+    #mainlayer-chain-clusters .score {
+      white-space: nowrap;
+      color: var(--muted-foreground);
+    }
+    #mainlayer-chain-clusters .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
+      margin: 0 0 0.7rem;
+      color: var(--muted-foreground);
+    }
+    #mainlayer-chain-clusters .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    #mainlayer-chain-clusters .legend-sample {
+      width: 2.2rem;
+      height: 0.8rem;
+      overflow: visible;
+    }
+    #mainlayer-chain-clusters .cluster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+    #mainlayer-chain-clusters .cluster-panel {
+      min-width: 0;
+    }
+    #mainlayer-chain-clusters .cluster-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.3rem 0.7rem;
+      margin-bottom: 0.25rem;
+    }
+    #mainlayer-chain-clusters .cluster-meta,
+    #mainlayer-chain-clusters .cluster-subtypes,
+    #mainlayer-chain-clusters .note {
+      color: var(--muted-foreground);
+    }
+    #mainlayer-chain-clusters .cluster-subtypes {
+      display: block;
+      width: 100%;
+      margin-top: 0.15rem;
+    }
+    #mainlayer-chain-clusters .plot-host {
+      width: 100%;
+      min-width: 0;
+    }
+    #mainlayer-chain-clusters .point-section {
+      margin-top: 1.1rem;
+    }
+    #mainlayer-chain-clusters .alternative-section {
+      margin-top: 1.1rem;
+    }
+    #mainlayer-chain-clusters .solution-list {
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+    }
+    #mainlayer-chain-clusters .solution-row {
+      display: grid;
+      grid-template-columns: 4.5rem 7rem minmax(0, 1fr);
+      gap: 0.4rem 0.8rem;
+      align-items: baseline;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    #mainlayer-chain-clusters .point-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      margin-bottom: 0.25rem;
+    }
+    #mainlayer-chain-clusters .point-field {
+      min-width: 15rem;
+      flex: 0 1 24rem;
+    }
+    #mainlayer-chain-clusters .point-host {
+      width: 100%;
+      min-width: 0;
+    }
+    #mainlayer-chain-clusters .ipa-chart {
+      display: block;
+      width: 100%;
+      overflow: visible;
+    }
+    #mainlayer-chain-clusters .ipa-chart text {
+      fill: var(--foreground);
+      font-size: 12px;
+    }
+    #mainlayer-chain-clusters .ipa-chart .axis-note,
+    #mainlayer-chain-clusters .ipa-chart .tick-label {
+      fill: var(--muted-foreground);
+    }
+    #mainlayer-chain-clusters .ipa-chart .plot-frame,
+    #mainlayer-chain-clusters .ipa-chart .vowel-frame,
+    #mainlayer-chain-clusters .ipa-chart .grid-line {
+      fill: none;
+      stroke: var(--border);
+      vector-effect: non-scaling-stroke;
+    }
+    #mainlayer-chain-clusters .ipa-chart .plot-frame {
+      stroke-width: 1;
+    }
+    #mainlayer-chain-clusters .ipa-chart .vowel-frame {
+      stroke-width: 1.4;
+    }
+    #mainlayer-chain-clusters .ipa-chart .grid-line {
+      stroke-width: 1;
+      opacity: 0.55;
+    }
+    #mainlayer-chain-clusters .ipa-chart .deviation-node {
+      stroke: none;
+      fill-opacity: 0.24;
+      pointer-events: none;
+    }
+    #mainlayer-chain-clusters .ipa-chart .medoid-chain {
+      fill: none;
+      stroke-width: 3.4;
+      stroke-opacity: 1;
+      vector-effect: non-scaling-stroke;
+      pointer-events: none;
+    }
+    #mainlayer-chain-clusters .ipa-chart .hit-line {
+      fill: none;
+      stroke: transparent;
+      stroke-width: 18;
+      pointer-events: stroke;
+    }
+    #mainlayer-chain-clusters .ipa-chart .node-hit {
+      fill: transparent;
+      stroke: transparent;
+      pointer-events: all;
+    }
+    #mainlayer-chain-clusters .tooltip {
+      position: absolute;
+      pointer-events: none;
+      z-index: 10;
+      max-width: min(25rem, calc(100% - 1rem));
+      padding: 0.45rem 0.55rem;
+      color: var(--popover-foreground);
+      background: var(--popover);
+      border: 1px solid var(--border);
+      border-radius: 0.35rem;
+      opacity: 0;
+    }
+    @media (max-width: 520px) {
+      #mainlayer-chain-clusters .cluster-grid {
+        grid-template-columns: 1fr;
+      }
+      #mainlayer-chain-clusters .solution-row {
+        grid-template-columns: 4rem 1fr;
+      }
+      #mainlayer-chain-clusters .solution-patterns {
+        grid-column: 1 / -1;
+      }
+    }
+  &lt;/style&gt;
+
+  &lt;h1&gt;方言点主链条聚类&lt;/h1&gt;
+
+  &lt;div class=&quot;viz-row controls&quot;&gt;
+    &lt;span id=&quot;mlcc-selection&quot; aria-live=&quot;polite&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;legend text-small&quot; aria-label=&quot;图例&quot;&gt;
+    &lt;span class=&quot;legend-item&quot;&gt;
+      &lt;svg class=&quot;legend-sample&quot; viewBox=&quot;0 0 36 12&quot; aria-hidden=&quot;true&quot;&gt;&lt;line x1=&quot;1&quot; y1=&quot;6&quot; x2=&quot;35&quot; y2=&quot;6&quot; stroke=&quot;var(--foreground)&quot; stroke-width=&quot;3&quot;&gt;&lt;/line&gt;&lt;/svg&gt;
+      实线：S0 → S1 → S2 → S3 主模式
+    &lt;/span&gt;
+    &lt;span class=&quot;legend-item&quot;&gt;&lt;svg class=&quot;legend-sample&quot; viewBox=&quot;0 0 36 12&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;13&quot; cy=&quot;6&quot; r=&quot;4.5&quot; fill=&quot;var(--viz-series-1)&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;25&quot; cy=&quot;6&quot; r=&quot;2.5&quot; fill=&quot;var(--viz-series-1)&quot; opacity=&quot;0.3&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;S0&lt;/span&gt;
+    &lt;span class=&quot;legend-item&quot;&gt;&lt;svg class=&quot;legend-sample&quot; viewBox=&quot;0 0 36 12&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;13&quot; cy=&quot;6&quot; r=&quot;4.5&quot; fill=&quot;var(--viz-series-2)&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;25&quot; cy=&quot;6&quot; r=&quot;2.5&quot; fill=&quot;var(--viz-series-2)&quot; opacity=&quot;0.3&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;S1&lt;/span&gt;
+    &lt;span class=&quot;legend-item&quot;&gt;&lt;svg class=&quot;legend-sample&quot; viewBox=&quot;0 0 36 12&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;13&quot; cy=&quot;6&quot; r=&quot;4.5&quot; fill=&quot;var(--viz-series-3)&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;25&quot; cy=&quot;6&quot; r=&quot;2.5&quot; fill=&quot;var(--viz-series-3)&quot; opacity=&quot;0.3&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;S2&lt;/span&gt;
+    &lt;span class=&quot;legend-item&quot;&gt;&lt;svg class=&quot;legend-sample&quot; viewBox=&quot;0 0 36 12&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;13&quot; cy=&quot;6&quot; r=&quot;4.5&quot; fill=&quot;var(--viz-series-4)&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;25&quot; cy=&quot;6&quot; r=&quot;2.5&quot; fill=&quot;var(--viz-series-4)&quot; opacity=&quot;0.3&quot;&gt;&lt;/circle&gt;&lt;/svg&gt;S3&lt;/span&gt;
+    &lt;span class=&quot;legend-item&quot;&gt;大节点＝代表链；小淡点＝类内方言；菱形＝复元音&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;cluster-grid&quot; id=&quot;mlcc-cluster-grid&quot;&gt;&lt;/div&gt;
+
+  &lt;section class=&quot;alternative-section&quot; aria-labelledby=&quot;mlcc-alternative-title&quot;&gt;
+    &lt;h2 id=&quot;mlcc-alternative-title&quot;&gt;其他类别数解（对照）&lt;/h2&gt;
+    &lt;div class=&quot;solution-list text-small&quot; id=&quot;mlcc-solution-list&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;point-section&quot; aria-labelledby=&quot;mlcc-point-title&quot;&gt;
+    &lt;div class=&quot;point-heading&quot;&gt;
+      &lt;h2 id=&quot;mlcc-point-title&quot;&gt;逐方言点链位图&lt;/h2&gt;
+      &lt;label class=&quot;form-label point-field&quot; for=&quot;mlcc-point-select&quot;&gt;
+        方言点
+        &lt;select class=&quot;form-select&quot; id=&quot;mlcc-point-select&quot;&gt;&lt;/select&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;point-host&quot; id=&quot;mlcc-point-host&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;p class=&quot;note text-small&quot;&gt;实线严格按 S0 → S1 → S2 → S3 连接；复元音节点放在两个成分的 IPA 几何中点，不另画内部轨迹。每个 slot 使用固定颜色，代表链节点较大，类内其他方言节点较小且颜色更淡。S3 的点级主体复元音共有 &lt;span id=&quot;mlcc-s3-count&quot;&gt;&lt;/span&gt; 个。&lt;/p&gt;
+  &lt;div class=&quot;tooltip text-small&quot; id=&quot;mlcc-tooltip&quot; role=&quot;tooltip&quot;&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    (() =&gt; {
+      const root = document.getElementById(&quot;mainlayer-chain-clusters&quot;);
+      const DATA = {&quot;default&quot;:3,&quot;minSize&quot;:5,&quot;scores&quot;:{&quot;2&quot;:0.4018,&quot;3&quot;:0.4835,&quot;4&quot;:0.4747,&quot;5&quot;:0.4076,&quot;6&quot;:0.4526,&quot;7&quot;:0.4994,&quot;8&quot;:0.5135},&quot;solutions&quot;:{&quot;2&quot;:{&quot;clusters&quot;:[{&quot;cluster&quot;:1,&quot;size&quot;:60,&quot;medoid_id&quot;:&quot;CX02&quot;,&quot;medoid_name&quot;:&quot;长兴&quot;,&quot;medoid_chain&quot;:&quot;a → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;AJ01&quot;,&quot;BS01&quot;,&quot;BZ01&quot;,&quot;CM01&quot;,&quot;CS01&quot;,&quot;CS02&quot;,&quot;CX02&quot;,&quot;DB01&quot;,&quot;DQ01&quot;,&quot;FC01&quot;,&quot;FJ01&quot;,&quot;FX01&quot;,&quot;FY01&quot;,&quot;FY02&quot;,&quot;GQ01&quot;,&quot;HM01&quot;,&quot;HM02&quot;,&quot;HN01&quot;,&quot;HY01&quot;,&quot;HZ01&quot;,&quot;HZ02&quot;,&quot;JD01&quot;,&quot;JS01&quot;,&quot;JS02&quot;,&quot;JW01&quot;,&quot;JX01&quot;,&quot;KQ01&quot;,&quot;LA01&quot;,&quot;LP01&quot;,&quot;LT01&quot;,&quot;MH01&quot;,&quot;NH01&quot;,&quot;PB01&quot;,&quot;PH01&quot;,&quot;QD01&quot;,&quot;QP01&quot;,&quot;SH01&quot;,&quot;SJ01&quot;,&quot;SJ02&quot;,&quot;SL01&quot;,&quot;SX01&quot;,&quot;SY02&quot;,&quot;SZ02&quot;,&quot;SZ03&quot;,&quot;TC01&quot;,&quot;TC02&quot;,&quot;TL01&quot;,&quot;TX01&quot;,&quot;WJ01&quot;,&quot;WJ02&quot;,&quot;XC01&quot;,&quot;XD01&quot;,&quot;XH02&quot;,&quot;XS01&quot;,&quot;XS03&quot;,&quot;XZ01&quot;,&quot;YQ01&quot;,&quot;YX01&quot;,&quot;ZP01&quot;,&quot;ZR01&quot;]},{&quot;cluster&quot;:2,&quot;size&quot;:22,&quot;medoid_id&quot;:&quot;FH01&quot;,&quot;medoid_name&quot;:&quot;奉化西坞&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2 əu → S3 u&quot;,&quot;type_label&quot;:&quot;S2 前增生复元音型&quot;,&quot;members&quot;:[&quot;BL01&quot;,&quot;CX01&quot;,&quot;CZ01&quot;,&quot;DS01&quot;,&quot;DY01&quot;,&quot;FH01&quot;,&quot;JJ01&quot;,&quot;JT01&quot;,&quot;JY01&quot;,&quot;KS01&quot;,&quot;LY01&quot;,&quot;NB01&quot;,&quot;NT01&quot;,&quot;SZ01&quot;,&quot;WX01&quot;,&quot;WX02&quot;,&quot;YX02&quot;,&quot;YY01&quot;,&quot;ZJ01&quot;,&quot;ZJ02&quot;,&quot;ZJ03&quot;,&quot;ZS01&quot;]}]},&quot;3&quot;:{&quot;clusters&quot;:[{&quot;cluster&quot;:1,&quot;size&quot;:18,&quot;medoid_id&quot;:&quot;KQ01&quot;,&quot;medoid_name&quot;:&quot;柯桥&quot;,&quot;medoid_chain&quot;:&quot;a → o → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1–S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;S1–S2 O并位型&quot;,&quot;members&quot;:[&quot;DB01&quot;,&quot;DY01&quot;,&quot;FY01&quot;,&quot;HM02&quot;,&quot;HZ01&quot;,&quot;KQ01&quot;,&quot;LA01&quot;,&quot;PB01&quot;,&quot;QD01&quot;,&quot;SX01&quot;,&quot;SY02&quot;,&quot;SZ02&quot;,&quot;SZ03&quot;,&quot;XC01&quot;,&quot;XH02&quot;,&quot;XS01&quot;,&quot;XS03&quot;,&quot;YX01&quot;]},{&quot;cluster&quot;:2,&quot;size&quot;:21,&quot;medoid_id&quot;:&quot;FH01&quot;,&quot;medoid_name&quot;:&quot;奉化西坞&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2 əu → S3 u&quot;,&quot;type_label&quot;:&quot;S2 前增生复元音型&quot;,&quot;members&quot;:[&quot;BL01&quot;,&quot;CX01&quot;,&quot;CZ01&quot;,&quot;DS01&quot;,&quot;FH01&quot;,&quot;JJ01&quot;,&quot;JT01&quot;,&quot;JY01&quot;,&quot;KS01&quot;,&quot;LY01&quot;,&quot;NB01&quot;,&quot;NT01&quot;,&quot;SZ01&quot;,&quot;WX01&quot;,&quot;WX02&quot;,&quot;YX02&quot;,&quot;YY01&quot;,&quot;ZJ01&quot;,&quot;ZJ02&quot;,&quot;ZJ03&quot;,&quot;ZS01&quot;]},{&quot;cluster&quot;:3,&quot;size&quot;:43,&quot;medoid_id&quot;:&quot;BS01&quot;,&quot;medoid_name&quot;:&quot;宝山&quot;,&quot;medoid_chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ᴀ → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;AJ01&quot;,&quot;BS01&quot;,&quot;BZ01&quot;,&quot;CM01&quot;,&quot;CS01&quot;,&quot;CS02&quot;,&quot;CX02&quot;,&quot;DQ01&quot;,&quot;FC01&quot;,&quot;FJ01&quot;,&quot;FX01&quot;,&quot;FY02&quot;,&quot;GQ01&quot;,&quot;HM01&quot;,&quot;HN01&quot;,&quot;HY01&quot;,&quot;HZ02&quot;,&quot;JD01&quot;,&quot;JS01&quot;,&quot;JS02&quot;,&quot;JW01&quot;,&quot;JX01&quot;,&quot;LP01&quot;,&quot;LT01&quot;,&quot;MH01&quot;,&quot;NH01&quot;,&quot;PH01&quot;,&quot;QP01&quot;,&quot;SH01&quot;,&quot;SJ01&quot;,&quot;SJ02&quot;,&quot;SL01&quot;,&quot;TC01&quot;,&quot;TC02&quot;,&quot;TL01&quot;,&quot;TX01&quot;,&quot;WJ01&quot;,&quot;WJ02&quot;,&quot;XD01&quot;,&quot;XZ01&quot;,&quot;YQ01&quot;,&quot;ZP01&quot;,&quot;ZR01&quot;]}]},&quot;4&quot;:{&quot;clusters&quot;:[{&quot;cluster&quot;:1,&quot;size&quot;:15,&quot;medoid_id&quot;:&quot;KQ01&quot;,&quot;medoid_name&quot;:&quot;柯桥&quot;,&quot;medoid_chain&quot;:&quot;a → o → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1–S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;S1–S2 O并位型&quot;,&quot;members&quot;:[&quot;FY01&quot;,&quot;HM02&quot;,&quot;KQ01&quot;,&quot;LA01&quot;,&quot;PB01&quot;,&quot;QD01&quot;,&quot;SX01&quot;,&quot;SY02&quot;,&quot;SZ02&quot;,&quot;SZ03&quot;,&quot;XC01&quot;,&quot;XH02&quot;,&quot;XS01&quot;,&quot;XS03&quot;,&quot;YX01&quot;]},{&quot;cluster&quot;:2,&quot;size&quot;:21,&quot;medoid_id&quot;:&quot;FH01&quot;,&quot;medoid_name&quot;:&quot;奉化西坞&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2 əu → S3 u&quot;,&quot;type_label&quot;:&quot;S2 前增生复元音型&quot;,&quot;members&quot;:[&quot;BL01&quot;,&quot;CX01&quot;,&quot;CZ01&quot;,&quot;DS01&quot;,&quot;FH01&quot;,&quot;JJ01&quot;,&quot;JT01&quot;,&quot;JY01&quot;,&quot;KS01&quot;,&quot;LY01&quot;,&quot;NB01&quot;,&quot;NT01&quot;,&quot;SZ01&quot;,&quot;WX01&quot;,&quot;WX02&quot;,&quot;YX02&quot;,&quot;YY01&quot;,&quot;ZJ01&quot;,&quot;ZJ02&quot;,&quot;ZJ03&quot;,&quot;ZS01&quot;]},{&quot;cluster&quot;:3,&quot;size&quot;:3,&quot;medoid_id&quot;:&quot;HZ01&quot;,&quot;medoid_name&quot;:&quot;杭州城区&quot;,&quot;medoid_chain&quot;:&quot;ɛ → a → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ɛ → S1 a → S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;其他链形&quot;,&quot;members&quot;:[&quot;DB01&quot;,&quot;DY01&quot;,&quot;HZ01&quot;]},{&quot;cluster&quot;:4,&quot;size&quot;:43,&quot;medoid_id&quot;:&quot;BS01&quot;,&quot;medoid_name&quot;:&quot;宝山&quot;,&quot;medoid_chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ᴀ → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;AJ01&quot;,&quot;BS01&quot;,&quot;BZ01&quot;,&quot;CM01&quot;,&quot;CS01&quot;,&quot;CS02&quot;,&quot;CX02&quot;,&quot;DQ01&quot;,&quot;FC01&quot;,&quot;FJ01&quot;,&quot;FX01&quot;,&quot;FY02&quot;,&quot;GQ01&quot;,&quot;HM01&quot;,&quot;HN01&quot;,&quot;HY01&quot;,&quot;HZ02&quot;,&quot;JD01&quot;,&quot;JS01&quot;,&quot;JS02&quot;,&quot;JW01&quot;,&quot;JX01&quot;,&quot;LP01&quot;,&quot;LT01&quot;,&quot;MH01&quot;,&quot;NH01&quot;,&quot;PH01&quot;,&quot;QP01&quot;,&quot;SH01&quot;,&quot;SJ01&quot;,&quot;SJ02&quot;,&quot;SL01&quot;,&quot;TC01&quot;,&quot;TC02&quot;,&quot;TL01&quot;,&quot;TX01&quot;,&quot;WJ01&quot;,&quot;WJ02&quot;,&quot;XD01&quot;,&quot;XZ01&quot;,&quot;YQ01&quot;,&quot;ZP01&quot;,&quot;ZR01&quot;]}]},&quot;5&quot;:{&quot;clusters&quot;:[{&quot;cluster&quot;:1,&quot;size&quot;:13,&quot;medoid_id&quot;:&quot;KQ01&quot;,&quot;medoid_name&quot;:&quot;柯桥&quot;,&quot;medoid_chain&quot;:&quot;a → o → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1–S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;S1–S2 O并位型&quot;,&quot;members&quot;:[&quot;HM02&quot;,&quot;KQ01&quot;,&quot;LA01&quot;,&quot;PB01&quot;,&quot;QD01&quot;,&quot;SX01&quot;,&quot;SY02&quot;,&quot;SZ02&quot;,&quot;SZ03&quot;,&quot;XC01&quot;,&quot;XH02&quot;,&quot;XS01&quot;,&quot;XS03&quot;]},{&quot;cluster&quot;:2,&quot;size&quot;:20,&quot;medoid_id&quot;:&quot;CX02&quot;,&quot;medoid_name&quot;:&quot;长兴&quot;,&quot;medoid_chain&quot;:&quot;a → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;AJ01&quot;,&quot;CX02&quot;,&quot;DQ01&quot;,&quot;FY01&quot;,&quot;FY02&quot;,&quot;HN01&quot;,&quot;HZ02&quot;,&quot;JS01&quot;,&quot;LP01&quot;,&quot;LT01&quot;,&quot;MH01&quot;,&quot;NH01&quot;,&quot;PH01&quot;,&quot;TC01&quot;,&quot;TC02&quot;,&quot;TL01&quot;,&quot;TX01&quot;,&quot;XD01&quot;,&quot;YQ01&quot;,&quot;YX01&quot;]},{&quot;cluster&quot;:3,&quot;size&quot;:21,&quot;medoid_id&quot;:&quot;FH01&quot;,&quot;medoid_name&quot;:&quot;奉化西坞&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2 əu → S3 u&quot;,&quot;type_label&quot;:&quot;S2 前增生复元音型&quot;,&quot;members&quot;:[&quot;BL01&quot;,&quot;CX01&quot;,&quot;CZ01&quot;,&quot;DS01&quot;,&quot;FH01&quot;,&quot;JJ01&quot;,&quot;JT01&quot;,&quot;JY01&quot;,&quot;KS01&quot;,&quot;LY01&quot;,&quot;NB01&quot;,&quot;NT01&quot;,&quot;SZ01&quot;,&quot;WX01&quot;,&quot;WX02&quot;,&quot;YX02&quot;,&quot;YY01&quot;,&quot;ZJ01&quot;,&quot;ZJ02&quot;,&quot;ZJ03&quot;,&quot;ZS01&quot;]},{&quot;cluster&quot;:4,&quot;size&quot;:3,&quot;medoid_id&quot;:&quot;HZ01&quot;,&quot;medoid_name&quot;:&quot;杭州城区&quot;,&quot;medoid_chain&quot;:&quot;ɛ → a → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ɛ → S1 a → S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;其他链形&quot;,&quot;members&quot;:[&quot;DB01&quot;,&quot;DY01&quot;,&quot;HZ01&quot;]},{&quot;cluster&quot;:5,&quot;size&quot;:25,&quot;medoid_id&quot;:&quot;BS01&quot;,&quot;medoid_name&quot;:&quot;宝山&quot;,&quot;medoid_chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ᴀ → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;BS01&quot;,&quot;BZ01&quot;,&quot;CM01&quot;,&quot;CS01&quot;,&quot;CS02&quot;,&quot;FC01&quot;,&quot;FJ01&quot;,&quot;FX01&quot;,&quot;GQ01&quot;,&quot;HM01&quot;,&quot;HY01&quot;,&quot;JD01&quot;,&quot;JS02&quot;,&quot;JW01&quot;,&quot;JX01&quot;,&quot;QP01&quot;,&quot;SH01&quot;,&quot;SJ01&quot;,&quot;SJ02&quot;,&quot;SL01&quot;,&quot;WJ01&quot;,&quot;WJ02&quot;,&quot;XZ01&quot;,&quot;ZP01&quot;,&quot;ZR01&quot;]}]},&quot;6&quot;:{&quot;clusters&quot;:[{&quot;cluster&quot;:1,&quot;size&quot;:13,&quot;medoid_id&quot;:&quot;KQ01&quot;,&quot;medoid_name&quot;:&quot;柯桥&quot;,&quot;medoid_chain&quot;:&quot;a → o → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1–S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;S1–S2 O并位型&quot;,&quot;members&quot;:[&quot;HM02&quot;,&quot;KQ01&quot;,&quot;LA01&quot;,&quot;PB01&quot;,&quot;QD01&quot;,&quot;SX01&quot;,&quot;SY02&quot;,&quot;SZ02&quot;,&quot;SZ03&quot;,&quot;XC01&quot;,&quot;XH02&quot;,&quot;XS01&quot;,&quot;XS03&quot;]},{&quot;cluster&quot;:2,&quot;size&quot;:20,&quot;medoid_id&quot;:&quot;CX02&quot;,&quot;medoid_name&quot;:&quot;长兴&quot;,&quot;medoid_chain&quot;:&quot;a → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;AJ01&quot;,&quot;CX02&quot;,&quot;DQ01&quot;,&quot;FY01&quot;,&quot;FY02&quot;,&quot;HN01&quot;,&quot;HZ02&quot;,&quot;JS01&quot;,&quot;LP01&quot;,&quot;LT01&quot;,&quot;MH01&quot;,&quot;NH01&quot;,&quot;PH01&quot;,&quot;TC01&quot;,&quot;TC02&quot;,&quot;TL01&quot;,&quot;TX01&quot;,&quot;XD01&quot;,&quot;YQ01&quot;,&quot;YX01&quot;]},{&quot;cluster&quot;:3,&quot;size&quot;:17,&quot;medoid_id&quot;:&quot;FH01&quot;,&quot;medoid_name&quot;:&quot;奉化西坞&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2 əu → S3 u&quot;,&quot;type_label&quot;:&quot;S2 前增生复元音型&quot;,&quot;members&quot;:[&quot;BL01&quot;,&quot;CX01&quot;,&quot;CZ01&quot;,&quot;DS01&quot;,&quot;FH01&quot;,&quot;JJ01&quot;,&quot;JT01&quot;,&quot;JY01&quot;,&quot;LY01&quot;,&quot;NB01&quot;,&quot;NT01&quot;,&quot;YX02&quot;,&quot;YY01&quot;,&quot;ZJ01&quot;,&quot;ZJ02&quot;,&quot;ZJ03&quot;,&quot;ZS01&quot;]},{&quot;cluster&quot;:4,&quot;size&quot;:4,&quot;medoid_id&quot;:&quot;KS01&quot;,&quot;medoid_name&quot;:&quot;昆山市区玉山镇&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → əu&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 əu&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;KS01&quot;,&quot;SZ01&quot;,&quot;WX01&quot;,&quot;WX02&quot;]},{&quot;cluster&quot;:5,&quot;size&quot;:3,&quot;medoid_id&quot;:&quot;HZ01&quot;,&quot;medoid_name&quot;:&quot;杭州城区&quot;,&quot;medoid_chain&quot;:&quot;ɛ → a → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ɛ → S1 a → S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;其他链形&quot;,&quot;members&quot;:[&quot;DB01&quot;,&quot;DY01&quot;,&quot;HZ01&quot;]},{&quot;cluster&quot;:6,&quot;size&quot;:25,&quot;medoid_id&quot;:&quot;BS01&quot;,&quot;medoid_name&quot;:&quot;宝山&quot;,&quot;medoid_chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ᴀ → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;BS01&quot;,&quot;BZ01&quot;,&quot;CM01&quot;,&quot;CS01&quot;,&quot;CS02&quot;,&quot;FC01&quot;,&quot;FJ01&quot;,&quot;FX01&quot;,&quot;GQ01&quot;,&quot;HM01&quot;,&quot;HY01&quot;,&quot;JD01&quot;,&quot;JS02&quot;,&quot;JW01&quot;,&quot;JX01&quot;,&quot;QP01&quot;,&quot;SH01&quot;,&quot;SJ01&quot;,&quot;SJ02&quot;,&quot;SL01&quot;,&quot;WJ01&quot;,&quot;WJ02&quot;,&quot;XZ01&quot;,&quot;ZP01&quot;,&quot;ZR01&quot;]}]},&quot;7&quot;:{&quot;clusters&quot;:[{&quot;cluster&quot;:1,&quot;size&quot;:13,&quot;medoid_id&quot;:&quot;KQ01&quot;,&quot;medoid_name&quot;:&quot;柯桥&quot;,&quot;medoid_chain&quot;:&quot;a → o → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1–S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;S1–S2 O并位型&quot;,&quot;members&quot;:[&quot;HM02&quot;,&quot;KQ01&quot;,&quot;LA01&quot;,&quot;PB01&quot;,&quot;QD01&quot;,&quot;SX01&quot;,&quot;SY02&quot;,&quot;SZ02&quot;,&quot;SZ03&quot;,&quot;XC01&quot;,&quot;XH02&quot;,&quot;XS01&quot;,&quot;XS03&quot;]},{&quot;cluster&quot;:2,&quot;size&quot;:19,&quot;medoid_id&quot;:&quot;CX02&quot;,&quot;medoid_name&quot;:&quot;长兴&quot;,&quot;medoid_chain&quot;:&quot;a → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;AJ01&quot;,&quot;CX02&quot;,&quot;FY01&quot;,&quot;FY02&quot;,&quot;HN01&quot;,&quot;HZ02&quot;,&quot;JS01&quot;,&quot;LP01&quot;,&quot;LT01&quot;,&quot;MH01&quot;,&quot;NH01&quot;,&quot;PH01&quot;,&quot;TC01&quot;,&quot;TC02&quot;,&quot;TL01&quot;,&quot;TX01&quot;,&quot;XD01&quot;,&quot;YQ01&quot;,&quot;YX01&quot;]},{&quot;cluster&quot;:3,&quot;size&quot;:17,&quot;medoid_id&quot;:&quot;FH01&quot;,&quot;medoid_name&quot;:&quot;奉化西坞&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2 əu → S3 u&quot;,&quot;type_label&quot;:&quot;S2 前增生复元音型&quot;,&quot;members&quot;:[&quot;BL01&quot;,&quot;CX01&quot;,&quot;CZ01&quot;,&quot;DS01&quot;,&quot;FH01&quot;,&quot;JJ01&quot;,&quot;JT01&quot;,&quot;JY01&quot;,&quot;LY01&quot;,&quot;NB01&quot;,&quot;NT01&quot;,&quot;YX02&quot;,&quot;YY01&quot;,&quot;ZJ01&quot;,&quot;ZJ02&quot;,&quot;ZJ03&quot;,&quot;ZS01&quot;]},{&quot;cluster&quot;:4,&quot;size&quot;:4,&quot;medoid_id&quot;:&quot;KS01&quot;,&quot;medoid_name&quot;:&quot;昆山市区玉山镇&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → əu&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 əu&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;KS01&quot;,&quot;SZ01&quot;,&quot;WX01&quot;,&quot;WX02&quot;]},{&quot;cluster&quot;:5,&quot;size&quot;:22,&quot;medoid_id&quot;:&quot;BZ01&quot;,&quot;medoid_name&quot;:&quot;堡镇&quot;,&quot;medoid_chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ɑ → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;BS01&quot;,&quot;BZ01&quot;,&quot;CM01&quot;,&quot;CS02&quot;,&quot;FC01&quot;,&quot;FJ01&quot;,&quot;FX01&quot;,&quot;GQ01&quot;,&quot;HM01&quot;,&quot;HY01&quot;,&quot;JD01&quot;,&quot;JS02&quot;,&quot;JW01&quot;,&quot;JX01&quot;,&quot;QP01&quot;,&quot;SH01&quot;,&quot;SJ01&quot;,&quot;SJ02&quot;,&quot;WJ01&quot;,&quot;WJ02&quot;,&quot;XZ01&quot;,&quot;ZR01&quot;]},{&quot;cluster&quot;:6,&quot;size&quot;:3,&quot;medoid_id&quot;:&quot;HZ01&quot;,&quot;medoid_name&quot;:&quot;杭州城区&quot;,&quot;medoid_chain&quot;:&quot;ɛ → a → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ɛ → S1 a → S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;其他链形&quot;,&quot;members&quot;:[&quot;DB01&quot;,&quot;DY01&quot;,&quot;HZ01&quot;]},{&quot;cluster&quot;:7,&quot;size&quot;:4,&quot;medoid_id&quot;:&quot;CS01&quot;,&quot;medoid_name&quot;:&quot;川沙浦东&quot;,&quot;medoid_chain&quot;:&quot;ᴀ → ɔ → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ᴀ → S1 ɔ → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;CS01&quot;,&quot;DQ01&quot;,&quot;SL01&quot;,&quot;ZP01&quot;]}]},&quot;8&quot;:{&quot;clusters&quot;:[{&quot;cluster&quot;:1,&quot;size&quot;:13,&quot;medoid_id&quot;:&quot;KQ01&quot;,&quot;medoid_name&quot;:&quot;柯桥&quot;,&quot;medoid_chain&quot;:&quot;a → o → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1–S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;S1–S2 O并位型&quot;,&quot;members&quot;:[&quot;HM02&quot;,&quot;KQ01&quot;,&quot;LA01&quot;,&quot;PB01&quot;,&quot;QD01&quot;,&quot;SX01&quot;,&quot;SY02&quot;,&quot;SZ02&quot;,&quot;SZ03&quot;,&quot;XC01&quot;,&quot;XH02&quot;,&quot;XS01&quot;,&quot;XS03&quot;]},{&quot;cluster&quot;:2,&quot;size&quot;:16,&quot;medoid_id&quot;:&quot;CX02&quot;,&quot;medoid_name&quot;:&quot;长兴&quot;,&quot;medoid_chain&quot;:&quot;a → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;AJ01&quot;,&quot;CX02&quot;,&quot;FY01&quot;,&quot;HN01&quot;,&quot;HZ02&quot;,&quot;JS01&quot;,&quot;LP01&quot;,&quot;LT01&quot;,&quot;MH01&quot;,&quot;NH01&quot;,&quot;PH01&quot;,&quot;TC01&quot;,&quot;TC02&quot;,&quot;TX01&quot;,&quot;XD01&quot;,&quot;YX01&quot;]},{&quot;cluster&quot;:3,&quot;size&quot;:17,&quot;medoid_id&quot;:&quot;FH01&quot;,&quot;medoid_name&quot;:&quot;奉化西坞&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2 əu → S3 u&quot;,&quot;type_label&quot;:&quot;S2 前增生复元音型&quot;,&quot;members&quot;:[&quot;BL01&quot;,&quot;CX01&quot;,&quot;CZ01&quot;,&quot;DS01&quot;,&quot;FH01&quot;,&quot;JJ01&quot;,&quot;JT01&quot;,&quot;JY01&quot;,&quot;LY01&quot;,&quot;NB01&quot;,&quot;NT01&quot;,&quot;YX02&quot;,&quot;YY01&quot;,&quot;ZJ01&quot;,&quot;ZJ02&quot;,&quot;ZJ03&quot;,&quot;ZS01&quot;]},{&quot;cluster&quot;:4,&quot;size&quot;:4,&quot;medoid_id&quot;:&quot;KS01&quot;,&quot;medoid_name&quot;:&quot;昆山市区玉山镇&quot;,&quot;medoid_chain&quot;:&quot;a → o → əu → əu&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 o → S2–S3 əu&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;KS01&quot;,&quot;SZ01&quot;,&quot;WX01&quot;,&quot;WX02&quot;]},{&quot;cluster&quot;:5,&quot;size&quot;:4,&quot;medoid_id&quot;:&quot;FY02&quot;,&quot;medoid_name&quot;:&quot;富阳东梓关&quot;,&quot;medoid_chain&quot;:&quot;a → uo → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 a → S1 uo → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;CS02&quot;,&quot;FY02&quot;,&quot;TL01&quot;,&quot;YQ01&quot;]},{&quot;cluster&quot;:6,&quot;size&quot;:21,&quot;medoid_id&quot;:&quot;BZ01&quot;,&quot;medoid_name&quot;:&quot;堡镇&quot;,&quot;medoid_chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ɑ → S1 o → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;BS01&quot;,&quot;BZ01&quot;,&quot;CM01&quot;,&quot;FC01&quot;,&quot;FJ01&quot;,&quot;FX01&quot;,&quot;GQ01&quot;,&quot;HM01&quot;,&quot;HY01&quot;,&quot;JD01&quot;,&quot;JS02&quot;,&quot;JW01&quot;,&quot;JX01&quot;,&quot;QP01&quot;,&quot;SH01&quot;,&quot;SJ01&quot;,&quot;SJ02&quot;,&quot;WJ01&quot;,&quot;WJ02&quot;,&quot;XZ01&quot;,&quot;ZR01&quot;]},{&quot;cluster&quot;:7,&quot;size&quot;:3,&quot;medoid_id&quot;:&quot;HZ01&quot;,&quot;medoid_name&quot;:&quot;杭州城区&quot;,&quot;medoid_chain&quot;:&quot;ɛ → a → o → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ɛ → S1 a → S2 o → S3 u&quot;,&quot;type_label&quot;:&quot;其他链形&quot;,&quot;members&quot;:[&quot;DB01&quot;,&quot;DY01&quot;,&quot;HZ01&quot;]},{&quot;cluster&quot;:8,&quot;size&quot;:4,&quot;medoid_id&quot;:&quot;CS01&quot;,&quot;medoid_name&quot;:&quot;川沙浦东&quot;,&quot;medoid_chain&quot;:&quot;ᴀ → ɔ → u → u&quot;,&quot;medoid_collapsed_chain&quot;:&quot;S0 ᴀ → S1 ɔ → S2–S3 u&quot;,&quot;type_label&quot;:&quot;S2–S3 U并位型&quot;,&quot;members&quot;:[&quot;CS01&quot;,&quot;DQ01&quot;,&quot;SL01&quot;,&quot;ZP01&quot;]}]}},&quot;s3Count&quot;:5,&quot;points&quot;:[{&quot;id&quot;:&quot;AJ01&quot;,&quot;name&quot;:&quot;安吉安城&quot;,&quot;chain&quot;:&quot;a → ɷ → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;ɷ&quot;,3.0,0.5,3.0,0.5,3.0,0.5,false,0.2181],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;BL01&quot;,&quot;name&quot;:&quot;北仑&quot;,&quot;chain&quot;:&quot;a → o → au → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0573],[&quot;S2&quot;,&quot;au&quot;,2.025,1.5,1.05,3.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1326]]},{&quot;id&quot;:&quot;BS01&quot;,&quot;name&quot;:&quot;宝山&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.302],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;BZ01&quot;,&quot;name&quot;:&quot;堡镇&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.1299],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1453],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;CM01&quot;,&quot;name&quot;:&quot;崇明城桥&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1453],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;CS01&quot;,&quot;name&quot;:&quot;川沙浦东&quot;,&quot;chain&quot;:&quot;ᴀ → ɔ → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;ɔ&quot;,3.0,2.0,3.0,2.0,3.0,2.0,false,0.321],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;CS02&quot;,&quot;name&quot;:&quot;常熟虞山镇&quot;,&quot;chain&quot;:&quot;ᴀ → u → ɯ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2133],[&quot;S2&quot;,&quot;ɯ&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.024],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.012]]},{&quot;id&quot;:&quot;CX01&quot;,&quot;name&quot;:&quot;慈溪逍林&quot;,&quot;chain&quot;:&quot;a → o → ou → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ou&quot;,3.0,0.5,3.0,1.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1147]]},{&quot;id&quot;:&quot;CX02&quot;,&quot;name&quot;:&quot;长兴&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312]]},{&quot;id&quot;:&quot;CZ01&quot;,&quot;name&quot;:&quot;常州&quot;,&quot;chain&quot;:&quot;a → o → ɤɯ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.3095],[&quot;S2&quot;,&quot;ɤɯ&quot;,3.0,0.5,3.0,1.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.3193]]},{&quot;id&quot;:&quot;DB01&quot;,&quot;name&quot;:&quot;郎溪梅渚镇定埠&quot;,&quot;chain&quot;:&quot;ᴇ → ɑ → ɷ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴇ&quot;,0.53,1.55,0.53,1.55,0.53,1.55,false,0.0],[&quot;S1&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S2&quot;,&quot;ɷ&quot;,3.0,0.5,3.0,0.5,3.0,0.5,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2833]]},{&quot;id&quot;:&quot;DQ01&quot;,&quot;name&quot;:&quot;德清乾元&quot;,&quot;chain&quot;:&quot;a → ɔ → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;ɔ&quot;,3.0,2.0,3.0,2.0,3.0,2.0,false,0.0927],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;DS01&quot;,&quot;name&quot;:&quot;岱山岱西镇&quot;,&quot;chain&quot;:&quot;a → o → ɐu → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ɐu&quot;,2.46,1.25,1.92,2.5,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1143]]},{&quot;id&quot;:&quot;DY01&quot;,&quot;name&quot;:&quot;丹阳&quot;,&quot;chain&quot;:&quot;ɑ → ɑ → ə → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.2599],[&quot;S2&quot;,&quot;ə&quot;,1.7,1.5,1.7,1.5,1.7,1.5,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1165]]},{&quot;id&quot;:&quot;FC01&quot;,&quot;name&quot;:&quot;奉城&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.212],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;FH01&quot;,&quot;name&quot;:&quot;奉化西坞&quot;,&quot;chain&quot;:&quot;a → o → əu → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0822]]},{&quot;id&quot;:&quot;FJ01&quot;,&quot;name&quot;:&quot;枫泾镇&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1472],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0822],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0822]]},{&quot;id&quot;:&quot;FX01&quot;,&quot;name&quot;:&quot;奉贤&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.1299],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2963],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;FY01&quot;,&quot;name&quot;:&quot;富阳城关&quot;,&quot;chain&quot;:&quot;a → o → ʊ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ʊ&quot;,2.7,0.45,2.7,0.45,2.7,0.45,false,0.0616],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0616]]},{&quot;id&quot;:&quot;FY02&quot;,&quot;name&quot;:&quot;富阳东梓关&quot;,&quot;chain&quot;:&quot;a → uo → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.1247],[&quot;S1&quot;,&quot;uo&quot;,3.0,0.5,3.0,0.0,3.0,1.0,true,0.0],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;GQ01&quot;,&quot;name&quot;:&quot;高桥&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.1268],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2945],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;HM01&quot;,&quot;name&quot;:&quot;海门镇沙地话&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2963],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;HM02&quot;,&quot;name&quot;:&quot;海门四甲&quot;,&quot;chain&quot;:&quot;ɑ → yo → ɤ → ɯ&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;yo&quot;,1.5,0.5,0.0,0.0,3.0,1.0,true,0.2643],[&quot;S2&quot;,&quot;ɤ&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;ɯ&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;HN01&quot;,&quot;name&quot;:&quot;海宁硖石&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;HY01&quot;,&quot;name&quot;:&quot;海盐县城&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1453],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;HZ01&quot;,&quot;name&quot;:&quot;杭州城区&quot;,&quot;chain&quot;:&quot;ɛ → a → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɛ&quot;,0.7,2.0,0.7,2.0,0.7,2.0,false,0.1823],[&quot;S1&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.2495],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1333]]},{&quot;id&quot;:&quot;HZ02&quot;,&quot;name&quot;:&quot;湖州市区&quot;,&quot;chain&quot;:&quot;a → ɷ → u → əu&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;ɷ&quot;,3.0,0.5,3.0,0.5,3.0,0.5,false,0.1848],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1978],[&quot;S3&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.1645]]},{&quot;id&quot;:&quot;JD01&quot;,&quot;name&quot;:&quot;嘉定城厢&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1472],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;JJ01&quot;,&quot;name&quot;:&quot;靖江城区&quot;,&quot;chain&quot;:&quot;æ → o → ʌɤ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;æ&quot;,0.88,2.5,0.88,2.5,0.88,2.5,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.151],[&quot;S2&quot;,&quot;ʌɤ&quot;,3.0,1.5,3.0,2.0,3.0,1.0,true,0.136],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.136]]},{&quot;id&quot;:&quot;JS01&quot;,&quot;name&quot;:&quot;嘉善魏塘镇&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;JS02&quot;,&quot;name&quot;:&quot;金山朱泾&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1472],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;JT01&quot;,&quot;name&quot;:&quot;金坛&quot;,&quot;chain&quot;:&quot;a → o → əu → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.2831],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1548],[&quot;S2&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0822]]},{&quot;id&quot;:&quot;JW01&quot;,&quot;name&quot;:&quot;江湾&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1453],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;JX01&quot;,&quot;name&quot;:&quot;嘉兴城区&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1453],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;JY01&quot;,&quot;name&quot;:&quot;江阴城区澄江镇&quot;,&quot;chain&quot;:&quot;æ → o → əɯ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;æ&quot;,0.88,2.5,0.88,2.5,0.88,2.5,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;əɯ&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.0882],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1765]]},{&quot;id&quot;:&quot;KQ01&quot;,&quot;name&quot;:&quot;柯桥&quot;,&quot;chain&quot;:&quot;a → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;KS01&quot;,&quot;name&quot;:&quot;昆山市区玉山镇&quot;,&quot;chain&quot;:&quot;a → o → əu → əu&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.1681],[&quot;S3&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.1681]]},{&quot;id&quot;:&quot;LA01&quot;,&quot;name&quot;:&quot;临安城区&quot;,&quot;chain&quot;:&quot;a → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;LP01&quot;,&quot;name&quot;:&quot;临平五杭&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2675],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;LT01&quot;,&quot;name&quot;:&quot;练塘&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;LY01&quot;,&quot;name&quot;:&quot;溧阳&quot;,&quot;chain&quot;:&quot;ᴀ → o → ʌɯ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ʌɯ&quot;,3.0,1.0,3.0,2.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1027]]},{&quot;id&quot;:&quot;MH01&quot;,&quot;name&quot;:&quot;闵行&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2195],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;NB01&quot;,&quot;name&quot;:&quot;宁波市区&quot;,&quot;chain&quot;:&quot;a → o → əu → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0822]]},{&quot;id&quot;:&quot;NH01&quot;,&quot;name&quot;:&quot;南汇惠南镇&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.1247],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;NT01&quot;,&quot;name&quot;:&quot;南通金沙镇&quot;,&quot;chain&quot;:&quot;æ → o → ɤɯ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;æ&quot;,0.88,2.5,0.88,2.5,0.88,2.5,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1147],[&quot;S2&quot;,&quot;ɤɯ&quot;,3.0,0.5,3.0,1.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;PB01&quot;,&quot;name&quot;:&quot;彭埠镇&quot;,&quot;chain&quot;:&quot;a → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;PH01&quot;,&quot;name&quot;:&quot;平湖城关&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;QD01&quot;,&quot;name&quot;:&quot;启东吕四&quot;,&quot;chain&quot;:&quot;a → o → ɤ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1687],[&quot;S2&quot;,&quot;ɤ&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0787]]},{&quot;id&quot;:&quot;QP01&quot;,&quot;name&quot;:&quot;青浦商榻&quot;,&quot;chain&quot;:&quot;ɒ → ʊ → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɒ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;ʊ&quot;,2.7,0.45,2.7,0.45,2.7,0.45,false,0.1701],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1953],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1953]]},{&quot;id&quot;:&quot;SH01&quot;,&quot;name&quot;:&quot;上海市区&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1472],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;SJ01&quot;,&quot;name&quot;:&quot;松江镇&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2963],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;SJ02&quot;,&quot;name&quot;:&quot;泗泾&quot;,&quot;chain&quot;:&quot;ɑ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1453],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0822],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1489]]},{&quot;id&quot;:&quot;SL01&quot;,&quot;name&quot;:&quot;三林&quot;,&quot;chain&quot;:&quot;ᴀ → ɔ → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;ɔ&quot;,3.0,2.0,3.0,2.0,3.0,2.0,false,0.321],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;SX01&quot;,&quot;name&quot;:&quot;绍兴城区东头埭&quot;,&quot;chain&quot;:&quot;a → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;SY02&quot;,&quot;name&quot;:&quot;上虞百官镇&quot;,&quot;chain&quot;:&quot;ɐ → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɐ&quot;,1.92,2.5,1.92,2.5,1.92,2.5,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.07]]},{&quot;id&quot;:&quot;SZ01&quot;,&quot;name&quot;:&quot;苏州城区&quot;,&quot;chain&quot;:&quot;ɑ → o → əu → əu&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɑ&quot;,3.0,3.0,3.0,3.0,3.0,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1453],[&quot;S2&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.3359],[&quot;S3&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.3359]]},{&quot;id&quot;:&quot;SZ02&quot;,&quot;name&quot;:&quot;嵊州长乐&quot;,&quot;chain&quot;:&quot;a → ɔ → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;ɔ&quot;,3.0,2.0,3.0,2.0,3.0,2.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;SZ03&quot;,&quot;name&quot;:&quot;嵊州崇仁镇&quot;,&quot;chain&quot;:&quot;a → ɤ → ɤ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;ɤ&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ɤ&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;TC01&quot;,&quot;name&quot;:&quot;太仓沙溪&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312]]},{&quot;id&quot;:&quot;TC02&quot;,&quot;name&quot;:&quot;太仓城厢&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312]]},{&quot;id&quot;:&quot;TL01&quot;,&quot;name&quot;:&quot;桐庐镇&quot;,&quot;chain&quot;:&quot;a → uo → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;uo&quot;,3.0,0.5,3.0,0.0,3.0,1.0,true,0.035],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;TX01&quot;,&quot;name&quot;:&quot;桐乡城区&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.3058],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;WJ01&quot;,&quot;name&quot;:&quot;吴江市松陵&quot;,&quot;chain&quot;:&quot;ɔ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɔ&quot;,3.0,2.0,3.0,2.0,3.0,2.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0667],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312]]},{&quot;id&quot;:&quot;WJ02&quot;,&quot;name&quot;:&quot;吴江芦墟&quot;,&quot;chain&quot;:&quot;ɔ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ɔ&quot;,3.0,2.0,3.0,2.0,3.0,2.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0667],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.2312]]},{&quot;id&quot;:&quot;WX01&quot;,&quot;name&quot;:&quot;无锡城区&quot;,&quot;chain&quot;:&quot;a → u → əɯ → əɯ&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.3054],[&quot;S2&quot;,&quot;əɯ&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;əɯ&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.1765]]},{&quot;id&quot;:&quot;WX02&quot;,&quot;name&quot;:&quot;吴县光福镇&quot;,&quot;chain&quot;:&quot;a → o → əu → əu&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.1529],[&quot;S2&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.1681],[&quot;S3&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.1681]]},{&quot;id&quot;:&quot;XC01&quot;,&quot;name&quot;:&quot;新昌城关&quot;,&quot;chain&quot;:&quot;a → o̞ → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o̞&quot;,3.0,1.35,3.0,1.35,3.0,1.35,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;XD01&quot;,&quot;name&quot;:&quot;新登下港&quot;,&quot;chain&quot;:&quot;a → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.1247],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0723],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;XH02&quot;,&quot;name&quot;:&quot;萧山城厢&quot;,&quot;chain&quot;:&quot;a → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;XS01&quot;,&quot;name&quot;:&quot;象山丹城&quot;,&quot;chain&quot;:&quot;a → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;XS03&quot;,&quot;name&quot;:&quot;萧山南阳镇&quot;,&quot;chain&quot;:&quot;a → o → o → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;XZ01&quot;,&quot;name&quot;:&quot;莘庄&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2992],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0667]]},{&quot;id&quot;:&quot;YQ01&quot;,&quot;name&quot;:&quot;於潜&quot;,&quot;chain&quot;:&quot;a → uo → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;uo&quot;,3.0,0.5,3.0,0.0,3.0,1.0,true,0.1174],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;YX01&quot;,&quot;name&quot;:&quot;宜兴&quot;,&quot;chain&quot;:&quot;a → o → ɷ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.2495],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ɷ&quot;,3.0,0.5,3.0,0.5,3.0,0.5,false,0.2661],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0333]]},{&quot;id&quot;:&quot;YX02&quot;,&quot;name&quot;:&quot;鄞县中区&quot;,&quot;chain&quot;:&quot;a → o → əu → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;əu&quot;,2.35,0.75,1.7,1.5,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0822]]},{&quot;id&quot;:&quot;YY01&quot;,&quot;name&quot;:&quot;余姚城关&quot;,&quot;chain&quot;:&quot;a → o → ou → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ou&quot;,3.0,0.5,3.0,1.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.3073]]},{&quot;id&quot;:&quot;ZJ01&quot;,&quot;name&quot;:&quot;诸暨城关&quot;,&quot;chain&quot;:&quot;a → o → ɔi → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ɔi&quot;,1.5,1.0,3.0,2.0,0.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1317]]},{&quot;id&quot;:&quot;ZJ02&quot;,&quot;name&quot;:&quot;诸暨璜山镇&quot;,&quot;chain&quot;:&quot;a → ʊ → ɤɯ → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;ʊ&quot;,2.7,0.45,2.7,0.45,2.7,0.45,false,0.0],[&quot;S2&quot;,&quot;ɤɯ&quot;,3.0,0.5,3.0,1.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0693]]},{&quot;id&quot;:&quot;ZJ03&quot;,&quot;name&quot;:&quot;诸暨直埠镇&quot;,&quot;chain&quot;:&quot;a → o → ou → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;ou&quot;,3.0,0.5,3.0,1.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;ZP01&quot;,&quot;name&quot;:&quot;周浦&quot;,&quot;chain&quot;:&quot;ᴀ → ɔ → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.0],[&quot;S1&quot;,&quot;ɔ&quot;,3.0,2.0,3.0,2.0,3.0,2.0,false,0.321],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;ZR01&quot;,&quot;name&quot;:&quot;真如&quot;,&quot;chain&quot;:&quot;ᴀ → o → u → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;ᴀ&quot;,2.03,3.0,2.03,3.0,2.03,3.0,false,0.1268],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.2139],[&quot;S2&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.0]]},{&quot;id&quot;:&quot;ZS01&quot;,&quot;name&quot;:&quot;舟山定海&quot;,&quot;chain&quot;:&quot;a → o → au → u&quot;,&quot;slots&quot;:[[&quot;S0&quot;,&quot;a&quot;,1.05,3.0,1.05,3.0,1.05,3.0,false,0.0],[&quot;S1&quot;,&quot;o&quot;,3.0,1.0,3.0,1.0,3.0,1.0,false,0.0],[&quot;S2&quot;,&quot;au&quot;,2.025,1.5,1.05,3.0,3.0,0.0,true,0.0],[&quot;S3&quot;,&quot;u&quot;,3.0,0.0,3.0,0.0,3.0,0.0,false,0.1326]]}]};
+      const clusterGrid = root.querySelector(&quot;#mlcc-cluster-grid&quot;);
+      const selection = root.querySelector(&quot;#mlcc-selection&quot;);
+      const pointSelect = root.querySelector(&quot;#mlcc-point-select&quot;);
+      const pointHost = root.querySelector(&quot;#mlcc-point-host&quot;);
+      const solutionList = root.querySelector(&quot;#mlcc-solution-list&quot;);
+      root.querySelector(&quot;#mlcc-s3-count&quot;).textContent = `${DATA.s3Count}/${DATA.points.length}`;
+      const tooltip = root.querySelector(&quot;#mlcc-tooltip&quot;);
+      const pointById = new Map(DATA.points.map((point) =&gt; [point.id, point]));
+      const slotColors = {
+        S0: &quot;var(--viz-series-1)&quot;,
+        S1: &quot;var(--viz-series-2)&quot;,
+        S2: &quot;var(--viz-series-3)&quot;,
+        S3: &quot;var(--viz-series-4)&quot;,
+      };
+      let observers = [];
+
+      function svgElement(name, attributes = {}) {
+        const element = document.createElementNS(&quot;http://www.w3.org/2000/svg&quot;, name);
+        Object.entries(attributes).forEach(([key, value]) =&gt; element.setAttribute(key, value));
+        return element;
+      }
+
+      function clearObservers() {
+        observers.forEach((observer) =&gt; observer.disconnect());
+        observers = [];
+      }
+
+      function showTooltip(event, text) {
+        const bounds = root.getBoundingClientRect();
+        tooltip.textContent = text;
+        tooltip.style.opacity = &quot;1&quot;;
+        const desiredX = event.clientX - bounds.left + 12;
+        const desiredY = event.clientY - bounds.top + 12;
+        const maxX = Math.max(8, bounds.width - tooltip.offsetWidth - 8);
+        tooltip.style.left = `${Math.min(desiredX, maxX)}px`;
+        tooltip.style.top = `${Math.max(8, desiredY)}px`;
+      }
+
+      function hideTooltip() {
+        tooltip.style.opacity = &quot;0&quot;;
+        tooltip.style.left = &quot;0px&quot;;
+        tooltip.style.top = &quot;0px&quot;;
+      }
+
+      function attachTooltip(element, text) {
+        element.addEventListener(&quot;pointerenter&quot;, (event) =&gt; showTooltip(event, text));
+        element.addEventListener(&quot;pointermove&quot;, (event) =&gt; showTooltip(event, text));
+        element.addEventListener(&quot;pointerleave&quot;, hideTooltip);
+      }
+
+      function createScales(width, height) {
+        const margin = { top: 12, right: 18, bottom: 34, left: 64 };
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
+        const x = (value) =&gt; margin.left + ((value + 0.12) / 3.24) * innerWidth;
+        const y = (value) =&gt; margin.top + ((value + 0.12) / 3.24) * innerHeight;
+        return { margin, innerWidth, innerHeight, x, y };
+      }
+
+      function appendText(svg, text, x, y, className, anchor = &quot;middle&quot;) {
+        const node = svgElement(&quot;text&quot;, { x, y, class: className, &quot;text-anchor&quot;: anchor });
+        node.textContent = text;
+        svg.appendChild(node);
+        return node;
+      }
+
+      function drawFrame(svg, width, height, idPrefix) {
+        const scales = createScales(width, height);
+        const { margin, innerWidth, innerHeight, x, y } = scales;
+        const defs = svgElement(&quot;defs&quot;);
+        const marker = svgElement(&quot;marker&quot;, {
+          id: `${idPrefix}-arrow`,
+          viewBox: &quot;0 0 10 10&quot;,
+          refX: &quot;8&quot;,
+          refY: &quot;5&quot;,
+          markerWidth: &quot;5&quot;,
+          markerHeight: &quot;5&quot;,
+          orient: &quot;auto-start-reverse&quot;,
+        });
+        marker.appendChild(svgElement(&quot;path&quot;, { d: &quot;M 0 0 L 10 5 L 0 10 z&quot;, fill: &quot;context-stroke&quot; }));
+        defs.appendChild(marker);
+        svg.appendChild(defs);
+
+        svg.appendChild(svgElement(&quot;rect&quot;, {
+          x: margin.left,
+          y: margin.top,
+          width: innerWidth,
+          height: innerHeight,
+          class: &quot;plot-frame&quot;,
+          &quot;data-chart-frame&quot;: &quot;true&quot;,
+        }));
+
+        const boundary = [[0, 0], [3, 0], [3, 3], [1.05, 3], [0, 0]];
+        svg.appendChild(svgElement(&quot;path&quot;, {
+          d: boundary.map((point, index) =&gt; `${index ? &quot;L&quot; : &quot;M&quot;}${x(point[0])},${y(point[1])}`).join(&quot; &quot;),
+          class: &quot;vowel-frame&quot;,
+        }));
+        [1, 2].forEach((heightValue) =&gt; {
+          svg.appendChild(svgElement(&quot;line&quot;, {
+            x1: x(0.35 * heightValue),
+            y1: y(heightValue),
+            x2: x(3),
+            y2: y(heightValue),
+            class: &quot;grid-line&quot;,
+          }));
+        });
+        svg.appendChild(svgElement(&quot;line&quot;, {
+          x1: x(1.5), y1: y(0), x2: x(2.03), y2: y(3), class: &quot;grid-line&quot;,
+        }));
+
+        [[0, &quot;前&quot;], [1.5, &quot;央&quot;], [3, &quot;后&quot;]].forEach(([value, label]) =&gt; {
+          appendText(svg, label, x(value), height - 15, &quot;tick-label&quot;);
+        });
+        [[0, &quot;高&quot;], [1, &quot;中高&quot;], [2, &quot;中低&quot;], [3, &quot;低&quot;]].forEach(([value, label]) =&gt; {
+          appendText(svg, label, margin.left - 10, y(value) + 4, &quot;tick-label&quot;, &quot;end&quot;);
+        });
+        return { ...scales, markerId: `${idPrefix}-arrow` };
+      }
+
+      function slotPath(point, scales) {
+        return point.slots.map((slot, index) =&gt; `${index ? &quot;L&quot; : &quot;M&quot;}${scales.x(plotX(slot))},${scales.y(plotY(slot))}`).join(&quot; &quot;);
+      }
+
+      function plotX(slot) {
+        return slot[2];
+      }
+
+      function plotY(slot) {
+        return slot[3];
+      }
+
+      function representativeStops(point) {
+        const stops = [];
+        point.slots.forEach((slot) =&gt; {
+          const last = stops[stops.length - 1];
+          const sameAsLast = last
+            &amp;&amp; Math.abs(plotX(last.slot) - plotX(slot)) &lt; 0.0001
+            &amp;&amp; Math.abs(plotY(last.slot) - plotY(slot)) &lt; 0.0001;
+          if (sameAsLast) {
+            last.slotNames.push(slot[0]);
+            last.slots.push(slot);
+          } else {
+            stops.push({ slot, slotNames: [slot[0]], slots: [slot] });
+          }
+        });
+        return stops;
+      }
+
+      function stopLabel(stop) {
+        const valueGroups = [];
+        stop.slots.forEach((slot) =&gt; {
+          const last = valueGroups[valueGroups.length - 1];
+          if (last &amp;&amp; last.value === slot[1]) {
+            last.slotNames.push(slot[0]);
+          } else {
+            valueGroups.push({ value: slot[1], slotNames: [slot[0]] });
+          }
+        });
+        return valueGroups
+          .map((group) =&gt; `${group.slotNames.join(&quot;–&quot;)} ${group.value}`)
+          .join(&quot; → &quot;);
+      }
+
+      function collapsedChain(point) {
+        return representativeStops(point).map(stopLabel).join(&quot; → &quot;);
+      }
+
+      function drawDeviationNode(svg, slot, scales, color) {
+        const x = scales.x(plotX(slot));
+        const y = scales.y(plotY(slot));
+        const size = 3.2;
+        if (slot[8]) {
+          svg.appendChild(svgElement(&quot;path&quot;, {
+            d: `M${x},${y - size} L${x + size},${y} L${x},${y + size} L${x - size},${y} Z`,
+            class: &quot;deviation-node&quot;,
+            fill: color,
+          }));
+        } else {
+          svg.appendChild(svgElement(&quot;circle&quot;, { cx: x, cy: y, r: 3, class: &quot;deviation-node&quot;, fill: color }));
+        }
+      }
+
+      function drawRepresentative(svg, point, stops, scales, roleLabel = &quot;代表方言点&quot;) {
+        for (let index = 0; index &lt; stops.length - 1; index += 1) {
+          const from = stops[index].slot;
+          const to = stops[index + 1].slot;
+          const dx = scales.x(plotX(to)) - scales.x(plotX(from));
+          const dy = scales.y(plotY(to)) - scales.y(plotY(from));
+          if (Math.hypot(dx, dy) &lt; 0.5) continue;
+          svg.appendChild(svgElement(&quot;line&quot;, {
+            x1: scales.x(plotX(from)),
+            y1: scales.y(plotY(from)),
+            x2: scales.x(plotX(to)),
+            y2: scales.y(plotY(to)),
+            class: &quot;medoid-chain&quot;,
+            stroke: &quot;var(--foreground)&quot;,
+            &quot;marker-end&quot;: `url(#${scales.markerId})`,
+          }));
+        }
+        const path = stops.map((stop, index) =&gt; `${index ? &quot;L&quot; : &quot;M&quot;}${scales.x(plotX(stop.slot))},${scales.y(plotY(stop.slot))}`).join(&quot; &quot;);
+        const hit = svgElement(&quot;path&quot;, { d: path, class: &quot;hit-line&quot; });
+        attachTooltip(hit, `${roleLabel} ${point.id} ${point.name}｜${collapsedChain(point)}`);
+        svg.appendChild(hit);
+      }
+
+      function drawNode(svg, slot, scales, color, size, withTooltip = true, label = null) {
+        const [slotName, value, xValue, yValue, , , , , isDiphthong] = slot;
+        const x = scales.x(xValue);
+        const y = scales.y(yValue);
+        let node;
+        if (isDiphthong) {
+          node = svgElement(&quot;path&quot;, {
+            d: `M${x},${y - size} L${x + size},${y} L${x},${y + size} L${x - size},${y} Z`,
+            fill: color,
+          });
+        } else {
+          node = svgElement(&quot;circle&quot;, { cx: x, cy: y, r: size, fill: color });
+        }
+        svg.appendChild(node);
+        if (withTooltip) {
+          const hit = svgElement(&quot;circle&quot;, { cx: x, cy: y, r: 16, class: &quot;node-hit&quot; });
+          attachTooltip(hit, `${label || `${slotName} ${value}`}${isDiphthong ? &quot;（复元音，中点位置）&quot; : &quot;（单元音）&quot;}`);
+          svg.appendChild(hit);
+        }
+      }
+
+      function drawStopNodes(svg, stop, scales, size) {
+        stop.slots.forEach((slot, index) =&gt; {
+          const layerSize = size + (stop.slots.length - index - 1) * 2.5;
+          drawNode(svg, slot, scales, slotColors[slot[0]], layerSize, false);
+        });
+        const x = scales.x(plotX(stop.slot));
+        const y = scales.y(plotY(stop.slot));
+        const hit = svgElement(&quot;circle&quot;, { cx: x, cy: y, r: 16, class: &quot;node-hit&quot; });
+        attachTooltip(hit, stopLabel(stop));
+        svg.appendChild(hit);
+      }
+
+      function drawSlotLabels(svg, stops, scales) {
+        const labels = stops.map((stop) =&gt; {
+          const slot = stop.slot;
+          const px = plotX(slot);
+          const py = plotY(slot);
+          const x = scales.x(px);
+          const y = scales.y(py);
+          const nearRight = px &gt; 2.0;
+          let preferredY = y + 4;
+          if (py &lt; 0.4) preferredY = y + 18;
+          if (py &gt; 2.6) preferredY = y - 9;
+          return { stop, slot, x, nearRight, y: preferredY };
+        });
+        [true, false].forEach((nearRight) =&gt; {
+          const side = labels.filter((label) =&gt; label.nearRight === nearRight).sort((a, b) =&gt; a.y - b.y);
+          for (let index = 1; index &lt; side.length; index += 1) {
+            side[index].y = Math.max(side[index].y, side[index - 1].y + 18);
+          }
+          const maxY = scales.margin.top + scales.innerHeight - 6;
+          if (side.length &amp;&amp; side[side.length - 1].y &gt; maxY) {
+            const shift = side[side.length - 1].y - maxY;
+            side.forEach((label) =&gt; { label.y -= shift; });
+          }
+        });
+        labels.forEach((label) =&gt; {
+          appendText(svg, stopLabel(label.stop), label.x + (label.nearRight ? -9 : 9), label.y, &quot;node-label&quot;, label.nearRight ? &quot;end&quot; : &quot;start&quot;);
+        });
+      }
+
+      function responsivePlot(host, draw, heightRatio = 0.76, minHeight = 220, maxHeight = 330) {
+        const svg = svgElement(&quot;svg&quot;, { class: &quot;ipa-chart&quot;, role: &quot;img&quot; });
+        host.replaceChildren(svg);
+        const redraw = () =&gt; {
+          const width = Math.max(280, host.getBoundingClientRect().width || 280);
+          const height = Math.max(minHeight, Math.min(maxHeight, width * heightRatio));
+          svg.setAttribute(&quot;viewBox&quot;, `0 0 ${width} ${height}`);
+          svg.replaceChildren();
+          draw(svg, width, height);
+        };
+        redraw();
+        const observer = new ResizeObserver(redraw);
+        observer.observe(host);
+        observers.push(observer);
+      }
+
+      function renderClusters() {
+        clearObservers();
+        clusterGrid.replaceChildren();
+        const k = String(DATA.default);
+        selection.textContent = `推荐解：${k} 类｜silhouette ${DATA.scores[k].toFixed(3)}｜每类至少 ${DATA.minSize} 点`;
+        DATA.solutions[k].clusters.forEach((cluster) =&gt; {
+          const panel = document.createElement(&quot;section&quot;);
+          panel.className = &quot;cluster-panel&quot;;
+          const heading = document.createElement(&quot;div&quot;);
+          heading.className = &quot;cluster-heading&quot;;
+          const title = document.createElement(&quot;h3&quot;);
+          title.textContent = `第 ${cluster.cluster} 类 · ${cluster.type_label} · ${cluster.size} 点`;
+          const meta = document.createElement(&quot;span&quot;);
+          meta.className = &quot;cluster-meta text-small&quot;;
+          const medoid = pointById.get(cluster.medoid_id);
+          meta.textContent = `主模式 ${collapsedChain(medoid)}｜代表方言点 ${cluster.medoid_name}`;
+          const subtype = document.createElement(&quot;span&quot;);
+          subtype.className = &quot;cluster-subtypes text-small&quot;;
+          const patternCounts = new Map();
+          cluster.members.forEach((pointId) =&gt; {
+            pointById.get(pointId).slots.forEach((slot) =&gt; {
+              if (!slot[8]) return;
+              const key = `${slot[0]} ${slot[1]}`;
+              patternCounts.set(key, (patternCounts.get(key) || 0) + 1);
+            });
+          });
+          const patterns = [...patternCounts.entries()]
+            .sort((a, b) =&gt; a[0].localeCompare(b[0], &quot;zh-CN&quot;))
+            .map(([pattern, count]) =&gt; `${pattern} ×${count}`);
+          subtype.textContent = `复元音顺序：${patterns.length ? patterns.join(&quot;；&quot;) : &quot;无&quot;}`;
+          heading.append(title, meta, subtype);
+          const host = document.createElement(&quot;div&quot;);
+          host.className = &quot;plot-host&quot;;
+          panel.append(heading, host);
+          clusterGrid.appendChild(panel);
+
+          responsivePlot(host, (svg, width, height) =&gt; {
+            const chartTitle = svgElement(&quot;title&quot;);
+            chartTitle.textContent = `第 ${cluster.cluster} 类 ${cluster.type_label}，${cluster.size} 个方言点；代表方言点 ${cluster.medoid_name}`;
+            svg.appendChild(chartTitle);
+            const chartDesc = svgElement(&quot;desc&quot;);
+            chartDesc.textContent = &quot;实线严格按 S0、S1、S2、S3 连接类内主模式；大号彩色节点表示代表链，小号淡色节点表示类内其他方言。复元音放在两个成分的几何中点。&quot;;
+            svg.appendChild(chartDesc);
+            const scales = drawFrame(svg, width, height, `mlcc-c${k}-${cluster.cluster}`);
+            [0, 1, 2, 3].forEach((slotIndex) =&gt; {
+              const memberSlots = cluster.members.map((pointId) =&gt; pointById.get(pointId).slots[slotIndex]);
+              const slotName = memberSlots[0][0];
+              cluster.members.forEach((pointId) =&gt; {
+                if (pointId === cluster.medoid_id) return;
+                drawDeviationNode(svg, pointById.get(pointId).slots[slotIndex], scales, slotColors[slotName]);
+              });
+            });
+            const stops = representativeStops(medoid);
+            drawRepresentative(svg, medoid, stops, scales, &quot;代表方言点&quot;);
+            stops.forEach((stop) =&gt; {
+              drawStopNodes(svg, stop, scales, 5.5);
+            });
+            drawSlotLabels(svg, stops, scales);
+          });
+        });
+      }
+
+      function renderAlternativeSolutions() {
+        solutionList.replaceChildren();
+        Object.keys(DATA.solutions).sort((a, b) =&gt; Number(a) - Number(b)).forEach((k) =&gt; {
+          const solution = DATA.solutions[k];
+          const row = document.createElement(&quot;div&quot;);
+          row.className = &quot;solution-row&quot;;
+          const label = document.createElement(&quot;strong&quot;);
+          label.textContent = `k=${k}${Number(k) === DATA.default ? &quot; 推荐&quot; : &quot;&quot;}`;
+          const stats = document.createElement(&quot;span&quot;);
+          stats.textContent = `sil. ${DATA.scores[k].toFixed(3)}｜${solution.clusters.map((cluster) =&gt; cluster.size).join(&quot;/&quot;)}`;
+          const patterns = document.createElement(&quot;span&quot;);
+          patterns.className = &quot;solution-patterns&quot;;
+          patterns.textContent = solution.clusters
+            .map((cluster) =&gt; `C${cluster.cluster} ${cluster.medoid_collapsed_chain}`)
+            .join(&quot;；&quot;);
+          row.append(label, stats, patterns);
+          solutionList.appendChild(row);
+        });
+      }
+
+      function renderPoint() {
+        const point = pointById.get(pointSelect.value);
+        root.querySelector(&quot;#mlcc-point-title&quot;).textContent = `逐方言点链位图 · ${point.id} ${point.name}`;
+        responsivePlot(pointHost, (svg, width, height) =&gt; {
+          const chartTitle = svgElement(&quot;title&quot;);
+          chartTitle.textContent = `${point.id} ${point.name}：${collapsedChain(point)}`;
+          svg.appendChild(chartTitle);
+          const chartDesc = svgElement(&quot;desc&quot;);
+          chartDesc.textContent = &quot;该方言点的 S0、S1、S2、S3 点级主体链；实线只表示 slot 顺序，不另画复元音内部轨迹。&quot;;
+          svg.appendChild(chartDesc);
+          const scales = drawFrame(svg, width, height, &quot;mlcc-point&quot;);
+          const stops = representativeStops(point);
+          drawRepresentative(svg, point, stops, scales, &quot;方言点&quot;);
+          stops.forEach((stop) =&gt; {
+            drawStopNodes(svg, stop, scales, 7);
+          });
+          drawSlotLabels(svg, stops, scales);
+        }, 0.48, 280, 430);
+      }
+
+      DATA.points.forEach((point, index) =&gt; {
+        const option = document.createElement(&quot;option&quot;);
+        option.value = point.id;
+        option.textContent = `${point.id} ${point.name}｜${collapsedChain(point)}`;
+        if (index === 0) option.selected = true;
+        pointSelect.appendChild(option);
+      });
+      pointSelect.addEventListener(&quot;change&quot;, () =&gt; {
+        renderClusters();
+        renderPoint();
+      });
+      renderClusters();
+      renderAlternativeSolutions();
+      renderPoint();
+    })();
+  &lt;/script&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>

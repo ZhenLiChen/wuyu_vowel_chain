@@ -1,50 +1,64 @@
 ﻿point_id,point_name,subbranch,hao_value_counts,hao_status,hao_has_monophthong,hao_unmonophthongized,hao_dominant_value,core_nuclei,back_nuclei,core_nucleus_size,back_nucleus_size,subbranch_is_piling,subbranch_not_piling,core_has_low_back_ɑ_or_ɒ,core_lacks_low_back_ɑ_or_ɒ,core_has_open_mid_back_ɔ_or_ɒ,core_lacks_open_mid_back_ɔ_or_ɒ,core_has_ɑ,core_has_ɒ,core_has_ɔ,core_has_o_and_u,core_nucleus_size_ge_6,core_nucleus_size_le_5,back_nucleus_size_ge_4,back_nucleus_size_le_3,piling_and_lacks_low_back,piling_and_has_o_u_and_lacks_low_back
 AJ01,安吉安城,太湖片-苕溪小片,ɔ(98),monophthong_only,True,False,ɔ,"a, e, u, ɔ, ɷ","u, ɔ, ɷ",5,3,False,True,False,True,True,False,False,False,True,False,False,True,False,True,False,False
-BL01,北仑城关,太湖片-甬江小片,"ɔ(88), a(1)",monophthong_only,True,False,ɔ,"a, e, o, u, ɛ","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+BL01,北仑,太湖片-甬江小片,"ɔ(88), a(1)",monophthong_only,True,False,ɔ,"a, e, o, u, ɛ","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 BS01,宝山,太湖片-苏沪嘉小片,ɔ(77),monophthong_only,True,False,ɔ,"o, u, ᴀ, ᴇ","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
-CM01,崇明城关,太湖片-苏沪嘉小片,"ɔ(97), u(1)",monophthong_only,True,False,ɔ,"i, o, u, æ, ɑ, ɔ, ɛ","o, u, ɑ, ɔ",7,4,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
+BZ01,堡镇,太湖片-苏沪嘉小片,ɔ(70),monophthong_only,True,False,ɔ,"i, o, u, ɑ, ɔ, ɛ","o, u, ɑ, ɔ",6,4,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
+CM01,崇明城桥,太湖片-苏沪嘉小片,"ɔ(97), u(1)",monophthong_only,True,False,ɔ,"i, o, u, æ, ɑ, ɔ, ɛ","o, u, ɑ, ɔ",7,4,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
 CS01,川沙浦东,太湖片-苏沪嘉小片,ɔ(87),monophthong_only,True,False,ɔ,"o, u, ɔ, ɛ, ɤ, ᴀ","o, u, ɔ, ɤ",6,4,False,True,False,True,True,False,False,False,True,True,True,False,True,False,False,False
 CS02,常熟虞山镇,太湖片-苏沪嘉小片,ɔ(83),monophthong_only,True,False,ɔ,"i, u, ɛ, ɯ, ᴀ","u, ɯ",5,2,False,True,False,True,False,True,False,False,False,False,False,True,False,True,False,False
 CX01,慈溪逍林,太湖片-临绍小片,ɔ(88),monophthong_only,True,False,ɔ,"a, e, o, u, ø","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+CX02,长兴,太湖片-苕溪小片,ɔ(81),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 CZ01,常州,太湖片-毗陵小片,aɤ(98),diphthong_or_glide_only,False,True,aɤ,"a, o, u","o, u",3,2,True,False,False,True,False,True,False,False,False,True,False,True,False,True,True,True
 DB01,郎溪梅渚镇定埠,太湖片-毗陵小片,ɔ(85),monophthong_only,True,False,ɔ,"a, u, ɑ, ɷ, ᴇ","u, ɑ, ɷ",5,3,True,False,True,False,False,True,True,False,False,False,False,True,False,True,False,False
 DQ01,德清乾元,太湖片-苕溪小片,ɔ(92),monophthong_only,True,False,ɔ,"a, u, ɔ, ᴇ","u, ɔ",4,2,False,True,False,True,True,False,False,False,True,False,False,True,False,True,False,False
+DS01,岱山岱西镇,太湖片-甬江小片,ɔ(86),monophthong_only,True,False,ɔ,"a, e, o, u, ɔ, ɵ, ᴇ","o, u, ɔ",7,3,False,True,False,True,True,False,False,False,True,True,True,False,False,True,False,False
 DY01,丹阳,太湖片-毗陵小片,ɔ(86),monophthong_only,True,False,ɔ,"u, æ, ɑ, ɔ, ə","u, ɑ, ɔ",5,3,True,False,True,False,True,False,True,False,True,False,False,True,False,True,False,False
+FC01,奉城,太湖片-苏沪嘉小片,"ɔ(69), ɯ(1)",monophthong_only,True,False,ɔ,"i, o, u, ɑ, ɔ, ɯ","o, u, ɑ, ɔ, ɯ",6,5,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
 FH01,奉化西坞,太湖片-甬江小片,ɜ(85),monophthong_only,True,False,ɜ,"a, o, u, y, ɛ","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 FJ01,枫泾镇,太湖片-苏沪嘉小片,"ɔ(68), ə(1)",monophthong_only,True,False,ɔ,"o, u, ɔ, ɛ, ɤ, ᴀ","o, u, ɔ, ɤ",6,4,False,True,False,True,True,False,False,False,True,True,True,False,True,False,False,False
 FX01,奉贤,太湖片-苏沪嘉小片,"ɔ(76), ɯ(1)",monophthong_only,True,False,ɔ,"e, i, o, u, ɑ, ɔ, ɯ","o, u, ɑ, ɔ, ɯ",7,5,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
 FY01,富阳城关,太湖片-临绍小片,"ɔ(92), a(1)",monophthong_only,True,False,ɔ,"a, i, o, u, ɛ, ʊ","o, u, ʊ",6,3,False,True,False,True,False,True,False,False,False,True,True,False,False,True,False,False
 FY02,富阳东梓关,太湖片-临绍小片,ɔ(88),monophthong_only,True,False,ɔ,"a, o, u, ɔ, ɛ","o, u, ɔ",5,3,False,True,False,True,True,False,False,False,True,True,False,True,False,True,False,False
+GQ01,高桥,太湖片-苏沪嘉小片,ɔ(70),monophthong_only,True,False,ɔ,"e, o, u, ɔ, ɛ, ᴀ","o, u, ɔ",6,3,False,True,False,True,True,False,False,False,True,True,True,False,False,True,False,False
 HM01,海门镇沙地话,太湖片-苏沪嘉小片,ɔ(90),monophthong_only,True,False,ɔ,"o, u, ɑ, ɛ","o, u, ɑ",4,3,False,True,True,False,False,True,True,False,False,True,False,True,False,True,False,False
-HN01,海宁城关,太湖片-苏沪嘉小片,ɔ(82),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+HM02,海门四甲,太湖片-毗陵小片,ɔ(100),monophthong_only,True,False,ɔ,"o, ɑ, ɛ, ɤ, ɯ","o, ɑ, ɤ, ɯ",5,4,True,False,True,False,False,True,True,False,False,False,False,True,True,False,False,False
+HN01,海宁硖石,太湖片-苏沪嘉小片,ɔ(82),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 HY01,海盐县城,太湖片-苏沪嘉小片,ɔ(81),monophthong_only,True,False,ɔ,"e, o, u, ɑ, ɛ, ɤ","o, u, ɑ, ɤ",6,4,False,True,True,False,False,True,True,False,False,True,True,False,True,False,False,False
 HZ01,杭州城区,太湖片-杭州小片,ɔ(84),monophthong_only,True,False,ɔ,"a, o, u, ɛ","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
-HZ01,湖州市区,太湖片-苕溪小片,ɔ(87),monophthong_only,True,False,ɔ,"a, e, u, ɷ","u, ɷ",4,2,False,True,False,True,False,True,False,False,False,False,False,True,False,True,False,False
-JD01,嘉定城关,太湖片-苏沪嘉小片,ɔ(94),monophthong_only,True,False,ɔ,"o, u, ø, ᴀ, ᴇ","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+HZ02,湖州市区,太湖片-苕溪小片,ɔ(87),monophthong_only,True,False,ɔ,"a, e, u, ɷ","u, ɷ",4,2,False,True,False,True,False,True,False,False,False,False,False,True,False,True,False,False
+JD01,嘉定城厢,太湖片-苏沪嘉小片,ɔ(94),monophthong_only,True,False,ɔ,"o, u, ø, ᴀ, ᴇ","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 JJ01,靖江城区,太湖片-毗陵小片,ɒ(46),monophthong_only,True,False,ɒ,"o, u, æ, ɑ","o, u, ɑ",4,3,True,False,True,False,False,True,True,False,False,True,False,True,False,True,False,False
 JS01,嘉善魏塘镇,太湖片-苏沪嘉小片,ɔ(94),monophthong_only,True,False,ɔ,"a, i, o, u, ɔ, ɤ, ᴇ","o, u, ɔ, ɤ",7,4,False,True,False,True,True,False,False,False,True,True,True,False,True,False,False,False
-JS02,金山,太湖片-苏沪嘉小片,"ɔ(76), ɤ(1)",monophthong_only,True,False,ɔ,"i, o, u, ɑ, ɔ, ɛ, ɤ, ᴀ","o, u, ɑ, ɔ, ɤ",8,5,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
+JS02,金山朱泾,太湖片-苏沪嘉小片,"ɔ(76), ɤ(1)",monophthong_only,True,False,ɔ,"i, o, u, ɑ, ɔ, ɛ, ɤ, ᴀ","o, u, ɑ, ɔ, ɤ",8,5,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
 JT01,金坛,太湖片-毗陵小片,ao(97),diphthong_or_glide_only,False,True,ao,"a, o, u","o, u",3,2,True,False,False,True,False,True,False,False,False,True,False,True,False,True,True,True
+JW01,江湾,太湖片-苏沪嘉小片,ɔ(70),monophthong_only,True,False,ɔ,"o, u, ɑ, ɔ, ɛ, ᴀ","o, u, ɑ, ɔ",6,4,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
 JX01,嘉兴城区,太湖片-苏沪嘉小片,ɔ(87),monophthong_only,True,False,ɔ,"e, o, u, ɑ, ɛ","o, u, ɑ",5,3,False,True,True,False,False,True,True,False,False,True,False,True,False,True,False,False
 JY01,江阴城区澄江镇,太湖片-毗陵小片,ɒ(94),monophthong_only,True,False,ɒ,"a, o, u, æ, ɒ","o, u, ɒ",5,3,True,False,True,False,True,False,False,True,False,True,False,True,False,True,False,False
-KQ01,柯桥城关,太湖片-临绍小片,"ɒ(99), a(9)",monophthong_only,True,False,ɒ,"a, e, o, u, y, ɒ","o, u, ɒ",6,3,False,True,True,False,True,False,False,True,False,True,True,False,False,True,False,False
+KQ01,柯桥,太湖片-临绍小片,"ɒ(99), a(9)",monophthong_only,True,False,ɒ,"a, e, o, u, y, ɒ","o, u, ɒ",6,3,False,True,True,False,True,False,False,True,False,True,True,False,False,True,False,False
 KS01,昆山市区玉山镇,太湖片-苏沪嘉小片,ɔ(82),monophthong_only,True,False,ɔ,"a, o, u, ɛ","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+LA01,临安城区,太湖片-临绍小片,ɔ(91),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 LP01,临平五杭,太湖片-苕溪小片,ɔ(88),monophthong_only,True,False,ɔ,"a, o, u, y, ɛ","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+LT01,练塘,太湖片-苏沪嘉小片,ɔ(70),monophthong_only,True,False,ɔ,"a, o, u, ɔ","o, u, ɔ",4,3,False,True,False,True,True,False,False,False,True,True,False,True,False,True,False,False
 LY01,溧阳,太湖片-毗陵小片,ɑɤ(46),diphthong_or_glide_only,False,True,ɑɤ,"o, u, ɔ, ᴀ","o, u, ɔ",4,3,True,False,False,True,True,False,False,False,True,True,False,True,False,True,True,True
 MH01,闵行,太湖片-苏沪嘉小片,ɔ(77),monophthong_only,True,False,ɔ,"a, o, u, ɑ, ɔ, ɛ, ɤ","o, u, ɑ, ɔ, ɤ",7,5,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
 NB01,宁波市区,太湖片-甬江小片,ɔ(81),monophthong_only,True,False,ɔ,"a, o, u, ø","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 NH01,南汇惠南镇,太湖片-苏沪嘉小片,ɔ(79),monophthong_only,True,False,ɔ,"a, o, u, ɔ, ɛ","o, u, ɔ",5,3,False,True,False,True,True,False,False,False,True,True,False,True,False,True,False,False
 NT01,南通金沙镇,太湖片-毗陵小片,ə(44),monophthong_only,True,False,ə,"o, u, æ, ɑ","o, u, ɑ",4,3,True,False,True,False,False,True,True,False,False,True,False,True,False,True,False,False
+PB01,彭埠镇,太湖片-杭州小片,ɔ(83),monophthong_only,True,False,ɔ,"a, o, u, ø","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 PH01,平湖城关,太湖片-苏沪嘉小片,"ɔ(80), əw(1), a(1)",mixed_mono_and_diphthong,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+QD01,启东吕四,太湖片-毗陵小片,ɔ(92),monophthong_only,True,False,ɔ,"a, o, u, ɛ, ɤ","o, u, ɤ",5,3,True,False,False,True,False,True,False,False,False,True,False,True,False,True,True,True
 QP01,青浦商榻,太湖片-苏沪嘉小片,"ɐ(89), ɒ(1)",monophthong_only,True,False,ɐ,"u, ɐ, ɒ, ɛ, ʊ","u, ɒ, ʊ",5,3,False,True,True,False,True,False,False,True,False,False,False,True,False,True,False,False
 SH01,上海市区,太湖片-苏沪嘉小片,ɔ(97),monophthong_only,True,False,ɔ,"i, o, u, ɔ, ᴀ, ᴇ","o, u, ɔ",6,3,False,True,False,True,True,False,False,False,True,True,True,False,False,True,False,False
 SJ01,松江镇,太湖片-苏沪嘉小片,"ɔ(100), ɯ(1)",monophthong_only,True,False,ɔ,"e, o, u, ɑ, ɔ, ɛ","o, u, ɑ, ɔ",6,4,False,True,True,False,True,False,True,False,True,True,True,False,True,False,False,False
+SJ02,泗泾,太湖片-苏沪嘉小片,"ɔ(69), ɯ(1)",monophthong_only,True,False,ɔ,"i, o, u, ɑ","o, u, ɑ",4,3,False,True,True,False,False,True,True,False,False,True,False,True,False,True,False,False
+SL01,三林,太湖片-苏沪嘉小片,ɔ(70),monophthong_only,True,False,ɔ,"e, o, u, ɔ, ɤ, ᴀ","o, u, ɔ, ɤ",6,4,False,True,False,True,True,False,False,False,True,True,True,False,True,False,False,False
 SX01,绍兴城区东头埭,太湖片-临绍小片,"ɒ(101), a(4), ɤ(1)",monophthong_only,True,False,ɒ,"a, o, u, ɒ","o, u, ɒ",4,3,False,True,True,False,True,False,False,True,False,True,False,True,False,True,False,False
 SY02,上虞百官镇,太湖片-临绍小片,ɔ(94),monophthong_only,True,False,ɔ,"o, u, y, ɐ, ᴇ","o, u",5,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 SZ01,苏州城区,太湖片-苏沪嘉小片,æ(92),monophthong_only,True,False,æ,"i, o, ɑ, ɪ, ᴇ","o, ɑ",5,2,False,True,True,False,False,True,True,False,False,False,False,True,False,True,False,False
 SZ02,嵊州长乐,太湖片-临绍小片,ɒ(84),monophthong_only,True,False,ɒ,"a, i, o, u, ɔ, ᴇ","o, u, ɔ",6,3,False,True,False,True,True,False,False,False,True,True,True,False,False,True,False,False
 SZ03,嵊州崇仁镇,太湖片-临绍小片,ɑɒ(89),diphthong_or_glide_only,False,True,ɑɒ,"a, e, u, ɤ","u, ɤ",4,2,False,True,False,True,False,True,False,False,False,False,False,True,False,True,False,False
 TC01,太仓沙溪,太湖片-苏沪嘉小片,ɔ(97),monophthong_only,True,False,ɔ,"a, i, o, u, ɔ, ɛ","o, u, ɔ",6,3,False,True,False,True,True,False,False,False,True,True,True,False,False,True,False,False
+TC02,太仓城厢,太湖片-苏沪嘉小片,ɔ(103),monophthong_only,True,False,ɔ,"a, o, u, ᴇ","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 TL01,桐庐镇,太湖片-临绍小片,ɔ(82),monophthong_only,True,False,ɔ,"a, u, ɔ, ɛ","u, ɔ",4,2,False,True,False,True,True,False,False,False,True,False,False,True,False,True,False,False
 TX01,桐乡城区,太湖片-苏沪嘉小片,ɔ(90),monophthong_only,True,False,ɔ,"a, o, u, ɛ","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 WJ01,吴江市松陵,太湖片-苏沪嘉小片,ʌ(85),monophthong_only,True,False,ʌ,"a, o, u, ɔ, ɪ, ᴇ","o, u, ɔ",6,3,False,True,False,True,True,False,False,False,True,True,True,False,False,True,False,False
@@ -57,10 +71,13 @@ XH02,萧山城厢,太湖片-临绍小片,"ɒ(91), io(1)",mixed_mono_and_diphthon
 XS01,象山丹城,太湖片-甬江小片,ɔ(91),monophthong_only,True,False,ɔ,"a, o, u, ɛ","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 XS03,萧山南阳镇,太湖片-临绍小片,ɔ(81),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 XZ01,莘庄,太湖片-苏沪嘉小片,ɔ(69),monophthong_only,True,False,ɔ,"e, o, u, ɔ, ɛ, ɤ, ᴀ","o, u, ɔ, ɤ",7,4,False,True,False,True,True,False,False,False,True,True,True,False,True,False,False,False
+YQ01,於潜,太湖片-临绍小片,ɔ(94),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 YX01,宜兴,太湖片-毗陵小片,au(93),diphthong_or_glide_only,False,True,au,"a, o, u, ɛ, ɷ","o, u, ɷ",5,3,True,False,False,True,False,True,False,False,False,True,False,True,False,True,True,True
 YX02,鄞县中区,太湖片-甬江小片,ɔ(84),monophthong_only,True,False,ɔ,"a, e, o, u","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 YY01,余姚城关,太湖片-临绍小片,"ɔ(95), a(1)",monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 ZJ01,诸暨城关,太湖片-临绍小片,ɔ(89),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
 ZJ02,诸暨璜山镇,太湖片-临绍小片,ɔ(91),monophthong_only,True,False,ɔ,"a, u, ʊ","u, ʊ",3,2,False,True,False,True,False,True,False,False,False,False,False,True,False,True,False,False
 ZJ03,诸暨直埠镇,太湖片-临绍小片,ɔ(84),monophthong_only,True,False,ɔ,"a, o, u","o, u",3,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False
+ZP01,周浦,太湖片-苏沪嘉小片,ɔ(70),monophthong_only,True,False,ɔ,"e, o, u, ɔ, ɤ, ᴀ","o, u, ɔ, ɤ",6,4,False,True,False,True,True,False,False,False,True,True,True,False,True,False,False,False
+ZR01,真如,太湖片-苏沪嘉小片,ɔ(70),monophthong_only,True,False,ɔ,"o, u, ɔ, ᴀ","o, u, ɔ",4,3,False,True,False,True,True,False,False,False,True,True,False,True,False,True,False,False
 ZS01,舟山定海,太湖片-甬江小片,ɔ(86),monophthong_only,True,False,ɔ,"a, o, u, ɛ","o, u",4,2,False,True,False,True,False,True,False,False,False,True,False,True,False,True,False,False

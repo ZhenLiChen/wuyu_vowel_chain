@@ -1,38 +1,38 @@
 ﻿chain_slot,start_node,target_node,target_category,token_count,point_count,example_points
-S0,a,a,monophthong,1307,40,AJ01:安吉安城 | BL01:北仑城关 | CX01:慈溪逍林 | CZ01:常州 | DQ01:德清乾元 | FH01:奉化西坞 | FY01:富阳城关 | FY02:富阳东梓关 | HN01:海宁城关 | HZ01:杭州城区
-S0,a,ɑ,monophthong,279,11,CM01:崇明城关 | DB01:郎溪梅渚镇定埠 | DY01:丹阳 | FX01:奉贤 | HM01:海门镇沙地话 | HY01:海盐县城 | JJ01:靖江城区 | JX01:嘉兴城区 | NT01:南通金沙镇 | SJ01:松江镇
-S0,a,o,monophthong,70,42,BS01:宝山 | CM01:崇明城关 | CX01:慈溪逍林 | CZ01:常州 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关 | HM01:海门镇沙地话 | HN01:海宁城关
+S0,a,a,monophthong,1307,40,AJ01:安吉安城 | BL01:北仑 | CX01:慈溪逍林 | CZ01:常州 | DQ01:德清乾元 | FH01:奉化西坞 | FY01:富阳城关 | FY02:富阳东梓关 | HN01:海宁硖石 | HZ01:杭州城区
+S0,a,ɑ,monophthong,279,11,CM01:崇明城桥 | DB01:郎溪梅渚镇定埠 | DY01:丹阳 | FX01:奉贤 | HM01:海门镇沙地话 | HY01:海盐县城 | JJ01:靖江城区 | JX01:嘉兴城区 | NT01:南通金沙镇 | SJ01:松江镇
+S0,a,o,monophthong,70,42,BS01:宝山 | CM01:崇明城桥 | CX01:慈溪逍林 | CZ01:常州 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关 | HM01:海门镇沙地话 | HN01:海宁硖石
 S0,a,ɔ,monophthong,57,3,DQ01:德清乾元 | WJ01:吴江市松陵 | WJ02:吴江芦墟
 S0,a,ɷ,monophthong,5,2,AJ01:安吉安城 | HZ01:湖州市区
 S0,a,u,monophthong,3,2,CS02:常熟虞山镇 | CX01:慈溪逍林
 S0,a,ou,clear_split,1,1,CX01:慈溪逍林
-S1,a,o,monophthong,2185,51,BL01:北仑城关 | BS01:宝山 | CM01:崇明城关 | CS01:川沙浦东 | CX01:慈溪逍林 | CZ01:常州 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关
-S1,a,a,monophthong,468,40,AJ01:安吉安城 | BL01:北仑城关 | CX01:慈溪逍林 | CZ01:常州 | DQ01:德清乾元 | FH01:奉化西坞 | FY01:富阳城关 | FY02:富阳东梓关 | HN01:海宁城关 | HZ01:杭州城区
-S1,a,ɑ,monophthong,230,11,CM01:崇明城关 | DB01:郎溪梅渚镇定埠 | DY01:丹阳 | FX01:奉贤 | HM01:海门镇沙地话 | HY01:海盐县城 | JS02:金山 | JX01:嘉兴城区 | MH01:闵行 | SJ01:松江镇
-S1,a,ɔ,monophthong,164,12,CS01:川沙浦东 | DQ01:德清乾元 | FJ01:枫泾镇 | FX01:奉贤 | JS02:金山 | MH01:闵行 | NH01:南汇惠南镇 | SJ01:松江镇 | SZ02:嵊州长乐 | WJ01:吴江市松陵
+S1,a,o,monophthong,2185,51,BL01:北仑 | BS01:宝山 | CM01:崇明城桥 | CS01:川沙浦东 | CX01:慈溪逍林 | CZ01:常州 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关
+S1,a,a,monophthong,468,40,AJ01:安吉安城 | BL01:北仑 | CX01:慈溪逍林 | CZ01:常州 | DQ01:德清乾元 | FH01:奉化西坞 | FY01:富阳城关 | FY02:富阳东梓关 | HN01:海宁硖石 | HZ01:杭州城区
+S1,a,ɑ,monophthong,230,11,CM01:崇明城桥 | DB01:郎溪梅渚镇定埠 | DY01:丹阳 | FX01:奉贤 | HM01:海门镇沙地话 | HY01:海盐县城 | JS02:金山朱泾 | JX01:嘉兴城区 | MH01:闵行 | SJ01:松江镇
+S1,a,ɔ,monophthong,164,12,CS01:川沙浦东 | DQ01:德清乾元 | FJ01:枫泾镇 | FX01:奉贤 | JS02:金山朱泾 | MH01:闵行 | NH01:南汇惠南镇 | SJ01:松江镇 | SZ02:嵊州长乐 | WJ01:吴江市松陵
 S1,a,u,monophthong,80,6,AJ01:安吉安城 | CS02:常熟虞山镇 | DQ01:德清乾元 | NT01:南通金沙镇 | SJ01:松江镇 | WX01:无锡城区
 S1,a,ɷ,monophthong,74,2,AJ01:安吉安城 | HZ01:湖州市区
 S1,a,ɤ,monophthong,62,2,HY01:海盐县城 | SZ03:嵊州崇仁镇
 S1,a,əɯ,clear_split,15,1,WX01:无锡城区
-S2,ɑ,u,monophthong,2111,49,AJ01:安吉安城 | BS01:宝山 | CM01:崇明城关 | CS01:川沙浦东 | CS02:常熟虞山镇 | DQ01:德清乾元 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关
-S2,ɑ,o,monophthong,903,48,BL01:北仑城关 | CM01:崇明城关 | CS01:川沙浦东 | CX01:慈溪逍林 | CZ01:常州 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关 | FY02:富阳东梓关
+S2,ɑ,u,monophthong,2111,49,AJ01:安吉安城 | BS01:宝山 | CM01:崇明城桥 | CS01:川沙浦东 | CS02:常熟虞山镇 | DQ01:德清乾元 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关
+S2,ɑ,o,monophthong,903,48,BL01:北仑 | CM01:崇明城桥 | CS01:川沙浦东 | CX01:慈溪逍林 | CZ01:常州 | FH01:奉化西坞 | FJ01:枫泾镇 | FX01:奉贤 | FY01:富阳城关 | FY02:富阳东梓关
 S2,ɑ,əu,clear_split,831,13,FH01:奉化西坞 | FJ01:枫泾镇 | HZ01:湖州市区 | JT01:金坛 | KS01:昆山市区玉山镇 | NB01:宁波市区 | QP01:青浦商榻 | SZ01:苏州城区 | TC01:太仓沙溪 | WJ01:吴江市松陵
 S2,ɑ,ɤɯ,clear_split,222,3,CZ01:常州 | NT01:南通金沙镇 | ZJ02:诸暨璜山镇
 S2,ɑ,ou,clear_split,218,3,CX01:慈溪逍林 | YY01:余姚城关 | ZJ03:诸暨直埠镇
 S2,ɑ,ɷ,monophthong,204,4,AJ01:安吉安城 | DB01:郎溪梅渚镇定埠 | HZ01:湖州市区 | YX01:宜兴
 S2,ɑ,əɯ,clear_split,176,2,JY01:江阴城区澄江镇 | WX01:无锡城区
-S2,ɑ,a,monophthong,153,39,AJ01:安吉安城 | BL01:北仑城关 | CX01:慈溪逍林 | CZ01:常州 | DB01:郎溪梅渚镇定埠 | DQ01:德清乾元 | FH01:奉化西坞 | FY01:富阳城关 | FY02:富阳东梓关 | HN01:海宁城关
-S2,ɑ,ɤ,monophthong,99,7,CS01:川沙浦东 | FJ01:枫泾镇 | JS01:嘉善魏塘镇 | JS02:金山 | MH01:闵行 | SZ03:嵊州崇仁镇 | XZ01:莘庄
+S2,ɑ,a,monophthong,153,39,AJ01:安吉安城 | BL01:北仑 | CX01:慈溪逍林 | CZ01:常州 | DB01:郎溪梅渚镇定埠 | DQ01:德清乾元 | FH01:奉化西坞 | FY01:富阳城关 | FY02:富阳东梓关 | HN01:海宁硖石
+S2,ɑ,ɤ,monophthong,99,7,CS01:川沙浦东 | FJ01:枫泾镇 | JS01:嘉善魏塘镇 | JS02:金山朱泾 | MH01:闵行 | SZ03:嵊州崇仁镇 | XZ01:莘庄
 S2,ɑ,ə,monophthong,88,1,DY01:丹阳
 S2,ɑ,ɯ,monophthong,71,2,CS02:常熟虞山镇 | FX01:奉贤
 S2,ɑ,ʌɯ,clear_split,54,1,LY01:溧阳
-S2,ɑ,ɑ,monophthong,50,11,CM01:崇明城关 | DB01:郎溪梅渚镇定埠 | DY01:丹阳 | FX01:奉贤 | HM01:海门镇沙地话 | HY01:海盐县城 | JJ01:靖江城区 | JX01:嘉兴城区 | NT01:南通金沙镇 | SJ01:松江镇
+S2,ɑ,ɑ,monophthong,50,11,CM01:崇明城桥 | DB01:郎溪梅渚镇定埠 | DY01:丹阳 | FX01:奉贤 | HM01:海门镇沙地话 | HY01:海盐县城 | JJ01:靖江城区 | JX01:嘉兴城区 | NT01:南通金沙镇 | SJ01:松江镇
 S2,ɑ,ʌɤ,clear_split,46,1,JJ01:靖江城区
-S2,ɑ,ɔ,monophthong,30,14,DQ01:德清乾元 | DY01:丹阳 | FX01:奉贤 | FY02:富阳东梓关 | JS02:金山 | LY01:溧阳 | NH01:南汇惠南镇 | SJ01:松江镇 | SZ02:嵊州长乐 | TC01:太仓沙溪
+S2,ɑ,ɔ,monophthong,30,14,DQ01:德清乾元 | DY01:丹阳 | FX01:奉贤 | FY02:富阳东梓关 | JS02:金山朱泾 | LY01:溧阳 | NH01:南汇惠南镇 | SJ01:松江镇 | SZ02:嵊州长乐 | TC01:太仓沙溪
 S2,ɑ,ʌ,monophthong,1,1,WX01:无锡城区
-S3,u,u,monophthong,5802,63,AJ01:安吉安城 | BL01:北仑城关 | BS01:宝山 | CM01:崇明城关 | CS01:川沙浦东 | CS02:常熟虞山镇 | CX01:慈溪逍林 | CZ01:常州 | DB01:郎溪梅渚镇定埠 | DQ01:德清乾元
+S3,u,u,monophthong,5802,63,AJ01:安吉安城 | BL01:北仑 | BS01:宝山 | CM01:崇明城桥 | CS01:川沙浦东 | CS02:常熟虞山镇 | CX01:慈溪逍林 | CZ01:常州 | DB01:郎溪梅渚镇定埠 | DQ01:德清乾元
 S3,u,əu,clear_split,676,13,FH01:奉化西坞 | FJ01:枫泾镇 | HZ01:湖州市区 | JT01:金坛 | KS01:昆山市区玉山镇 | NB01:宁波市区 | QP01:青浦商榻 | SZ01:苏州城区 | TC01:太仓沙溪 | WJ01:吴江市松陵
-S3,u,o,monophthong,201,31,FJ01:枫泾镇 | FX01:奉贤 | HN01:海宁城关 | HY01:海盐县城 | HZ01:杭州城区 | JD01:嘉定城关 | JS01:嘉善魏塘镇 | JS02:金山 | KQ01:柯桥城关 | KS01:昆山市区玉山镇
+S3,u,o,monophthong,201,31,FJ01:枫泾镇 | FX01:奉贤 | HN01:海宁硖石 | HY01:海盐县城 | HZ01:杭州城区 | JD01:嘉定城厢 | JS01:嘉善魏塘镇 | JS02:金山朱泾 | KQ01:柯桥 | KS01:昆山市区玉山镇
 S3,u,əɯ,clear_split,129,2,JY01:江阴城区澄江镇 | WX01:无锡城区
 S3,u,ɷ,monophthong,47,4,AJ01:安吉安城 | DB01:郎溪梅渚镇定埠 | HZ01:湖州市区 | YX01:宜兴
 S3,u,ɯ,monophthong,43,1,CS02:常熟虞山镇
@@ -40,6 +40,6 @@ S3,u,ou,clear_split,29,3,CX01:慈溪逍林 | YY01:余姚城关 | ZJ03:诸暨直�
 S3,u,ɤɯ,clear_split,21,3,CZ01:常州 | NT01:南通金沙镇 | ZJ02:诸暨璜山镇
 S3,u,ə,monophthong,13,1,DY01:丹阳
 S3,u,ʌɤ,clear_split,8,1,JJ01:靖江城区
-S3,u,ɔ,monophthong,6,5,AJ01:安吉安城 | CM01:崇明城关 | SH01:上海市区 | SJ01:松江镇 | TC01:太仓沙溪
+S3,u,ɔ,monophthong,6,5,AJ01:安吉安城 | CM01:崇明城桥 | SH01:上海市区 | SJ01:松江镇 | TC01:太仓沙溪
 S3,u,ʌɯ,clear_split,3,1,LY01:溧阳
 S3,u,ʌ,monophthong,1,1,WX01:无锡城区

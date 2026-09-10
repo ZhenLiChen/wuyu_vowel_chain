@@ -6,7 +6,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_RAW = PROJECT_ROOT / "data_raw"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "mainlayer"
 FIGS_DIR.mkdir(parents=True, exist_ok=True)
 
 INPUT_PATH = DATA_RAW / "mainlayer_merge.csv"

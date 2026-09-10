@@ -9,8 +9,8 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DICT = PROJECT_ROOT / "data_dict"
-FIGS_DIR = PROJECT_ROOT / "figs"
-FIGS_DIR.mkdir(exist_ok=True)
+FIGS_DIR = PROJECT_ROOT / "figs" / "overview"
+FIGS_DIR.mkdir(parents=True, exist_ok=True)
 
 SHANGHAI_DENSE_BOUNDS = {
     "lon_min": 120.85,
@@ -36,7 +36,12 @@ def set_chinese_font():
     plt.rcParams["axes.unicode_minus"] = False
 
 
-def plot_map():
+def plot_map(
+    output_filename="wuyu_topography_map.png",
+    legend_loc="upper left",
+    legend_bbox=(0.76, 0.995),
+    legend_style=None,
+):
     coord_file = DATA_DICT / "point_coords_master.csv"
     if not coord_file.exists():
         print("❌ 错误：找不到坐标映射文件。请先填写坐标。")
@@ -110,16 +115,19 @@ def plot_map():
             [path_effects.withStroke(linewidth=2, foreground="white", alpha=0.7)]
         )
 
-    ax.legend(
-        title="吴语小片分类",
-        loc="upper left",
-        bbox_to_anchor=(0.76, 0.995),
-        frameon=True,
-    )
+    legend_kwargs = {
+        "title": "吴语小片分类",
+        "loc": legend_loc,
+        "bbox_to_anchor": legend_bbox,
+        "frameon": True,
+    }
+    if legend_style:
+        legend_kwargs.update(legend_style)
+    ax.legend(**legend_kwargs)
     ax.set_title("吴语太湖片方言采样点地理分布及地形地貌图", fontsize=18, pad=20)
     ax.set_axis_off()
 
-    output_png = FIGS_DIR / "wuyu_topography_map.png"
+    output_png = FIGS_DIR / output_filename
     plt.savefig(output_png, dpi=300, bbox_inches="tight")
     plt.close(fig)
     print(f"✅ 地图已成功生成并保存至: {output_png}")

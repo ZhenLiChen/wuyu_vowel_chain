@@ -27,8 +27,8 @@ set_chinese_font()
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 TARGET_CSV_PATH = PROJECT_ROOT / "data_clean" / "value_type" / "point_rhyme_inventory.csv"
 DATA_DICT = PROJECT_ROOT / "data_dict"
-FIGS_DIR = PROJECT_ROOT / "figs"
-FIGS_DIR.mkdir(exist_ok=True)
+FIGS_DIR = PROJECT_ROOT / "figs" / "vowel_inventory"
+FIGS_DIR.mkdir(parents=True, exist_ok=True)
 
 # === 3. “无损”清洗逻辑 (保留所有音值，包括 i 和 u) ===
 def keep_all_vowels(v_str):

@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>吴语原始数据校对清单</title>
+  <style>
+    :root {
+      --ink: #17221d;
+      --muted: #68746e;
+      --line: #d7ded9;
+      --paper: #ffffff;
+      --ground: #f2f5f1;
+      --green: #176b4b;
+      --green-soft: #e3f1e9;
+      --amber: #9a5d08;
+      --amber-soft: #fff2d6;
+      --red: #a33a32;
+      --shadow: 0 8px 24px rgba(21, 42, 31, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(23, 107, 75, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 107, 75, 0.035) 1px, transparent 1px),
+        var(--ground);
+      background-size: 24px 24px;
+      font-family: "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", sans-serif;
+    }
+
+    button, input, select { font: inherit; }
+
+    .shell {
+      width: min(1480px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .masthead {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle, .generated {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: minmax(250px, 1fr) repeat(3, minmax(120px, 180px));
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+
+    .progress-area, .metric {
+      padding: 18px 20px;
+    }
+
+    .metric {
+      border-left: 1px solid var(--line);
+    }
+
+    .metric-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .metric strong {
+      font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
+      font-size: 24px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .progress-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 11px;
+      font-size: 13px;
+    }
+
+    .progress-heading strong { font-variant-numeric: tabular-nums; }
+
+    .progress-track {
+      height: 12px;
+      overflow: hidden;
+      border: 1px solid #b9c7bf;
+      background: #eef1ee;
+    }
+
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      background: var(--green);
+      transition: width 180ms ease;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 220px 180px auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .field, .button {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .field {
+      width: 100%;
+      padding: 0 12px;
+      outline: none;
+    }
+
+    .field:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(23, 107, 75, 0.12);
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .button {
+      padding: 0 13px;
+      cursor: pointer;
+    }
+
+    .button:hover { border-color: var(--green); }
+    .button.danger:hover { border-color: var(--red); color: var(--red); }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: calc(100vh - 280px);
+      min-height: 360px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 940px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 11px 10px;
+      border-bottom: 1px solid #b8c3bd;
+      background: #edf2ee;
+      color: #46544c;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    thead th.check-head { text-align: center; }
+
+    tbody td {
+      padding: 11px 10px;
+      border-bottom: 1px solid #e5e9e6;
+      vertical-align: middle;
+      font-size: 13px;
+    }
+
+    tbody tr:hover { background: #f8faf8; }
+    tbody tr.complete { background: #f0f8f3; }
+    tbody tr[hidden] { display: none; }
+
+    .point-cell { width: 255px; }
+    .branch-cell { width: 175px; color: #4c5c53; }
+    .stats-cell { width: 205px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .flag-cell { width: 190px; }
+    .check-cell { width: 130px; text-align: center; }
+
+    .point-title {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .point-id {
+      color: var(--green);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-weight: 700;
+    }
+
+    .point-name { font-weight: 650; }
+
+    .file-link {
+      display: block;
+      overflow: hidden;
+      color: var(--muted);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-link:hover { color: var(--green); text-decoration: underline; }
+
+    .badge, .attention-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 100%;
+      overflow: hidden;
+      padding: 3px 7px;
+      border: 1px solid #e4c789;
+      background: var(--amber-soft);
+      color: var(--amber);
+      font-size: 11px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .attention-button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .attention-button:hover,
+    .attention-button[aria-expanded="true"] {
+      border-color: var(--amber);
+      background: #ffe8b5;
+    }
+
+    .attention-button::after {
+      content: "＋";
+      flex: 0 0 auto;
+      font-size: 13px;
+    }
+
+    .attention-button[aria-expanded="true"]::after {
+      content: "－";
+    }
+
+    .badge.ok {
+      border-color: #b8d8c7;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .detail-row td {
+      padding: 0;
+      background: #fffaf0;
+    }
+
+    .attention-detail {
+      padding: 15px 20px 17px;
+      border-bottom: 1px solid #e8d4a6;
+      color: #5f451c;
+    }
+
+    .attention-detail strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .attention-detail ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .attention-detail li + li { margin-top: 4px; }
+
+    .attention-note {
+      margin: 9px 0 0;
+      color: #806c49;
+      font-size: 11px;
+    }
+
+    .reading-stat + .reading-stat { margin-top: 3px; }
+
+    .review-check {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      margin: 0;
+      border: 1.5px solid #9aa79f;
+      background: #fff;
+      cursor: pointer;
+      display: inline-grid;
+      place-content: center;
+    }
+
+    .review-check::before {
+      width: 11px;
+      height: 6px;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      content: "";
+      transform: rotate(-45deg) scale(0);
+      transition: transform 100ms ease;
+    }
+
+    .review-check:checked {
+      border-color: var(--green);
+      background: var(--green);
+    }
+
+    .review-check:checked::before { transform: rotate(-45deg) scale(1); }
+    .review-check:focus-visible { outline: 3px solid rgba(23, 107, 75, 0.2); outline-offset: 2px; }
+
+    .empty {
+      padding: 40px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer-note {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 920px) {
+      .shell { width: min(100% - 20px, 1480px); padding-top: 20px; }
+      h1 { font-size: 29px; }
+      .masthead { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .summary { grid-template-columns: 1fr 1fr 1fr; }
+      .progress-area { grid-column: 1 / -1; }
+      .metric { border-left: 0; border-top: 1px solid var(--line); }
+      .metric + .metric { border-left: 1px solid var(--line); }
+      .toolbar { grid-template-columns: 1fr 1fr; }
+      .actions { grid-column: 1 / -1; justify-content: flex-start; flex-wrap: wrap; }
+      .table-wrap { max-height: calc(100vh - 390px); }
+    }
+
+    @media (max-width: 560px) {
+      .summary { grid-template-columns: 1fr; }
+      .metric, .metric + .metric { border-left: 0; }
+      .toolbar { grid-template-columns: 1fr; }
+      .actions { grid-column: auto; }
+      .button { flex: 1; }
+      .footer-note { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <h1>吴语原始数据校对清单</h1>
+        <p class="subtitle">逐点校对 · 原有韵部读音与新增韵部读音均确认后计为完成</p>
+      </div>
+      <p class="generated" id="generated"></p>
+    </header>
+
+    <section class="summary" aria-label="校对进度">
+      <div class="progress-area">
+        <div class="progress-heading">
+          <span>总校对进度</span>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+      <div class="metric">
+        <span class="metric-label">已完成方言点</span>
+        <strong id="completedFiles">0 / 0</strong>
+      </div>
+      <div class="metric">
+        <span class="metric-label">已勾选项目</span>
+        <strong id="completedChecks">0 / 0</strong>
+      </div>
+      <div class="metric">
+        <span class="metric-label">待关注文件</span>
+        <strong id="warningFiles">0</strong>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="筛选与进度管理">
+      <input class="field" id="search" type="search" placeholder="搜索点号、名称或文件名">
+      <select class="field" id="branchFilter" aria-label="按分片筛选"></select>
+      <select class="field" id="statusFilter" aria-label="按状态筛选">
+        <option value="all">全部状态</option>
+        <option value="pending">只看未完成</option>
+        <option value="complete">只看已完成</option>
+        <option value="warning">只看待关注</option>
+      </select>
+      <div class="actions">
+        <button class="button" id="exportButton" type="button">导出进度</button>
+        <button class="button" id="importButton" type="button">导入进度</button>
+        <button class="button danger" id="resetButton" type="button">清空勾选</button>
+        <input id="importInput" type="file" accept="application/json,.json" hidden>
+      </div>
+    </section>
+
+    <section class="table-wrap" aria-label="方言点校对列表">
+      <table>
+        <thead>
+          <tr>
+            <th class="point-cell">方言点 / 文件</th>
+            <th class="branch-cell">分片</th>
+            <th class="stats-cell">数据概况</th>
+            <th class="flag-cell">自动检查</th>
+            <th class="check-head check-cell">原有韵部读音</th>
+            <th class="check-head check-cell">新增韵部读音</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty" id="empty" hidden>没有符合当前筛选条件的文件。</div>
+    </section>
+
+    <div class="footer-note">
+      <span id="visibleCount"></span>
+      <span id="savedAt">尚未勾选</span>
+    </div>
+  </main>
+
+  <script src="raw_data_checklist_data.js"></script>
+  <script>
+    const FILES = window.RAW_DATA_CHECKLIST_FILES || [];
+    const ASPECTS = ["reading", "newRhymes"];
+    const ASPECT_LABELS = {
+      reading: "原有韵部读音",
+      newRhymes: "新增韵部读音",
+    };
+    const STORAGE_KEY = "wuyu-raw-data-review-v1";
+    const rowsElement = document.querySelector("#rows");
+    const emptyElement = document.querySelector("#empty");
+    const searchElement = document.querySelector("#search");
+    const branchElement = document.querySelector("#branchFilter");
+    const statusElement = document.querySelector("#statusFilter");
+    let state = loadState();
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        return saved && saved.checks ? saved : { checks: {}, updatedAt: null };
+      } catch {
+        return { checks: {}, updatedAt: null };
+      }
+    }
+
+    function saveState() {
+      state.updatedAt = new Date().toISOString();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      updateSummary();
+    }
+
+    function isChecked(path, aspect) {
+      return Boolean(state.checks[path] && state.checks[path][aspect]);
+    }
+
+    function isComplete(path) {
+      return ASPECTS.every(aspect => isChecked(path, aspect));
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function fileRows(file) {
+      const flags = file.flags.length
+        ? `<button class="attention-button" type="button" data-path="${escapeHtml(file.path)}" aria-expanded="false">${file.flags.length} 项待关注</button>`
+        : `<span class="badge ok">结构正常</span>`;
+      const checkboxes = ASPECTS.map(aspect => `
+        <td class="check-cell">
+          <input class="review-check" type="checkbox"
+            data-path="${escapeHtml(file.path)}" data-aspect="${aspect}"
+            aria-label="${escapeHtml(file.name)} ${ASPECT_LABELS[aspect]}"
+            ${isChecked(file.path, aspect) ? "checked" : ""}>
+        </td>
+      `).join("");
+      const rowClass = isComplete(file.path) ? "complete" : "";
+      const detailRow = file.flags.length ? `
+        <tr class="detail-row" data-detail-for="${escapeHtml(file.path)}" hidden>
+          <td colspan="6">
+            <div class="attention-detail">
+              <strong>自动检查发现：</strong>
+              <ul>${file.flags.map(flag => `<li>${escapeHtml(flag)}</li>`).join("")}</ul>
+              <p class="attention-note">这里只提示文件结构或数量上的异常，不判断具体读音是否正确。</p>
+            </div>
+          </td>
+        </tr>
+      ` : "";
+      return `
+        <tr class="data-row ${rowClass}" data-path="${escapeHtml(file.path)}"
+          data-search="${escapeHtml(`${file.id} ${file.name} ${file.path}`.toLowerCase())}"
+          data-branch="${escapeHtml(file.subbranch)}">
+          <td class="point-cell">
+            <div class="point-title">
+              <span class="point-id">${escapeHtml(file.id || "无点号")}</span>
+              <span class="point-name">${escapeHtml(file.name || "未命名")}</span>
+            </div>
+            <a class="file-link" href="${encodeURI(file.path)}" target="_blank" rel="noopener" title="${escapeHtml(file.path)}">${escapeHtml(file.path)}</a>
+          </td>
+          <td class="branch-cell">${escapeHtml(file.subbranch)}</td>
+          <td class="stats-cell">
+            <div class="reading-stat">原有：${file.originalReadingCount}/${file.originalRows}</div>
+            <div class="reading-stat">新增：${file.newRhymeReadingCount}/${file.newRhymeRows}</div>
+          </td>
+          <td class="flag-cell">${flags}</td>
+          ${checkboxes}
+        </tr>
+        ${detailRow}
+      `;
+    }
+
+    function detailRowFor(path) {
+      return [...rowsElement.querySelectorAll(".detail-row")]
+        .find(row => row.dataset.detailFor === path);
+    }
+
+    function renderRows() {
+      rowsElement.innerHTML = FILES.map(fileRows).join("");
+      rowsElement.querySelectorAll(".review-check").forEach(input => {
+        input.addEventListener("change", event => {
+          const { path, aspect } = event.target.dataset;
+          state.checks[path] ||= {};
+          state.checks[path][aspect] = event.target.checked;
+          const row = event.target.closest("tr");
+          row.classList.toggle("complete", isComplete(path));
+          saveState();
+          applyFilters();
+        });
+      });
+      rowsElement.querySelectorAll(".attention-button").forEach(button => {
+        button.addEventListener("click", event => {
+          const path = event.currentTarget.dataset.path;
+          const detail = detailRowFor(path);
+          const opening = detail.hidden;
+          detail.hidden = !opening;
+          event.currentTarget.setAttribute("aria-expanded", String(opening));
+        });
+      });
+      applyFilters();
+    }
+
+    function populateBranches() {
+      const branches = [...new Set(FILES.map(file => file.subbranch))].sort();
+      branchElement.innerHTML = '<option value="all">全部分片</option>' + branches
+        .map(branch => `<option value="${escapeHtml(branch)}">${escapeHtml(branch)}</option>`)
+        .join("");
+    }
+
+    function applyFilters() {
+      const query = searchElement.value.trim().toLowerCase();
+      const branch = branchElement.value;
+      const status = statusElement.value;
+      let visible = 0;
+
+      rowsElement.querySelectorAll("tr.data-row").forEach(row => {
+        const file = FILES.find(item => item.path === row.dataset.path);
+        const complete = isComplete(row.dataset.path);
+        const matchesQuery = !query || row.dataset.search.includes(query);
+        const matchesBranch = branch === "all" || row.dataset.branch === branch;
+        const matchesStatus = status === "all"
+          || (status === "pending" && !complete)
+          || (status === "complete" && complete)
+          || (status === "warning" && file.flags.length > 0);
+        row.hidden = !(matchesQuery && matchesBranch && matchesStatus);
+        if (row.hidden) {
+          const detail = detailRowFor(row.dataset.path);
+          if (detail) detail.hidden = true;
+          const button = row.querySelector(".attention-button");
+          if (button) button.setAttribute("aria-expanded", "false");
+        }
+        if (!row.hidden) visible += 1;
+      });
+
+      emptyElement.hidden = visible !== 0;
+      document.querySelector("#visibleCount").textContent = `当前显示 ${visible} / ${FILES.length} 个文件`;
+    }
+
+    function updateSummary() {
+      const totalChecks = FILES.length * ASPECTS.length;
+      const completedChecks = FILES.reduce((sum, file) => (
+        sum + ASPECTS.filter(aspect => isChecked(file.path, aspect)).length
+      ), 0);
+      const completedFiles = FILES.filter(file => isComplete(file.path)).length;
+      const warningFiles = FILES.filter(file => file.flags.length > 0).length;
+      const percentage = totalChecks ? Math.round(completedChecks / totalChecks * 100) : 0;
+
+      document.querySelector("#progressText").textContent = `${percentage}%`;
+      document.querySelector("#progressFill").style.width = `${percentage}%`;
+      document.querySelector(".progress-track").setAttribute("aria-valuenow", percentage);
+      document.querySelector("#completedFiles").textContent = `${completedFiles} / ${FILES.length}`;
+      document.querySelector("#completedChecks").textContent = `${completedChecks} / ${totalChecks}`;
+      document.querySelector("#warningFiles").textContent = warningFiles;
+      document.querySelector("#savedAt").textContent = state.updatedAt
+        ? `进度已自动保存 · ${new Date(state.updatedAt).toLocaleString("zh-CN")}`
+        : "尚未勾选";
+    }
+
+    function exportProgress() {
+      const payload = {
+        format: "wuyu-raw-data-review-v1",
+        exportedAt: new Date().toISOString(),
+        ...state,
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `raw-data-review-${new Date().toISOString().slice(0, 10)}.json`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
+
+    async function importProgress(file) {
+      const payload = JSON.parse(await file.text());
+      if (payload.format !== "wuyu-raw-data-review-v1" || !payload.checks) {
+        throw new Error("这不是本清单导出的进度文件");
+      }
+      state = { checks: payload.checks, updatedAt: new Date().toISOString() };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      renderRows();
+      updateSummary();
+    }
+
+    searchElement.addEventListener("input", applyFilters);
+    branchElement.addEventListener("change", applyFilters);
+    statusElement.addEventListener("change", applyFilters);
+    document.querySelector("#exportButton").addEventListener("click", exportProgress);
+    document.querySelector("#importButton").addEventListener("click", () => document.querySelector("#importInput").click());
+    document.querySelector("#importInput").addEventListener("change", async event => {
+      try {
+        if (event.target.files[0]) await importProgress(event.target.files[0]);
+      } catch (error) {
+        alert(error.message);
+      } finally {
+        event.target.value = "";
+      }
+    });
+    document.querySelector("#resetButton").addEventListener("click", () => {
+      if (!confirm("确定清空全部校对勾选吗？导出的进度文件不会受影响。")) return;
+      state = { checks: {}, updatedAt: new Date().toISOString() };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      renderRows();
+      updateSummary();
+    });
+
+    document.querySelector("#generated").textContent = window.RAW_DATA_CHECKLIST_GENERATED_AT
+      ? `文件清单生成于 ${new Date(window.RAW_DATA_CHECKLIST_GENERATED_AT).toLocaleString("zh-CN")}`
+      : "未载入文件清单";
+    populateBranches();
+    renderRows();
+    updateSummary();
+  </script>
+</body>
+</html>

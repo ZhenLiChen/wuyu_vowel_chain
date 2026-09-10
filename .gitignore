@@ -1,0 +1,31 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Editors and operating-system files
+.DS_Store
+.idea/
+*.swp
+*~
+
+# Temporary review, render, and inspection artifacts
+.codex_doc_review/
+tmp/
+*.inspect.ndjson
+

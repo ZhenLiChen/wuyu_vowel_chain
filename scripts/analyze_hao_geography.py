@@ -17,7 +17,7 @@ except AttributeError:
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 VALUE_DIR = PROJECT_ROOT / "data_clean" / "value_type"
 DATA_DICT = PROJECT_ROOT / "data_dict"
-FIGS_DIR = PROJECT_ROOT / "figs"
+FIGS_DIR = PROJECT_ROOT / "figs" / "monophthongization"
 
 RELATION_PATH = VALUE_DIR / "point_hao_monophthong_relation.csv"
 COORDS_PATH = DATA_DICT / "point_coords_master.csv"
