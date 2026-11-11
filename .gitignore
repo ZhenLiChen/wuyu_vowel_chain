@@ -29,3 +29,7 @@ node_modules/
 tmp/
 *.inspect.ndjson
 
+# Local R package library and default graphics device output
+.artifacts/nbclust-r/
+/Rplots.pdf
+

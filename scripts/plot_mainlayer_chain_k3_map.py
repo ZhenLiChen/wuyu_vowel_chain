@@ -135,7 +135,8 @@ def add_basemap(ax: plt.Axes) -> str:
             return name
         except Exception as exc:  # pragma: no cover - depends on tile service availability
             errors.append(f"{name}: {exc}")
-    raise RuntimeError("底图下载失败；" + " | ".join(errors))
+    print("底图下载失败，继续输出无底图方言点分布图：" + " | ".join(errors))
+    return "Offline coordinate map"
 
 
 def plot_map() -> None:

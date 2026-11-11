@@ -1,7 +1,7 @@
 ﻿phonetic,split_category,token_count,point_count,slot_counts,source_node,support_rank
-əu,clear_split,1507,13,"S2(831), S3(676)",u,1.0
-əɯ,clear_split,320,2,"S2(176), S3(129), S1(15)",ə,2.0
-ou,clear_split,248,3,"S2(218), S3(29), S0(1)",o,3.0
-ɤɯ,clear_split,243,3,"S2(222), S3(21)",ɤ,4.0
+əu,clear_split,1738,15,"S2(939), S3(799)",u,1.0
+əɯ,clear_split,469,4,"S2(262), S3(187), S1(20)",ə,2.0
+ɤɯ,clear_split,343,4,"S2(315), S3(28)",ɤ,3.0
+ou,clear_split,248,3,"S2(218), S3(29), S0(1)",o,4.0
 ʌɯ,clear_split,57,1,"S2(54), S3(3)",ʌ,5.0
 ʌɤ,clear_split,54,1,"S2(46), S3(8)",ʌ,6.0

@@ -23,48 +23,48 @@ N/T 在低位链段为无效格位，平均时自动按 NaN 跳过。
 - 选择原则：三指标分别排序后求 rank_sum；若最小簇规模 < 3，则额外加罚分，避免过碎切分。
 
 按最大链段强度的规则分类：
-- S0_S1_dominant: 5 点；诸暨城关、诸暨璜山镇、常州、丹阳、金坛
+- S0_S1_dominant: 6 点；诸暨城关、诸暨璜山镇、常州、常州武进、丹阳、金坛
 - S1_S2_dominant: 10 点；柯桥、临安城区、绍兴城区东头埭、上虞百官镇、嵊州崇仁镇、萧山城厢、萧山南阳镇、彭埠镇、启东吕四、象山丹城
-- S2_S3_dominant: 40 点；慈溪逍林、富阳城关、富阳东梓关、嵊州长乐、桐庐镇、新登下港、於潜、余姚城关、杭州城区、郎溪梅渚镇定埠、海门四甲、江阴城区澄江镇、北仑、岱山岱西镇、舟山定海、宝山、堡镇、崇明城桥、川沙浦东、常熟虞山镇、奉城、枫泾镇、奉贤、高桥、海盐县城、江湾、嘉兴城区、昆山市区玉山镇、练塘、闵行、南汇惠南镇、平湖城关、泗泾、三林、吴江市松陵、吴江芦墟、莘庄、周浦、真如、德清乾元
-- S2_S3_plus_S0_S1: 18 点；海门镇沙地话、海宁硖石、嘉定城厢、嘉善魏塘镇、金山朱泾、青浦商榻、上海市区、松江镇、苏州城区、太仓沙溪、太仓城厢、桐乡城区、无锡城区、吴县光福镇、安吉安城、长兴、湖州市区、临平五杭
+- S2_S3_dominant: 38 点；慈溪逍林、富阳城关、富阳东梓关、嵊州长乐、桐庐镇、新登下港、於潜、余姚城关、杭州城区、郎溪梅渚镇定埠、海门四甲、江阴城区澄江镇、北仑、岱山岱西镇、舟山定海、宝山、堡镇、崇明城桥、川沙浦东、奉城、枫泾镇、奉贤、高桥、海盐县城、江湾、嘉兴城区、昆山市区玉山镇、练塘、闵行、南汇惠南镇、平湖城关、三林、吴江市松陵、吴江芦墟、莘庄、周浦、真如、德清乾元
+- S2_S3_plus_S0_S1: 21 点；江阴顾山镇、常熟梅李镇、海门镇沙地话、海宁硖石、嘉定城厢、嘉善魏塘镇、金山朱泾、青浦商榻、上海市区、松江镇、苏州城区、太仓沙溪、太仓城厢、桐乡城区、无锡城区、吴县光福镇、无锡南方泉、安吉安城、长兴、湖州市区、临平五杭
 - overall_low: 9 点；新昌城关、诸暨直埠镇、靖江城区、溧阳、南通金沙镇、宜兴、奉化西坞、宁波市区、鄞县中区
 
 候选方案评分表：
-- kmeans k=3: silhouette=0.5209, CH=99.5895, DB=0.6329, min_cluster=9, rank_score=8.0
-- hier_ward k=3: silhouette=0.5175, CH=94.4571, DB=0.6161, min_cluster=9, rank_score=10.0
-- kmeans k=4: silhouette=0.4327, CH=102.5198, DB=0.8347, min_cluster=9, rank_score=22.0
-- hier_average k=2: silhouette=0.5118, CH=45.0345, DB=0.6012, min_cluster=9, rank_score=25.0
-- kmeans k=5: silhouette=0.4257, CH=87.7907, DB=0.8279, min_cluster=3, rank_score=28.0
-- hier_complete k=3: silhouette=0.4240, CH=79.6219, DB=0.8051, min_cluster=9, rank_score=30.0
-- hier_ward k=4: silhouette=0.4115, CH=99.3758, DB=0.8463, min_cluster=9, rank_score=30.0
-- kmeans k=6: silhouette=0.3997, CH=89.7754, DB=0.8284, min_cluster=3, rank_score=31.0
-- hier_ward k=5: silhouette=0.4183, CH=91.0265, DB=0.8689, min_cluster=9, rank_score=33.0
-- hier_complete k=4: silhouette=0.3518, CH=86.2526, DB=0.7929, min_cluster=9, rank_score=34.0
-- kmeans k=2: silhouette=0.4605, CH=70.0968, DB=0.9761, min_cluster=33, rank_score=37.0
-- hier_ward k=6: silhouette=0.3955, CH=89.0514, DB=0.8611, min_cluster=9, rank_score=37.0
-- hier_complete k=5: silhouette=0.3525, CH=78.1776, DB=0.8190, min_cluster=3, rank_score=38.0
-- hier_ward k=2: silhouette=0.4570, CH=68.1969, DB=0.9883, min_cluster=32, rank_score=41.0
-- hier_complete k=6: silhouette=0.3349, CH=74.8353, DB=0.8306, min_cluster=3, rank_score=46.0
-- hier_complete k=2: silhouette=0.3455, CH=49.4196, DB=1.1096, min_cluster=39, rank_score=56.0
-- hier_average k=4: silhouette=0.4763, CH=69.7696, DB=0.5472, min_cluster=1, rank_score=120.0
-- hier_average k=5: silhouette=0.4263, CH=82.0054, DB=0.6928, min_cluster=1, rank_score=125.0
-- hier_average k=6: silhouette=0.3533, CH=68.1550, DB=0.6472, min_cluster=1, rank_score=138.0
-- hier_average k=3: silhouette=0.3381, CH=24.4557, DB=0.5822, min_cluster=1, rank_score=141.0
+- kmeans k=3: silhouette=0.5135, CH=98.7801, DB=0.6444, min_cluster=9, rank_score=7.0
+- hier_average k=3: silhouette=0.5096, CH=93.6623, DB=0.6300, min_cluster=9, rank_score=11.0
+- hier_ward k=3: silhouette=0.5096, CH=93.6623, DB=0.6300, min_cluster=9, rank_score=11.0
+- kmeans k=4: silhouette=0.4219, CH=101.5022, DB=0.8374, min_cluster=9, rank_score=19.0
+- hier_average k=2: silhouette=0.5114, CH=45.3062, DB=0.6008, min_cluster=9, rank_score=22.0
+- hier_average k=5: silhouette=0.4291, CH=79.2131, DB=0.7017, min_cluster=3, rank_score=26.0
+- kmeans k=5: silhouette=0.4170, CH=92.9995, DB=0.8215, min_cluster=7, rank_score=27.0
+- hier_average k=4: silhouette=0.4408, CH=75.1186, DB=0.7267, min_cluster=3, rank_score=28.0
+- hier_ward k=4: silhouette=0.4019, CH=97.7136, DB=0.8440, min_cluster=9, rank_score=28.0
+- kmeans k=6: silhouette=0.4080, CH=95.9903, DB=0.8518, min_cluster=9, rank_score=29.0
+- hier_complete k=4: silhouette=0.3995, CH=95.7256, DB=0.8496, min_cluster=10, rank_score=32.0
+- hier_ward k=5: silhouette=0.4195, CH=92.7491, DB=0.8625, min_cluster=9, rank_score=34.0
+- hier_ward k=6: silhouette=0.4037, CH=92.8897, DB=0.8525, min_cluster=9, rank_score=36.0
+- kmeans k=2: silhouette=0.4520, CH=69.0203, DB=0.9959, min_cluster=34, rank_score=38.0
+- hier_complete k=5: silhouette=0.4170, CH=90.5609, DB=0.8671, min_cluster=10, rank_score=38.0
+- hier_average k=6: silhouette=0.3527, CH=73.2383, DB=0.6970, min_cluster=3, rank_score=39.0
+- hier_ward k=2: silhouette=0.4483, CH=67.0986, DB=1.0088, min_cluster=33, rank_score=42.0
+- hier_complete k=3: silhouette=0.3639, CH=67.2817, DB=0.8780, min_cluster=10, rank_score=50.0
+- hier_complete k=6: silhouette=0.3631, CH=76.5579, DB=1.1104, min_cluster=5, rank_score=50.0
+- hier_complete k=2: silhouette=0.2672, CH=38.3761, DB=1.1246, min_cluster=27, rank_score=60.0
 
 kmeans 单独比较：
-- k=3: silhouette=0.5209, CH=99.5895, DB=0.6329, min_cluster=9, rank_score=8.0
-- k=4: silhouette=0.4327, CH=102.5198, DB=0.8347, min_cluster=9, rank_score=22.0
-- k=5: silhouette=0.4257, CH=87.7907, DB=0.8279, min_cluster=3, rank_score=28.0
-- k=6: silhouette=0.3997, CH=89.7754, DB=0.8284, min_cluster=3, rank_score=31.0
-- k=2: silhouette=0.4605, CH=70.0968, DB=0.9761, min_cluster=33, rank_score=37.0
+- k=3: silhouette=0.5135, CH=98.7801, DB=0.6444, min_cluster=9, rank_score=7.0
+- k=4: silhouette=0.4219, CH=101.5022, DB=0.8374, min_cluster=9, rank_score=19.0
+- k=5: silhouette=0.4170, CH=92.9995, DB=0.8215, min_cluster=7, rank_score=27.0
+- k=6: silhouette=0.4080, CH=95.9903, DB=0.8518, min_cluster=9, rank_score=29.0
+- k=2: silhouette=0.4520, CH=69.0203, DB=0.9959, min_cluster=34, rank_score=38.0
 
 最优方案：kmeans / k=3
-最优指标：silhouette=0.5209, CH=99.5895, DB=0.6329
+最优指标：silhouette=0.5135, CH=98.7801, DB=0.6444
 注意：虽然 C1 与 C3 都会被自动命名为 S2_S3_dominant，但它们不是同一个簇。
 C1 是弱后段型：三段整体都偏低，只是 S2-S3 相对最高。
 C3 是强后段型：S2-S3 显著升高，和 C1 不在同一强度等级。
 
 最优方案聚类摘要：
-- C1 S2_S3_dominant: 25 点；中心=(0.091, 0.037, 0.141)；太湖片-毗陵小片(10) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1) | 太湖片-苏沪嘉小片(1)
+- C1 S2_S3_dominant: 26 点；中心=(0.094, 0.036, 0.139)；太湖片-毗陵小片(11) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1) | 太湖片-苏沪嘉小片(1)
 - C2 S1_S2_dominant: 9 点；中心=(0.100, 0.553, 0.112)；太湖片-临绍小片(7) | 太湖片-杭州小片(1) | 太湖片-甬江小片(1)
-- C3 S2_S3_dominant: 48 点；中心=(0.194, 0.063, 0.552)；太湖片-苏沪嘉小片(37) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(5) | 太湖片-毗陵小片(1)
+- C3 S2_S3_dominant: 49 点；中心=(0.197, 0.067, 0.552)；太湖片-苏沪嘉小片(37) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(5) | 太湖片-毗陵小片(2)

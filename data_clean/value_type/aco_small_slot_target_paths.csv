@@ -1,44 +1,45 @@
 ﻿chain_slot,start_node,target_node,target_category,token_count,point_count,reached,best_path,path_cost,pheromone_weighted_score
-S3,u,u,monophthong,5802,63,True,u,0.0,0.0
-S1,a,o,monophthong,2185,51,True,a > ɑ > ɔ > o,1.2798810804467309,1.2798810791668496
-S2,ɑ,u,monophthong,2111,49,True,ɑ > ɔ > o > ɷ > u,1.4267916309709716,1.4267916295441798
-S0,a,a,monophthong,1307,40,True,a,0.0,0.0
-S2,ɑ,o,monophthong,903,48,True,ɑ > ɔ > o,0.8116052183777652,0.8116052175661599
-S2,ɑ,əu,clear_split,831,13,True,ɑ > ɔ > o > ɷ > u > əu,1.7216007912763152,1.721600789554714
-S3,u,əu,clear_split,676,13,True,u > əu,0.2948091603053435,0.2948091600105343
-S1,a,a,monophthong,468,40,True,a,0.0,0.0
-S0,a,ɑ,monophthong,279,11,True,a > ɑ,0.4682758620689656,0.4682758616006897
-S1,a,ɑ,monophthong,230,11,True,a > ɑ,0.4682758620689656,0.4682758616006897
-S2,ɑ,ɤɯ,clear_split,222,3,True,ɑ > ɔ > o > ɤ > ɤɯ,1.5998135922823415,1.599813590682528
+S3,u,u,monophthong,7334,82,True,u,0.0,0.0
+S2,ɑ,u,monophthong,2745,66,True,ɑ > ɔ > o > ɷ > u,1.4267916309709716,1.4267916295441798
+S1,a,o,monophthong,2705,67,True,a > ɑ > ɔ > o,1.2798810804467309,1.2798810791668496
+S0,a,a,monophthong,1621,52,True,a,0.0,0.0
+S2,ɑ,o,monophthong,1078,60,True,ɑ > ɔ > o,0.8116052183777652,0.8116052175661599
+S2,ɑ,əu,clear_split,939,15,True,ɑ > ɔ > o > ɷ > u > əu,1.7216007912763152,1.721600789554714
+S3,u,əu,clear_split,799,15,True,u > əu,0.2948091603053435,0.2948091600105343
+S1,a,a,monophthong,581,52,True,a,0.0,0.0
+S0,a,ɑ,monophthong,391,15,True,a > ɑ,0.4682758620689656,0.4682758616006897
+S2,ɑ,ɤɯ,clear_split,315,4,True,ɑ > ɔ > o > ɤ > ɤɯ,1.5998135922823415,1.599813590682528
+S2,ɑ,ɤ,monophthong,298,11,True,ɑ > ɔ > o > ɤ,1.2513520538208032,1.251352052569451
+S1,a,ɑ,monophthong,282,15,True,a > ɑ,0.4682758620689656,0.4682758616006897
+S2,ɑ,əɯ,clear_split,262,4,True,ɑ > ɔ > ə > əɯ,1.4211836101266995,1.421183608705516
+S3,u,o,monophthong,246,42,False,,,
 S2,ɑ,ou,clear_split,218,3,True,ɑ > ɔ > o > ou,1.1560088881025359,1.1560088869465268
 S2,ɑ,ɷ,monophthong,204,4,True,ɑ > ɔ > o > ɷ,1.1110169830836476,1.1110169819726305
-S3,u,o,monophthong,201,31,False,,,
-S2,ɑ,əɯ,clear_split,176,2,True,ɑ > ɔ > ə > əɯ,1.4211836101266995,1.421183608705516
-S1,a,ɔ,monophthong,164,12,True,a > ɑ > ɔ,0.8977880571909169,0.8977880562931287
-S2,ɑ,a,monophthong,153,39,False,,,
-S3,u,əɯ,clear_split,129,2,False,,,
-S2,ɑ,ɤ,monophthong,99,7,True,ɑ > ɔ > o > ɤ,1.2513520538208032,1.251352052569451
+S2,ɑ,a,monophthong,190,50,False,,,
+S1,a,ɔ,monophthong,187,19,True,a > ɑ > ɔ,0.8977880571909169,0.8977880562931287
+S3,u,əɯ,clear_split,187,4,False,,,
+S3,u,ɯ,monophthong,155,2,False,,,
+S1,a,u,monophthong,126,8,True,a > ɑ > ɔ > o > ɷ > u,1.8950674930399374,1.8950674911448695
+S0,a,o,monophthong,95,56,True,a > ɑ > ɔ > o,1.2798810804467309,1.2798810791668496
 S2,ɑ,ə,monophthong,88,1,True,ɑ > ɔ > ə,1.072722071665161,1.0727220705924392
-S1,a,u,monophthong,80,6,True,a > ɑ > ɔ > o > ɷ > u,1.8950674930399374,1.8950674911448695
+S1,a,ɤ,monophthong,80,3,True,a > ɑ > ɔ > o > ɤ,1.719627915889769,1.7196279141701407
 S1,a,ɷ,monophthong,74,2,True,a > ɑ > ɔ > o > ɷ,1.5792928451526134,1.5792928435733202
-S2,ɑ,ɯ,monophthong,71,2,True,ɑ > ɔ > o > ɤ > ɯ,1.703791078211047,1.703791076507256
-S0,a,o,monophthong,70,42,True,a > ɑ > ɔ > o,1.2798810804467309,1.2798810791668496
-S1,a,ɤ,monophthong,62,2,True,a > ɑ > ɔ > o > ɤ,1.719627915889769,1.7196279141701407
+S2,ɑ,ɑ,monophthong,60,14,True,ɑ,0.0,0.0
+S2,ɑ,ɯ,monophthong,60,3,True,ɑ > ɔ > o > ɤ > ɯ,1.703791078211047,1.703791076507256
 S0,a,ɔ,monophthong,57,3,True,a > ɑ > ɔ,0.8977880571909169,0.8977880562931287
 S2,ɑ,ʌɯ,clear_split,54,1,True,ɑ > ɔ > ʌ > ʌɯ,1.2374972098396393,1.237497208602142
-S2,ɑ,ɑ,monophthong,50,11,True,ɑ,0.0,0.0
 S3,u,ɷ,monophthong,47,4,False,,,
 S2,ɑ,ʌɤ,clear_split,46,1,True,ɑ > ɔ > ʌ > ʌɤ,1.220451175339282,1.2204511741188309
-S3,u,ɯ,monophthong,43,1,False,,,
-S2,ɑ,ɔ,monophthong,30,14,True,ɑ > ɔ,0.42951219512195127,0.42951219469243906
+S2,ɑ,ɔ,monophthong,35,18,True,ɑ > ɔ,0.42951219512195127,0.42951219469243906
 S3,u,ou,clear_split,29,3,False,,,
-S3,u,ɤɯ,clear_split,21,3,False,,,
-S1,a,əɯ,clear_split,15,1,True,a > ɑ > ɔ > ə > əɯ,1.8894594721956652,1.8894594703062058
+S3,u,ɤɯ,clear_split,28,4,False,,,
+S3,u,ɤ,monophthong,24,2,False,,,
+S1,a,əɯ,clear_split,20,2,True,a > ɑ > ɔ > ə > əɯ,1.8894594721956652,1.8894594703062058
 S3,u,ə,monophthong,13,1,False,,,
 S3,u,ʌɤ,clear_split,8,1,False,,,
 S3,u,ɔ,monophthong,6,5,False,,,
 S0,a,ɷ,monophthong,5,2,True,a > ɑ > ɔ > o > ɷ,1.5792928451526134,1.5792928435733202
-S0,a,u,monophthong,3,2,True,a > ɑ > ɔ > o > ɷ > u,1.8950674930399374,1.8950674911448695
+S0,a,u,monophthong,4,2,True,a > ɑ > ɔ > o > ɷ > u,1.8950674930399374,1.8950674911448695
 S3,u,ʌɯ,clear_split,3,1,False,,,
 S0,a,ou,clear_split,1,1,True,a > ɑ > ɔ > o > ou,1.6242847501715016,1.6242847485472165
 S2,ɑ,ʌ,monophthong,1,1,True,ɑ > ɔ > ʌ,0.8408635464733026,0.840863545632439

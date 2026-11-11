@@ -6,7 +6,7 @@
 CSV 出发，统一清洗读音与文白层次，构建 `S0–S5` 链位，计算声组条件下的合并率，
 并进一步完成主体层聚类、音值库藏、裂化/单音化、地理分布和 ACO 模拟。
 
-当前正式语料包含 **82 个方言点**；核心清洗母表约 **5 万行**。仓库同时保留脚本、
+当前正式语料包含 **84 个方言点**；核心清洗母表约 **7.1 万行**。仓库同时保留脚本、
 派生表、说明文档和一套按研究主题整理的静态图，便于复核现有结论或重跑单个模块。
 
 ## 研究对象与链位
@@ -52,7 +52,7 @@ data_clean/wuyu_lexeme.csv
 ```text
 .
 ├── data_raw/
-│   ├── points/                 # 正式纳入主流程的 82 点原始表
+│   ├── points/                 # 正式纳入主流程的 84 点原始表
 │   ├── pending/                # 尚待核定、不会被主流程读取的候选材料
 │   └── raw_data_checklist.*    # 原始材料核查页及其生成数据
 ├── data_clean/
@@ -186,7 +186,8 @@ python scripts/plot_dialect_map.py
 
 ## 文档导航
 
-- [当前 82 点清单](docs/current_82_point_inventory.md)
+- [当前 84 点清单](docs/current_84_point_inventory.md)
+- [2026-11-11 数据与分析更新](docs/update_2026-11-11.md)
 - [merge rate 方法与字段](docs/merge_rate_methodology.md)
 - [merge rate 当前结果](docs/merge_rate_results.md)
 - [主体层链聚类](docs/mainlayer_chain_clustering.md)

@@ -1,5 +1,9 @@
 # S0–S3 主体层链形聚类：算法与当前结果
 
+> 本文中的定量叙述来自 82 点版本。当前 84 点聚类已重跑，数据见
+> `data_clean/value_type/mainlayer_chain_clusters.csv`，最新地图见
+> `figs/mainlayer/mainlayer_chain_k3_map.png`；最新 k=3 分组为 18、23、43 点。
+
 本文档记录 `佳皆—麻—歌戈—模` 四个链位的点级主体层聚类口径、当前三类结果和制图规则。对应脚本为 `scripts/cluster_mainlayer_chains.py`。
 
 ## 1. 数据与分析单位

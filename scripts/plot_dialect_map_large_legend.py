@@ -7,11 +7,11 @@ if __name__ == "__main__":
     plot_map(
         output_filename="wuyu_topography_map_large_legend.png",
         legend_loc="lower left",
-        legend_bbox=(0.018, 0.018),
+        legend_bbox=(0.018, 0.008),
         legend_style={
-            "fontsize": 13.5,
-            "title_fontsize": 16,
-            "markerscale": 1.55,
+            "fontsize": 16,
+            "title_fontsize": 18,
+            "markerscale": 1.8,
             "framealpha": 0.58,
             "facecolor": "white",
             "edgecolor": "#4B5563",

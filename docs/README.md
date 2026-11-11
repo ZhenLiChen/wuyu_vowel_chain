@@ -2,10 +2,11 @@
 
 ## 数据与方法
 
-- `current_82_point_inventory.md`：当前正式方言点清单。
+- `current_84_point_inventory.md`：当前正式方言点清单。
 - `point_naming.md`：点号、地点名与原始文件命名规范。
 - `merge_rate_methodology.md`：分布、重叠率、总体值和 N/T 特殊口径。
 - `merge_rate_results.md`：由脚本自动更新的当前数值结果。
+- `update_2026-11-11.md`：84 点数据更新、泗泾排除、图表重算与 R/NbClust 结果记录。
 - `onset_inventory_and_merge_interpretation.md`：库藏覆盖率与链位合并率的区别。
 
 ## 主体层与结构类型

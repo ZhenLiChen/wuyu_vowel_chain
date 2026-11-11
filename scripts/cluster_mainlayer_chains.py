@@ -475,8 +475,13 @@ def write_outputs(
 def main() -> None:
     df = pd.read_csv(INPUT_PATH, dtype=str).fillna("")
     df = df[df["onset_class"].isin(ONSET_ORDER)].copy()
-    if len(df) != 410 or df["point_id"].nunique() != 82:
-        raise ValueError("预期 82 个方言点 × 5 类声母，共 410 行。")
+    expected_points = df["point_id"].nunique()
+    expected_rows = expected_points * len(ONSET_ORDER)
+    if len(df) != expected_rows:
+        raise ValueError(
+            f"预期每个方言点各有 {len(ONSET_ORDER)} 类声母记录；"
+            f"当前 {expected_points} 点、{len(df)} 行。"
+        )
 
     points = build_point_chains(df)
     matrix = distance_matrix(points)

@@ -1,3 +1,3 @@
 ﻿term,term_label,coefficient,std_error_approx,choice_multiplier,model,ridge_lambda
-in_core_nucleus,S0-S3已有该元音,1.7061919255488094,0.04850362066251678,5.507946818767405,ridge_conditional_softmax,1.0
-phonetic_fit_to_au_z,与*au单音化方向相近,1.908680030149581,0.021238617293437973,6.744180805354615,ridge_conditional_softmax,1.0
+in_core_nucleus,S0-S3已有该元音,1.798730503509023,0.04781716517697966,6.041972330993483,ridge_conditional_softmax,1.0
+phonetic_fit_to_au_z,与*au单音化方向相近,1.903395628053027,0.02130487525329778,6.708635841822939,ridge_conditional_softmax,1.0

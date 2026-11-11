@@ -13,6 +13,9 @@ raw_files = sorted(raw_dir.glob("*.csv"))
 if raw_files:
     df_list = [pd.read_csv(p) for p in raw_files]
     df = pd.concat(df_list, ignore_index=True)
+    for col in ["point_id", "point_name", "subbranch"]:
+        if col in df.columns:
+            df[col] = df[col].astype("string").str.strip()
 else:
     raw_path = DATA_RAW / "wuyu_raw.csv"
     df = pd.read_csv(raw_path)
@@ -27,6 +30,7 @@ df = df.rename(columns={"汉字": "char", "读音": "phonetic_raw"})
 known_raw_columns = {
     "point_id", "point_name", "subbranch", "lat", "lon",
     "韵", "声组", "char", "phonetic_raw", "note",
+    "曹晓燕2004/本人记音",
 }
 fallback_phonetic_columns = [col for col in df.columns if col not in known_raw_columns]
 

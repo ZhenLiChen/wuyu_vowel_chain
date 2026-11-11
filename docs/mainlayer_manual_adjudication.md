@@ -12,7 +12,7 @@
 
 - `clean_wenzhou.py` 已补入项目中常见的 IPA 元音字符，`ɷ / ɑ / ᴀ / ᴇ / ʮ / ɥ` 不再漏抽。
 - `type_phonetic_chains.csv` 与 `phonetic_evolution_chains.csv` 当前由同一脚本同步更新。
-- `mainlayer_merge.csv` 已按当前 82 个方言点重建。
+- `mainlayer_merge.csv` 已按当前 84 个方言点重建。
 
 ## 主体层合并描述性统计
 

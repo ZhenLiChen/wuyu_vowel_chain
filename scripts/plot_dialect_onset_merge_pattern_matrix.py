@@ -178,6 +178,7 @@ def draw_matrix(profiles: pd.DataFrame) -> None:
     FIG_DIR.mkdir(parents=True, exist_ok=True)
 
     n_profiles = len(profiles)
+    n_points = int(profiles["point_count"].sum())
     figure_width = max(18.5, 0.78 * n_profiles + 2.8)
     fig = plt.figure(figsize=(figure_width, 9.5), facecolor="white")
     ax = fig.add_axes([0.055, 0.45, 0.925, 0.30])
@@ -311,7 +312,7 @@ def draw_matrix(profiles: pd.DataFrame) -> None:
         0.515,
         0.938,
         (
-            f"统计口径与 sunburst 一致：82 个方言点 × 5 个声母组；"
+            f"统计口径与 sunburst 一致：{n_points} 个方言点 × 5 个声母组；"
             f"五组详细模式完全一致的方言合并为一列，共 {n_profiles} 套组合；"
             "排序：合并声组数↓ → 同型点数↓ → 全异声组数↑，含 13* 者置末"
         ),

@@ -18,7 +18,7 @@
 
 ## 当前推荐入口
 
-- `overview/wuyu_topography_map.png`：82 点地形与小片分布。
+- `overview/wuyu_topography_map.png`：84 点地形与小片分布（当前排除泗泾，含无锡南方泉）。
 - `overview/sankey_evolution_profiles.html`：点级演变画像交互图。
 - `mainlayer/mainlayer_chain_clusters.html`：主体层聚类交互图。
 - `mainlayer/mainlayer_chain_k3_map.png`：推荐三类的地理分布。

@@ -10,21 +10,21 @@
 3. 中途还发生过文件覆盖：merge_strength_k3_map.png 曾被新输出误占用，现已恢复原图。
 
 连续合并强度聚类：使用 avg_S0_S1, avg_S1_S2, avg_S2_S3 三个均值，采用 NbClust 风格自动选优，当前最优为 kmeans / k=3。
-- 瓦片底图版：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_nbclust_tile_map.png
-- 地图：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_nbclust_plain_map.png
-- 散点：/Users/kleinchan/wuyu_vowel_chain/figs/merge_strength_stage_scatter.png
+- 瓦片底图版：当前环境抓取失败；原因：Esri.WorldTopoMap: ConnectionError: HTTPSConnectionPool(host='server.arcgisonline.com', port=443): Max retries exceeded with url: /ArcGIS/rest/services/World_Topo_Map/MapServer/tile/8/103/212 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x176cd8320>: Failed to resolve 'server.arcgisonline.com' ([Errno 8] nodename nor servname provided, or not known)")) ; OpenStreetMap.Mapnik: ConnectionError: HTTPSConnectionPool(host='tile.openstreetmap.org', port=443): Max retries exceeded with url: /8/212/103.png (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x176d4b170>: Failed to resolve 'tile.openstreetmap.org' ([Errno 8] nodename nor servname provided, or not known)")) ; CartoDB.Positron: ConnectionError: HTTPSConnectionPool(host='a.basemaps.cartocdn.com', port=443): Max retries exceeded with url: /light_all/8/212/103.png (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x176d4adb0>: Failed to resolve 'a.basemaps.cartocdn.com' ([Errno 8] nodename nor servname provided, or not known)"))
+- 地图：/Users/kleinchan/wuyu_vowel_chain/figs/merge_analysis/merge_strength_nbclust_plain_map.png
+- 散点：/Users/kleinchan/wuyu_vowel_chain/figs/merge_analysis/merge_strength_stage_scatter.png
 类别合并模式聚类：使用 K/M/P/Ø/TS 的三级合并模式，Hamming 距离，k-modes 聚类，图中采用 k=4。
-- 地图：/Users/kleinchan/wuyu_vowel_chain/figs/merge_pattern_k4_map.png
-- MDS：/Users/kleinchan/wuyu_vowel_chain/figs/merge_pattern_hamming_mds.png
+- 地图：/Users/kleinchan/wuyu_vowel_chain/figs/merge_analysis/merge_pattern_k4_map.png
+- MDS：/Users/kleinchan/wuyu_vowel_chain/figs/merge_analysis/merge_pattern_hamming_mds.png
 - 聚类表：/Users/kleinchan/wuyu_vowel_chain/data_clean/merge_analysis/point_merge_pattern_clusters.csv
 
 连续聚类最优方案摘要（kmeans / k=3）：
-- C1 S2_S3_dominant: 25 点；太湖片-毗陵小片(10) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1) | 太湖片-苏沪嘉小片(1)
-- C3 S2_S3_dominant: 48 点；太湖片-苏沪嘉小片(37) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(5) | 太湖片-毗陵小片(1)
+- C1 S2_S3_dominant: 26 点；太湖片-毗陵小片(11) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1) | 太湖片-苏沪嘉小片(1)
+- C3 S2_S3_dominant: 49 点；太湖片-苏沪嘉小片(37) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(5) | 太湖片-毗陵小片(2)
 - C2 S1_S2_dominant: 9 点；太湖片-临绍小片(7) | 太湖片-杭州小片(1) | 太湖片-甬江小片(1)
 
 类别模式聚类 k=4 摘要：
-- 越级/断裂型: 3 点；太湖片-苏沪嘉小片(2) | 太湖片-苕溪小片(1)
-- 保守分立型: 25 点；太湖片-毗陵小片(11) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1)
-- 扩展合流型: 45 点；太湖片-苏沪嘉小片(36) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(4)
+- 越级/断裂型: 6 点；太湖片-苏沪嘉小片(4) | 太湖片-苕溪小片(1) | 太湖片-毗陵小片(1)
+- 保守分立型: 26 点；太湖片-毗陵小片(12) | 太湖片-临绍小片(7) | 太湖片-甬江小片(6) | 太湖片-杭州小片(1)
+- 扩展合流型: 43 点；太湖片-苏沪嘉小片(34) | 太湖片-临绍小片(5) | 太湖片-苕溪小片(4)
 - 中段合并型: 9 点；太湖片-临绍小片(7) | 太湖片-杭州小片(1) | 太湖片-甬江小片(1)

@@ -1,4 +1,8 @@
-# Sankey 模式汇总（82 点版）
+# Sankey 模式汇总（历史 82 点版）
+
+> 本文保留 2026-05-24 的 82 点描述。当前 84 点汇总已由 `scripts/generate_sankey.py`
+> 重算，见 [`figs/overview/evolution_descriptive_stats.txt`](../figs/overview/evolution_descriptive_stats.txt)
+> 与 `data_raw/dialect_evolution_profiles_full.csv`。
 
 - 更新时间：2026-05-24
 - 数据来源：`data_raw/dialect_evolution_profiles_full.csv`

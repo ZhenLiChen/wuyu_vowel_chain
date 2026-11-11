@@ -319,16 +319,17 @@ def validate(
     slot_values: pd.DataFrame,
     points: pd.DataFrame,
 ) -> None:
-    assert len(df) == 410
-    assert df["point_id"].nunique() == 82
+    expected_points = df["point_id"].nunique()
+    expected_rows = expected_points * len(ONSET_ORDER)
+    assert len(df) == expected_rows
     assert set(df["onset_class"].astype(str)) == set(ONSET_ORDER)
-    assert df.groupby("onset_class", observed=True).size().eq(82).all()
+    assert df.groupby("onset_class", observed=True).size().eq(expected_points).all()
     assert len(onset_summary) == 5
-    assert structure.groupby("onset_class")["point_count"].sum().eq(82).all()
-    assert chains.groupby("onset_class")["point_count"].sum().eq(82).all()
+    assert structure.groupby("onset_class")["point_count"].sum().eq(expected_points).all()
+    assert chains.groupby("onset_class")["point_count"].sum().eq(expected_points).all()
     assert len(slot_summary) == 20
-    assert slot_values.groupby(["onset_class", "slot"])["point_count"].sum().eq(82).all()
-    assert len(points) == 410
+    assert slot_values.groupby(["onset_class", "slot"])["point_count"].sum().eq(expected_points).all()
+    assert len(points) == expected_rows
 
 
 def main() -> None:

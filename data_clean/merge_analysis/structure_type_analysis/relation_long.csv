@@ -167,34 +167,34 @@ CS01,川沙浦东,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,A_rel,S2=S3,True,
 CS01,川沙浦东,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 CS01,川沙浦东,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 CS01,川沙浦东,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,N,special_merge_onset,N_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,T,special_merge_onset,T_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,T,special_merge_onset,T_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,T,special_merge_onset,T_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,T,special_merge_onset,T_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,A_rel,S2=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,C_rel,S0=S1,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,B_rel,S1=S2,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,B_rel,S1=S2,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,A_rel,S2=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-CS02,常熟虞山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,D_rel,S1=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,N,special_merge_onset,N_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,T,special_merge_onset,T_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,T,special_merge_onset,T_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,T,special_merge_onset,T_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,T,special_merge_onset,T_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,A_rel,S2=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,C_rel,S0=S1,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,B_rel,S1=S2,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,M,value_pattern_onset,M_L3,S1=S2=S3,pattern_E,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,B_rel,S1=S2,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,P,value_pattern_onset,P_L3,S1=S2=S3,pattern_E,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,A_rel,S2=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+CS03,常熟梅李镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,D_rel,S1=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 CX01,慈溪逍林,N,special_merge_onset,N_Status,分立,split,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
 CX01,慈溪逍林,N,special_merge_onset,N_Status,分立,split,B_rel,S1=S2,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
 CX01,慈溪逍林,N,special_merge_onset,N_Status,分立,split,C_rel,S0=S1,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
@@ -279,6 +279,34 @@ CZ01,常州,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,A_rel,S2=S3,True
 CZ01,常州,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,B_rel,S1=S2,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
 CZ01,常州,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,C_rel,S0=S1,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
 CZ01,常州,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,D_rel,S1=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,N,special_merge_onset,N_Status,分立,split,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,N,special_merge_onset,N_Status,分立,split,B_rel,S1=S2,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,N,special_merge_onset,N_Status,分立,split,C_rel,S0=S1,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,N,special_merge_onset,N_Status,分立,split,D_rel,S1=S3,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,T,special_merge_onset,T_Status,分立,split,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,T,special_merge_onset,T_Status,分立,split,B_rel,S1=S2,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,T,special_merge_onset,T_Status,分立,split,C_rel,S0=S1,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,T,special_merge_onset,T_Status,分立,split,D_rel,S1=S3,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,K,value_pattern_onset,K_L3,全对立,pattern_NONE,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,K,value_pattern_onset,K_L3,全对立,pattern_NONE,B_rel,S1=S2,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,K,value_pattern_onset,K_L3,全对立,pattern_NONE,C_rel,S0=S1,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,K,value_pattern_onset,K_L3,全对立,pattern_NONE,D_rel,S1=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,M,value_pattern_onset,M_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,M,value_pattern_onset,M_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,M,value_pattern_onset,M_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,M,value_pattern_onset,M_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,P,value_pattern_onset,P_L3,全对立,pattern_NONE,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,P,value_pattern_onset,P_L3,全对立,pattern_NONE,B_rel,S1=S2,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,P,value_pattern_onset,P_L3,全对立,pattern_NONE,C_rel,S0=S1,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,P,value_pattern_onset,P_L3,全对立,pattern_NONE,D_rel,S1=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,TS,value_pattern_onset,TS_L3,全对立,pattern_NONE,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,TS,value_pattern_onset,TS_L3,全对立,pattern_NONE,B_rel,S1=S2,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,TS,value_pattern_onset,TS_L3,全对立,pattern_NONE,C_rel,S0=S1,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,TS,value_pattern_onset,TS_L3,全对立,pattern_NONE,D_rel,S1=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,B_rel,S1=S2,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,C_rel,S0=S1,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
+CZ02,常州武进,Ø,value_pattern_onset,Ø_L3,全对立,pattern_NONE,D_rel,S1=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
 DB01,郎溪梅渚镇定埠,N,special_merge_onset,N_Status,分立,split,A_rel,S2=S3,True,0,conservative_split,保守分立型,1,C1 S2_S3_dominant
 DB01,郎溪梅渚镇定埠,N,special_merge_onset,N_Status,分立,split,B_rel,S1=S2,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
 DB01,郎溪梅渚镇定埠,N,special_merge_onset,N_Status,分立,split,C_rel,S0=S1,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
@@ -587,6 +615,34 @@ GQ01,高桥,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_do
 GQ01,高桥,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 GQ01,高桥,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 GQ01,高桥,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,N,special_merge_onset,N_Status,合流,merge,D_rel,S1=S3,False,,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,T,special_merge_onset,T_Status,合流,merge,A_rel,S2=S3,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,T,special_merge_onset,T_Status,合流,merge,B_rel,S1=S2,False,,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,T,special_merge_onset,T_Status,合流,merge,C_rel,S0=S1,False,,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,T,special_merge_onset,T_Status,合流,merge,D_rel,S1=S3,False,,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,A_rel,S2=S3,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,B_rel,S1=S2,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,C_rel,S0=S1,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,K,value_pattern_onset,K_L3,S0=S1,pattern_C,D_rel,S1=S3,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,A_rel,S2=S3,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,B_rel,S1=S2,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,C_rel,S0=S1,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,D_rel,S1=S3,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,P,value_pattern_onset,P_L3,S0=S1，S2=S3,pattern_F,A_rel,S2=S3,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,P,value_pattern_onset,P_L3,S0=S1，S2=S3,pattern_F,B_rel,S1=S2,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,P,value_pattern_onset,P_L3,S0=S1，S2=S3,pattern_F,C_rel,S0=S1,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,P,value_pattern_onset,P_L3,S0=S1，S2=S3,pattern_F,D_rel,S1=S3,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,A_rel,S2=S3,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,B_rel,S1=S2,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,C_rel,S0=S1,True,0,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
+GS01,江阴顾山镇,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,D_rel,S1=S3,True,1,mixed_transition,混合过渡型,3,C3 S2_S3_dominant
 HM01,海门镇沙地话,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 HM01,海门镇沙地话,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 HM01,海门镇沙地话,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
@@ -1427,34 +1483,6 @@ SJ01,松江镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A
 SJ01,松江镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 SJ01,松江镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 SJ01,松江镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,N,special_merge_onset,N_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,T,special_merge_onset,T_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,T,special_merge_onset,T_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,T,special_merge_onset,T_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,T,special_merge_onset,T_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,K,value_pattern_onset,K_L3,S0=S1，S2=S3,pattern_F,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,K,value_pattern_onset,K_L3,S0=S1，S2=S3,pattern_F,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,K,value_pattern_onset,K_L3,S0=S1，S2=S3,pattern_F,C_rel,S0=S1,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,K,value_pattern_onset,K_L3,S0=S1，S2=S3,pattern_F,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,A_rel,S2=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,M,value_pattern_onset,M_L3,S1=S3 [越级],pattern_D,D_rel,S1=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,P,value_pattern_onset,P_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,P,value_pattern_onset,P_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,P,value_pattern_onset,P_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,P,value_pattern_onset,P_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,TS,value_pattern_onset,TS_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
-SJ02,泗泾,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 SL01,三林,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 SL01,三林,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 SL01,三林,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
@@ -1847,6 +1875,34 @@ WX02,吴县光福镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,A_rel,S2=S3,Tr
 WX02,吴县光福镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 WX02,吴县光福镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 WX02,吴县光福镇,Ø,value_pattern_onset,Ø_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,N,special_merge_onset,N_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,T,special_merge_onset,T_Status,合流,merge,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,T,special_merge_onset,T_Status,合流,merge,B_rel,S1=S2,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,T,special_merge_onset,T_Status,合流,merge,C_rel,S0=S1,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,T,special_merge_onset,T_Status,合流,merge,D_rel,S1=S3,False,,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,K,value_pattern_onset,K_L3,S0=S1,pattern_C,A_rel,S2=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,K,value_pattern_onset,K_L3,S0=S1,pattern_C,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,K,value_pattern_onset,K_L3,S0=S1,pattern_C,C_rel,S0=S1,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,K,value_pattern_onset,K_L3,S0=S1,pattern_C,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,M,value_pattern_onset,M_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,M,value_pattern_onset,M_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,M,value_pattern_onset,M_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,M,value_pattern_onset,M_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,P,value_pattern_onset,P_L3,S2=S3,pattern_A,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,P,value_pattern_onset,P_L3,S2=S3,pattern_A,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,P,value_pattern_onset,P_L3,S2=S3,pattern_A,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,P,value_pattern_onset,P_L3,S2=S3,pattern_A,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,TS,value_pattern_onset,TS_L3,S1=S2=S3,pattern_E,A_rel,S2=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,TS,value_pattern_onset,TS_L3,S1=S2=S3,pattern_E,B_rel,S1=S2,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,TS,value_pattern_onset,TS_L3,S1=S2=S3,pattern_E,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,TS,value_pattern_onset,TS_L3,S1=S2=S3,pattern_E,D_rel,S1=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,A_rel,S2=S3,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,B_rel,S1=S2,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,C_rel,S0=S1,True,0,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
+WX03,无锡南方泉,Ø,value_pattern_onset,Ø_L3,S1=S3 [越级],pattern_D,D_rel,S1=S3,True,1,A_dominant,S2=S3主导型,3,C3 S2_S3_dominant
 XC01,新昌城关,N,special_merge_onset,N_Status,合流,merge,A_rel,S2=S3,True,1,conservative_split,保守分立型,1,C1 S2_S3_dominant
 XC01,新昌城关,N,special_merge_onset,N_Status,合流,merge,B_rel,S1=S2,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant
 XC01,新昌城关,N,special_merge_onset,N_Status,合流,merge,C_rel,S0=S1,False,,conservative_split,保守分立型,1,C1 S2_S3_dominant

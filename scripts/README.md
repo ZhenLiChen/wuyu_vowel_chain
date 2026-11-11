@@ -18,15 +18,30 @@
 | 脚本 | 主要输出 |
 |---|---|
 | `analyze_merge_strength_clusters.py` | `data_clean/merge_analysis/` 中的点级强度聚类 |
+| `analyze_merge_strength_nbclust.R` | 使用隔离 R 库中的 NbClust 包，以 Ward.D2 和 k-means 对点级强度聚类作实际包级比较 |
+| `setup_nbclust_r_env.R` | 在 `.artifacts/nbclust-r/library` 建立 NbClust 隔离 R 库 |
 | `plot_merge_clustering_comparison.py` | `figs/merge_analysis/` 中的强度/模式聚类比较 |
 | `plot_continuous_merge_strength_cluster_map.py` | 连续合并强度地图 |
+| `plot_merge_strength_nbclust_r_map.py` | 当前 Python 结果与 R/NbClust Ward.D2 结果的并列地图 |
 | `analyze_mainlayer_ipa_positions.py` | 主体层 IPA 表、总览图和点级 PDF 图册 |
 | `analyze_mainlayer_by_onset.py` | 声组条件下的主体层结构与音值链表 |
 | `cluster_mainlayer_chains.py` | 点级代表链和 `k=2…8` 聚类数据 |
 | `plot_mainlayer_chain_k3_map.py` | 推荐 `k=3` 类型地理图 |
 | `plot_mainlayer_chain_main_only.py` | 三类代表主链 HTML 与独立 PNG |
-| `plot_dialect_onset_merge_pattern_matrix.py` | 82 点 × 声组模式矩阵（PNG/PDF） |
+| `plot_dialect_onset_merge_pattern_matrix.py` | 84 点 × 声组模式矩阵（PNG/PDF） |
 | `plot_mainlayer_stats_tree.py`、`plot_s1_s3_type_tree.py` | 主体层结构树 |
+
+R/NbClust 重跑顺序：
+
+```bash
+Rscript scripts/setup_nbclust_r_env.R
+Rscript scripts/analyze_merge_strength_nbclust.R
+python3 scripts/plot_merge_strength_nbclust_r_map.py
+```
+
+NbClust 使用独立项目库，不修改系统 R 库。分析比较标准化后的三个强度特征，距离为
+Euclidean，候选簇数为 2–6；R 分析表、指标投票、报告和对照地图分别写入
+`data_clean/merge_analysis/` 与 `figs/merge_analysis/`。
 
 ## 音值、裂化与单音化
 
